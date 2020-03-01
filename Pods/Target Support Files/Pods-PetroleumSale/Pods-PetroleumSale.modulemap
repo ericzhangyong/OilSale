@@ -1,0 +1,6 @@
+framework module Pods_PetroleumSale {
+  umbrella header "Pods-PetroleumSale-umbrella.h"
+
+  export *
+  module * { export * }
+}

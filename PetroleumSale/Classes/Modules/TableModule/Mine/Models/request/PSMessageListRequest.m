@@ -1,0 +1,23 @@
+//
+//  PSMessageListRequest.m
+//  PetroleumSale
+//
+//  Created by zhangyong on 2019/12/5.
+//  Copyright © 2019 eric. All rights reserved.
+//
+
+#import "PSMessageListRequest.h"
+#import "UserInfoProfile.h"
+
+@implementation PSMessageListRequest
+
+
+-(NSString *)requestMethod{
+    
+    if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeDriver) {
+        return method_messageDriverList;
+    }else{
+        return method_messageList;
+    }
+}
+@end

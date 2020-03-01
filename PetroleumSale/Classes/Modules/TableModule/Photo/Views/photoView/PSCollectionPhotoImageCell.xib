@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PSCollectionPhotoImageCell">
+            <rect key="frame" x="0.0" y="0.0" width="95" height="125"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="95" height="125"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XgY-cJ-no8">
+                        <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="XgY-cJ-no8" secondAttribute="height" multiplier="1:1" id="wIV-5h-NQS"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhD-qL-vdr">
+                        <rect key="frame" x="0.0" y="105" width="95" height="20"/>
+                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSO-Jb-STO">
+                        <rect key="frame" x="70" y="0.0" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="oKD-9E-Vfk"/>
+                            <constraint firstAttribute="height" constant="25" id="wNe-41-gYw"/>
+                        </constraints>
+                        <state key="normal" image="login_uploadimage_delete"/>
+                        <connections>
+                            <action selector="acioonDelete:" destination="gTV-IL-0wX" eventType="touchUpInside" id="YCk-IM-Xmp"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="XgY-cJ-no8" secondAttribute="trailing" id="1CU-yG-WD8"/>
+                <constraint firstItem="XgY-cJ-no8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="BBA-Tb-aof"/>
+                <constraint firstItem="mSO-Jb-STO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OzF-zI-9gA"/>
+                <constraint firstItem="XgY-cJ-no8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ykd-DH-TQ8"/>
+                <constraint firstAttribute="trailing" secondItem="rhD-qL-vdr" secondAttribute="trailing" id="Zca-Ap-JKP"/>
+                <constraint firstItem="rhD-qL-vdr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bYk-SV-jll"/>
+                <constraint firstItem="rhD-qL-vdr" firstAttribute="top" secondItem="XgY-cJ-no8" secondAttribute="bottom" constant="10" id="pvy-gY-Ol3"/>
+                <constraint firstAttribute="trailing" secondItem="mSO-Jb-STO" secondAttribute="trailing" id="zfM-Dy-kQo"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <connections>
+                <outlet property="btn_Delete" destination="mSO-Jb-STO" id="y5K-Ei-OXW"/>
+                <outlet property="imageView_content" destination="XgY-cJ-no8" id="UAk-M9-aeN"/>
+                <outlet property="label_title" destination="rhD-qL-vdr" id="chM-y5-7VS"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="86"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="login_uploadimage_delete" width="20" height="20"/>
+    </resources>
+</document>

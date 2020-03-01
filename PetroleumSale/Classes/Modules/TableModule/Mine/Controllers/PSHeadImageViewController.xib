@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PSHeadImageViewController">
+            <connections>
+                <outlet property="aboveLineView" destination="mpo-ZN-1uc" id="FCL-uP-SRo"/>
+                <outlet property="downLineView" destination="sTK-8J-7At" id="brV-eK-TTH"/>
+                <outlet property="headImageView" destination="p9k-Wt-E99" id="nRy-k9-9wC"/>
+                <outlet property="updateHeadImageBtn" destination="FUU-Us-0px" id="QB0-4P-td5"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p9k-Wt-E99">
+                    <rect key="frame" x="0.0" y="45" width="375" height="510"/>
+                    <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="p9k-Wt-E99" secondAttribute="height" multiplier="375:510" id="Pfx-ju-rXh"/>
+                    </constraints>
+                </imageView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUU-Us-0px">
+                    <rect key="frame" x="127.5" y="581" width="120" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="JeD-rd-5GY"/>
+                        <constraint firstAttribute="height" constant="30" id="cjZ-z0-w3k"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <state key="normal" title="更换审核图片">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpo-ZN-1uc">
+                    <rect key="frame" x="0.0" y="44" width="375" height="1"/>
+                    <color key="backgroundColor" red="0.84313725490196079" green="0.84313725490196079" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="veH-ck-coB"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTK-8J-7At">
+                    <rect key="frame" x="0.0" y="555" width="375" height="1"/>
+                    <color key="backgroundColor" red="0.84313725490196079" green="0.84313725490196079" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="kNE-mY-PKM"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="mpo-ZN-1uc" firstAttribute="top" secondItem="0aG-iI-IbF" secondAttribute="top" constant="44" id="2Lg-2L-MfG"/>
+                <constraint firstAttribute="trailing" secondItem="mpo-ZN-1uc" secondAttribute="trailing" id="7QQ-oF-oVy"/>
+                <constraint firstItem="FUU-Us-0px" firstAttribute="top" secondItem="sTK-8J-7At" secondAttribute="bottom" constant="25" id="Auw-sW-yWM"/>
+                <constraint firstItem="mpo-ZN-1uc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CDN-Kh-gXz"/>
+                <constraint firstItem="sTK-8J-7At" firstAttribute="top" secondItem="p9k-Wt-E99" secondAttribute="bottom" id="Dto-IB-9fa"/>
+                <constraint firstAttribute="trailing" secondItem="sTK-8J-7At" secondAttribute="trailing" id="FJw-l3-xDh"/>
+                <constraint firstItem="FUU-Us-0px" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bNz-f6-BQn"/>
+                <constraint firstItem="p9k-Wt-E99" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="diT-x9-QmU"/>
+                <constraint firstItem="p9k-Wt-E99" firstAttribute="top" secondItem="mpo-ZN-1uc" secondAttribute="bottom" id="e6Z-qv-kNd"/>
+                <constraint firstAttribute="trailing" secondItem="p9k-Wt-E99" secondAttribute="trailing" id="elj-zE-PFZ"/>
+                <constraint firstItem="sTK-8J-7At" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="m6l-rr-utA"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="0aG-iI-IbF"/>
+            <point key="canvasLocation" x="33.5" y="84.5"/>
+        </view>
+    </objects>
+</document>
