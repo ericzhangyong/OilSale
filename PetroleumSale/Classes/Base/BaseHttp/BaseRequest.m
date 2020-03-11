@@ -510,7 +510,7 @@ completed:(DataCompletionBlock)successBlock
     baseRespense.type = RespenseTypeFailed;
     
     if(([appMesg isEqualToString:@"用户身份过期"]||[appCode isEqualToString:@"expired"]||[appMesg isEqualToString:@"当前账户不存在"]) && self.isAutoPopLoginVC){//@"用户未登录或者在其他设备上登录，请重新登录！"
-        shouldShowErr = NO;
+        shouldShowErr = YES;
         [UserInfoProfile.shareUserInfo clearAll];
         //登录过期或者未登录
         [RELoginViewController presentLoginWithLoginType:RELoginTypeSecretCode];

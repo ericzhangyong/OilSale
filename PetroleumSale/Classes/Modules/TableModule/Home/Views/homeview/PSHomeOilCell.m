@@ -27,7 +27,6 @@
     [super layoutSubviews];
     
     
-    [self.view_contain zy_cornerRaidus:2];
     [self.view_contain zy_setShadowColor:color_E9E9E9 shadowOffset:CGSizeMake(0, 0) shadowRadius:4 shadowOpacity:0.6];
 }
 

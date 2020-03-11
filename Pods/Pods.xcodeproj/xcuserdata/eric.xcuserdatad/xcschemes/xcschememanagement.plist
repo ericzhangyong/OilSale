@@ -6,73 +6,174 @@
 	<dict>
 		<key>AFNetworking.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
 		<key>AliyunOSSiOS.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
 		<key>CYLTabBarController.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
 		<key>IQKeyboardManager-IQKeyboardManager.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
 		<key>IQKeyboardManager.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
 		<key>MBProgressHUD.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
 		<key>MJExtension.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
 		<key>MJRefresh.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
 		<key>MMPopupView.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
 		<key>Masonry.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
 		<key>Pods-PetroleumSale.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
 		<key>SDCycleScrollView.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>12</integer>
 		</dict>
 		<key>SDWebImage.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>13</integer>
 		</dict>
 		<key>YYModel.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>14</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0130B3724283586C0E9D2A112D4F2AA1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>05B2A835D60F78761395189914B88047</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0BBEBA30975C0DAB7CB6D3C696EB3BE8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>25728446DE9B9694D908A69676AE5DEC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3847153A6E5EEFB86565BA840768F429</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4D3BA58D0583DF37575CACAB3DDADC85</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>55AF53E6C77A10ED4985E04D74A8878E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6868056D761E163D10FDAF8CF1C4D9B8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>82B0A41D3031FF27D78E17B0A9A46FB0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84B44807A12996D487A4A591A481D6A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8534B493C62D81C69516B0E9599CEF36</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C1FD11F5F7EBFF63F845CDF963F73E1A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CBED833AAD6266F3AEFE9BE31C68E094</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FBA456CB50E371584C11231929A0971E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

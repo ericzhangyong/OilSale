@@ -18,10 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark -数据处理
 
 -(NSString *)ps_getDeliverNoAtIndex:(NSInteger)index;
+-(NSString *)ps_getDeliverOrderTimeAtIndex:(NSInteger)index;
 -(NSString *)ps_getImageUrlAtIndex:(NSInteger)index;
 -(NSString *)ps_getBucketTypeAtIndex:(NSInteger)index;
 -(NSString *)ps_getPriceAtIndex:(NSInteger)index;
 -(NSString *)ps_getNameAtIndex:(NSInteger)index;
+-(CGFloat)ps_getNameWidthAtIndex:(NSInteger)index;
 -(NSString *)ps_getPhoneAtIndex:(NSInteger)index;
 -(NSString *)ps_getIsDebtAtIndex:(NSInteger)index;
 -(NSString *)ps_getAddressAtIndex:(NSInteger)index;

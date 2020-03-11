@@ -181,10 +181,10 @@
     }
 }
 -(BOOL)ps_getIsShowRightBottomBtnTitleAtIndex:(NSInteger)index{
-    if (self.listType == PSOrderListTypeCurrent) {
+    if (self.listType == PSOrderListTypeHistory) {
         return YES;
     }else{
-        return NO;
+        return YES;
     }
 }
 -(BOOL)ps_getIsShowCheckBottomBtnTitleAtIndex:(NSInteger)index{

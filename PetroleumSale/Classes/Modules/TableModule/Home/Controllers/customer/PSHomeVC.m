@@ -187,6 +187,7 @@
             
         }];
     };
+    cell.view_addShopCart.showDunOrTongType = [self.homeViewModel ps_getUnitTypeAtSection:section Index:index];
     
     return cell;
 }

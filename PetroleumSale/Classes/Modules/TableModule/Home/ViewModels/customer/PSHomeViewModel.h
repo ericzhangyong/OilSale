@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 获取桶类型标题数组
 -(NSArray *)ps_getBucket_typeTitleArr;
 -(NSString *)ps_getTitleAtSection:(NSInteger)section Index:(NSInteger)index;
+-(NSString *)ps_getUnitTypeAtSection:(NSInteger)section
+                               Index:(NSInteger)index;
 -(NSString *)ps_getImageUrlAtSection:(NSInteger)section Index:(NSInteger)index;
 -(NSMutableAttributedString *)ps_getPriceAtSection:(NSInteger)section Index:(NSInteger)index;
 

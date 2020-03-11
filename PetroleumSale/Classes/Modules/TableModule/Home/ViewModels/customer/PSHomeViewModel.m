@@ -69,6 +69,13 @@
     PSProductModel *productModel = [self ps_getProductModelAtSection:section Index:index];
     return [NSString stringWithFormat:@"%@(%@)",productModel.bucket_type,productModel.bucket_desc];
 }
+-(NSString *)ps_getUnitTypeAtSection:(NSInteger)section
+                               Index:(NSInteger)index{
+    
+    PSProductModel *productModel = [self ps_getProductModelAtSection:section Index:index];
+    return [NSString stringWithFormat:@"%@",productModel.unit_type];
+}
+
 -(NSString *)ps_getImageUrlAtSection:(NSInteger)section Index:(NSInteger)index{
     PSProductModel *productModel = [self ps_getProductModelAtSection:section Index:index];
     return productModel.bucket_pic;
@@ -78,7 +85,9 @@
     
     
     NSString *price =  productModel.tax_include_price;
+    NSString *unitType = @"升";
     if (section ==1) {
+        unitType = @"吨";
         price = productModel.unit_price;
         if (![BaseVerifyUtils isNullOrSpaceStr:productModel.unit_price]&& productModel.notContainTaxOrDeliver) {
             price = [NSString stringWithFormat:@"%.2f",productModel.unit_price.doubleValue+productModel.distribution_fee.doubleValue];
@@ -87,18 +96,19 @@
             price  = [NSString stringWithFormat:@"%.2f",price.doubleValue * productModel.bucket_volume.integerValue];
         }
     }else{
+        unitType = @"桶";
         if (![BaseVerifyUtils isNullOrSpaceStr:productModel.tax_include_price]&& productModel.notContainTaxOrDeliver) {
             price = productModel.tax_exclude_price;
         }
-        if ([BaseVerifyUtils isNumber:price]) {
+//        if ([BaseVerifyUtils isNumber:price]) {
             price  = [NSString stringWithFormat:@"%.2f",price.doubleValue * productModel.bucket_volume.integerValue];
-        }
+//        }
     }
     
     
     
     
-    NSString *content = [NSString stringWithFormat:@"¥%@/%@",price,productModel.unit_type];
+    NSString *content = [NSString stringWithFormat:@"¥%@/%@",price,unitType];
     NSMutableAttributedString *attr = [[NSMutableAttributedString alloc] initWithString:content attributes:@{NSFontAttributeName:[UIFont systemWEPingFangMediumFontOfSize:16],NSForegroundColorAttributeName:color_333333}];
     NSArray *dotArr = [price componentsSeparatedByString:@"."];
     if (dotArr.count>0) {
@@ -183,7 +193,7 @@
 
 -(NSString *)ps_getCarPrice{
     
-    NSString *carPrice = [NSString stringWithFormat:@"按车批发 ¥%.2f/升",self.homeModel.oil_price_car_whole_sale.oil_price.doubleValue];
+    NSString *carPrice = [NSString stringWithFormat:@"按车批发 ¥%.2f",self.homeModel.oil_price_car_whole_sale.oil_price.doubleValue];
     return carPrice;
 }
 
@@ -231,7 +241,7 @@
 }
 -(NSString *)ps_getFarpStationPrice{
     
-    NSString *farpPrice = [NSString stringWithFormat:@"%@/升",self.homeModel.farp_product.farp_oil_price];
+    NSString *farpPrice = [NSString stringWithFormat:@"%@",self.homeModel.farp_product.farp_oil_price];
     return farpPrice;
 }
 -(void)ps_setCarListWithArr:(NSArray *)arr{
@@ -314,6 +324,9 @@
     PSAddShopCartRequest *addShopCart = [PSAddShopCartRequest new];
     addShopCart.bucket_type_id = model.bucket_type_id.integerValue;
     addShopCart.buy_num = buyNum.integerValue;
+    if (buyNum.integerValue == 0) {
+        addShopCart.buy_num = 1;
+    }
     if (section == 1) {//车下单
         addShopCart.product_type = @"car";
         addShopCart.distribution_state = !model.notContainTaxOrDeliver;

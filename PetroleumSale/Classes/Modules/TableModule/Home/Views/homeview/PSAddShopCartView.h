@@ -42,12 +42,12 @@ typedef NS_ENUM(NSInteger,AddShopCartStyle){
 @property (nonatomic,strong) UITextField *tf_input;
 
 
-
 /**
  是否显示View_add Yes显示view_add NO显示view_folder
  */
 @property (nonatomic,assign) BOOL isShowView_add;
 
+@property (nonatomic,copy) NSString *showDunOrTongType;
 
 
 

@@ -67,7 +67,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 250;
+    return 275;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -79,9 +79,11 @@
     cell.imageView_background.hidden = index !=0;
     cell.label_deliverNo.text = [self.senderViewModel ps_getDeliverNoAtIndex:index];
     [cell.imageView_header setImageWithUrl:[self.senderViewModel ps_getImageUrlAtIndex:index] placeholder:defaultHolder160_160 ];
+    cell.label_time.text = [self.senderViewModel ps_getDeliverOrderTimeAtIndex:index];
     cell.label_buckettype.text = [self.senderViewModel ps_getBucketTypeAtIndex:index];
     cell.label_price.text  = [self.senderViewModel ps_getPriceAtIndex:index];
     cell.label_name.text= [self.senderViewModel ps_getNameAtIndex:index];
+    cell.layoutWidth_name.constant = [self.senderViewModel ps_getNameWidthAtIndex:index];
     cell.label_phoneNum.text = [self.senderViewModel ps_getPhoneAtIndex:index];
     cell.label_address.text = [self.senderViewModel ps_getAddressAtIndex:index];
     cell.label_wareHouseStauts.text = [self.senderViewModel ps_getwarHouseStatusAtIndex:index];

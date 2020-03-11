@@ -8,6 +8,7 @@
 
 #import "PSSenderOrderViewModel.h"
 #import "PSSenderOrderListRequest.h"
+#import "NSString+RECategory.h"
 
 @implementation PSSenderOrderViewModel
 
@@ -26,6 +27,11 @@
     
     PSSenderOrderModel *senderOrderModel = [self ps_getSenderOrderModelAtIndex:index];
     return [NSString stringWithFormat:@"订单号：%@",senderOrderModel.order_info.order_code];
+}
+-(NSString *)ps_getDeliverOrderTimeAtIndex:(NSInteger)index{
+    
+    PSSenderOrderModel *senderOrderModel = [self ps_getSenderOrderModelAtIndex:index];
+    return [NSString stringWithFormat:@"订单时间：%@",senderOrderModel.order_info.shopping_time];
 }
 
 -(NSString *)ps_getImageUrlAtIndex:(NSInteger)index{
@@ -50,6 +56,17 @@
     PSSenderOrderModel *senderOrderModel = [self ps_getSenderOrderModelAtIndex:index];
 
     return senderOrderModel.order_info.consignee;
+}
+
+-(CGFloat)ps_getNameWidthAtIndex:(NSInteger)index{
+    
+    NSString *str = [self ps_getNameAtIndex:index];
+    
+    CGFloat width = 65;
+    if (![BaseVerifyUtils isNullOrSpaceStr:str]) {
+        width = [str widthWithFont:[UIFont systemWEPingFangRegularOfSize:14]];
+    }
+    return width;
 }
 
 -(NSString *)ps_getPhoneAtIndex:(NSInteger)index{

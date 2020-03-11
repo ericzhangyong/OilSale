@@ -134,7 +134,7 @@
     self.label_lastBuy.text = homeViewModel.homeModel.buy_notice;
 //    self.label_notice.text =
     NSString *price = homeViewModel.homeModel.oil_price_today.oil_price;
-    NSString *content = [NSString stringWithFormat:@"¥%@/桶",price];
+    NSString *content = [NSString stringWithFormat:@"¥%@",price];
     NSMutableAttributedString *attr = [[NSMutableAttributedString alloc] initWithString:content attributes:@{NSFontAttributeName:[UIFont systemWEPingFangMediumFontOfSize:16],NSForegroundColorAttributeName:color_EE5455}];
     NSArray *dotArr = [price componentsSeparatedByString:@"."];
     if (dotArr.count>0) {

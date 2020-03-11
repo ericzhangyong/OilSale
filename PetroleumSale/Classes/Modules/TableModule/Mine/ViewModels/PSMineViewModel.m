@@ -72,8 +72,15 @@
         PSMineSetModel *addresModel = [PSMineSetModel new];
         addresModel.mineCellType = PSMineCellTypeAddress;
         addresModel.title = @"收货地址";
-        NSString *address = [NSString stringWithFormat:@"%@%@",userInfo.receipt_addr.region,userInfo.receipt_addr.complete_address];
-        addresModel.content = address;
+//        NSString *address = [NSString stringWithFormat:@"%@%@",userInfo.receipt_addr.region,userInfo.receipt_addr.complete_address];
+        NSMutableString *addressStr = [NSMutableString stringWithString:@""];
+        if (![BaseVerifyUtils isNullOrSpaceStr:userInfo.receipt_addr.region]) {
+            [addressStr appendString:userInfo.receipt_addr.region];
+        }
+        if (![BaseVerifyUtils isNullOrSpaceStr:userInfo.receipt_addr.complete_address]) {
+            [addressStr appendString:userInfo.receipt_addr.complete_address];
+        }
+        addresModel.content = addressStr;
         addresModel.iconImageUrl = @"userpg_list_adress";
         [self.dataSource addObject:addresModel];
         

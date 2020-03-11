@@ -13,6 +13,9 @@
 @interface PSAddShopCartView ()<UITextFieldDelegate>
 
 @property (nonatomic,assign) BOOL isEndEditing;
+
+@property (nonatomic,strong) UILabel *label_dunType;
+
 @end
 @implementation PSAddShopCartView
 
@@ -92,6 +95,7 @@
     [addView addSubview:tf_input];
     self.tf_input = tf_input;
 
+    [self.view_add addSubview:self.label_dunType];
     
     self.view_add.hidden = YES;
     self.view_folder.hidden= NO;
@@ -143,10 +147,14 @@
         make.centerY.equalTo(self.view_add.mas_centerY);
         make.height.width.mas_equalTo(24);
     }];
-    
+    [self.label_dunType mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.btn_plus.mas_left).offset(2);
+        make.width.mas_equalTo(20);
+        make.centerY.equalTo(self.view_add.mas_centerY);
+    }];
     [self.tf_input mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.btn_minus.mas_right);
-        make.right.equalTo(self.btn_plus.mas_left);
+        make.right.equalTo(self.label_dunType.mas_left);
         make.centerY.equalTo(self.view_add.mas_centerY);
         make.height.mas_equalTo(21);
     }];
@@ -163,6 +171,15 @@
     }
 }
 
+- (void)setShowDunOrTongType:(NSString *)showDunOrTongType{
+//    self.label_dunType.hidden = !isShowDunType;
+    _showDunOrTongType = showDunOrTongType;
+    self.label_dunType.text = showDunOrTongType;
+    CGFloat width = 20 ;
+    [self.label_dunType mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(width);
+    }];
+}
 
 
 
@@ -192,7 +209,7 @@
             self.tf_input.text = @"0";
             self.isShowView_add = NO;
         }else{
-            self.tf_input.text = [NSString stringWithFormat:@"%d",oldText.integerValue-1];
+            self.tf_input.text = [NSString stringWithFormat:@"%zd",oldText.integerValue-1];
         }
     }
 }
@@ -315,6 +332,18 @@
 //        self.confirmView.ff_y=keyboardFrame.origin.y-self.confirmView.ff_height;
 //    }];
     
+}
+
+
+#pragma mark- lazy
+-(UILabel *)label_dunType{
+    if (!_label_dunType) {
+        _label_dunType = [UILabel new];
+//        _label_dunType.text = @"吨";
+        _label_dunType.font = [UIFont systemWEPingFangRegularOfSize:14];
+        _label_dunType.textColor = color_333333;
+    }
+    return _label_dunType;
 }
 
 

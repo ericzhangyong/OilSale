@@ -148,19 +148,6 @@
         }];
     };
     
-    
-    
-    
-    
-    
-    
-//    cell.btn_goToSend.hidden = self.deliveryViewModel.listType == PSSenderDeliverListTypeSended;
-//    WEAK_SELF;
-//    cell.goToSendClick = ^{
-//
-//        PSSenderDriverSelectVC *selectDriver = [[PSSenderDriverSelectVC alloc] initWithOrderId:[self.deliveryViewModel ps_getDeliverOrderIdAtIndex:index]];
-//        [weakSelf.view.navViewController pushViewController:selectDriver animated:YES];
-//    };
     return cell;
 }
 

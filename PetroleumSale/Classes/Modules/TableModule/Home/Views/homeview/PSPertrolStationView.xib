@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -242,10 +242,10 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="haM-0G-PT6" secondAttribute="trailing" id="8UM-sJ-C9p"/>
-                <constraint firstItem="haM-0G-PT6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="aaz-ng-4XS"/>
-                <constraint firstAttribute="bottom" secondItem="haM-0G-PT6" secondAttribute="bottom" id="dys-lW-7m0"/>
-                <constraint firstItem="haM-0G-PT6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="muM-Mi-FYc"/>
+                <constraint firstAttribute="trailing" secondItem="haM-0G-PT6" secondAttribute="trailing" priority="999" id="8UM-sJ-C9p"/>
+                <constraint firstItem="haM-0G-PT6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" priority="999" id="aaz-ng-4XS"/>
+                <constraint firstAttribute="bottom" secondItem="haM-0G-PT6" secondAttribute="bottom" priority="999" id="dys-lW-7m0"/>
+                <constraint firstItem="haM-0G-PT6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="999" id="muM-Mi-FYc"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

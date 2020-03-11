@@ -15,10 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *imageView_background;
 
 @property (weak, nonatomic) IBOutlet UILabel *label_deliverNo;
+@property (weak, nonatomic) IBOutlet UILabel *label_time;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView_header;
 @property (weak, nonatomic) IBOutlet UILabel *label_buckettype;
 @property (weak, nonatomic) IBOutlet UILabel *label_price;
 @property (weak, nonatomic) IBOutlet UILabel *label_name;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutWidth_name;
+
 @property (weak, nonatomic) IBOutlet UILabel *label_phoneNum;
 @property (weak, nonatomic) IBOutlet UILabel *label_address;
 @property (weak, nonatomic) IBOutlet UILabel *label_wareHouseStauts;

@@ -167,7 +167,7 @@
     return senderOrderModel.isSelected;
 }
 -(BOOL)ps_getIsShowBtnSelectedAtIndex:(NSInteger)index{
-    if (self.listType == PSSenderDeliverListTypeSended) {
+    if (self.listType == PSSenderDeliverListTypeUnSended) {
         return YES;
     }else{
         return NO;
