@@ -84,15 +84,17 @@
     [self.view_confirm mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self.view);
         make.height.mas_equalTo(56);
+        make.bottom.equalTo(self.view).offset(-SafeBottom);
     }];
     [self.view_edit mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.equalTo(self.view);
+        make.left.right.equalTo(self.view);
         make.height.mas_equalTo(56);
+        make.bottom.equalTo(self.view).offset(-SafeBottom);
     }];
     
     [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self.view);
-        make.bottom.equalTo(self.view).offset(-56);
+        make.bottom.equalTo(self.view).offset(-56-SafeBottom);
     }];
     
     WEAK_SELF;

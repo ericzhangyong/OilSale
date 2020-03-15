@@ -21,6 +21,10 @@
     
     self.conrol_accountBalance.selected = YES;
     self.btn_accountBalance.selected = YES;
+    
+    [self.btn_accountBalance addTarget:self action:@selector(actionAccountBalance:) forControlEvents:UIControlEventTouchUpInside];
+    [self.btn_accountOidCard addTarget:self action:@selector(actionAccountOidCard:) forControlEvents:UIControlEventTouchUpInside];
+
 }
 
 - (IBAction)actionSelectWareHouse:(UIControl *)sender {

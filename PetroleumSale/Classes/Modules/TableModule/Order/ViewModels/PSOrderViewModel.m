@@ -65,11 +65,13 @@
 
 -(NSString *)ps_getOrderStatusAtIndex:(NSInteger)index{
     PSOrderModel *orderModel = [self ps_getOrderModelAtIndex:index];
-    if (orderModel.order_state ==1) {
-        return @"未收货";
-    }else{
-        return @"已完成";
-    }
+    
+    return orderModel.distribution_state_desc;
+//    if (orderModel.order_state ==1) {
+//        return @"未收货";
+//    }else{
+//        return @"已完成";
+//    }
 }
 -(UIColor *)ps_getOrderStatusTextColorAtIndex:(NSInteger)index{
     PSOrderModel *orderModel = [self ps_getOrderModelAtIndex:index];
