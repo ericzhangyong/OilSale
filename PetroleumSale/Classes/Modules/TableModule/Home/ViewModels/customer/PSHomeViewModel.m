@@ -156,10 +156,11 @@
             return @"不含税";
         }
     }else{
-        if ([BaseVerifyUtils isNullOrSpaceStr:productModel.distribution_fee]) {
-            return @"配送 +0";
-        }
-        return [NSString stringWithFormat:@"配送 +%@",productModel.distribution_fee];
+        return productModel.distribution_fee;
+//        if ([BaseVerifyUtils isNullOrSpaceStr:productModel.distribution_fee]) {
+//            return @"配送 +0";
+//        }
+//        return [NSString stringWithFormat:@"配送 +%@",productModel.distribution_fee];
     }
 }
 -(CGFloat)ps_getRightBtnWidthAtSection:(NSInteger)section index:(NSInteger)index{
