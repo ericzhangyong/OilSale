@@ -18,6 +18,8 @@
         return @"driver/qry_driver_mine.do";
     }else if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypePetrolStation){
         return method_stationMine;
+    }else if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeSalesman){
+        return method_salesmanMine;
     }
     else{
         return method_userInfo;

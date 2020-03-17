@@ -139,7 +139,7 @@
 {
     if (!_hideNavBarVcClassArr) {
         _hideNavBarVcClassArr = [NSMutableArray array];
-        NSArray *hiddenArr = @[@"CYLTabBarController",@"PSMineVC",@"PSHomeVC",@"PSDriverHomeVC",@"PSPhotoConfirmVC",@"PSSenderOrderListVC",@"PSSenderDeleryVC",@"PSPetrolStationHomeVC"];
+        NSArray *hiddenArr = @[@"CYLTabBarController",@"PSMineVC",@"PSHomeVC",@"PSDriverHomeVC",@"PSPhotoConfirmVC",@"PSSenderOrderListVC",@"PSSenderDeleryVC",@"PSPetrolStationHomeVC",@"PSSalemanHomeVC"];
         [_hideNavBarVcClassArr setArray:hiddenArr];
     }
     return _hideNavBarVcClassArr;

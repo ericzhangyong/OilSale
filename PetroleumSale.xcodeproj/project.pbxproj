@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		077DF32324209EF800DDD3A2 /* PSSalemanHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 077DF32224209EF800DDD3A2 /* PSSalemanHomeVC.m */; };
+		077DF32724209F2A00DDD3A2 /* PSSalesmanOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 077DF32624209F2A00DDD3A2 /* PSSalesmanOrderVC.m */; };
+		077DF32B2420A1C900DDD3A2 /* PSSalesmanHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 077DF32A2420A1C900DDD3A2 /* PSSalesmanHomeViewModel.m */; };
+		077DF3332420A26400DDD3A2 /* PSSalesmanHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 077DF3312420A26400DDD3A2 /* PSSalesmanHomeCell.m */; };
+		077DF3342420A26400DDD3A2 /* PSSalesmanHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 077DF3322420A26400DDD3A2 /* PSSalesmanHomeCell.xib */; };
+		077DF3372420AB3500DDD3A2 /* PSSalesmanHomeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 077DF3362420AB3500DDD3A2 /* PSSalesmanHomeRequest.m */; };
+		077DF33A2420ACDF00DDD3A2 /* PSClientInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 077DF3392420ACDF00DDD3A2 /* PSClientInfoModel.m */; };
+		077DF33D2420B99900DDD3A2 /* PSSalesmanVisitRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 077DF33C2420B99900DDD3A2 /* PSSalesmanVisitRequest.m */; };
+		077DF3402420BD6300DDD3A2 /* PSSalesmanOrderListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 077DF33F2420BD6300DDD3A2 /* PSSalesmanOrderListVC.m */; };
+		077DF3442420BE8A00DDD3A2 /* PSSalesmanOrderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 077DF3432420BE8A00DDD3A2 /* PSSalesmanOrderViewModel.m */; };
+		077DF3492420C1FB00DDD3A2 /* PSSalesmanOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 077DF3472420C1FB00DDD3A2 /* PSSalesmanOrderCell.m */; };
+		077DF34A2420C1FB00DDD3A2 /* PSSalesmanOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 077DF3482420C1FB00DDD3A2 /* PSSalesmanOrderCell.xib */; };
+		077DF34D2420E5B100DDD3A2 /* PSSalesmanOrderListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 077DF34C2420E5B100DDD3A2 /* PSSalesmanOrderListRequest.m */; };
+		077DF3502420E68100DDD3A2 /* PSSalesmanOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 077DF34F2420E68100DDD3A2 /* PSSalesmanOrderModel.m */; };
 		32D1C8E9D04FF487E8D861C1 /* Pods_PetroleumSale.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F32C0E600E707E9041F40E /* Pods_PetroleumSale.framework */; };
 		C2003B3E23B09EAC0010BDB9 /* PSSenderOrderListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2003B3D23B09EAC0010BDB9 /* PSSenderOrderListVC.m */; };
 		C2003B4223B0A0560010BDB9 /* PSSenderDeleryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2003B4123B0A0560010BDB9 /* PSSenderDeleryVC.m */; };
@@ -301,6 +315,32 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		077DF32124209EF800DDD3A2 /* PSSalemanHomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSalemanHomeVC.h; sourceTree = "<group>"; };
+		077DF32224209EF800DDD3A2 /* PSSalemanHomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSalemanHomeVC.m; sourceTree = "<group>"; };
+		077DF32524209F2A00DDD3A2 /* PSSalesmanOrderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSalesmanOrderVC.h; sourceTree = "<group>"; };
+		077DF32624209F2A00DDD3A2 /* PSSalesmanOrderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSalesmanOrderVC.m; sourceTree = "<group>"; };
+		077DF3292420A1C900DDD3A2 /* PSSalesmanHomeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSalesmanHomeViewModel.h; sourceTree = "<group>"; };
+		077DF32A2420A1C900DDD3A2 /* PSSalesmanHomeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSalesmanHomeViewModel.m; sourceTree = "<group>"; };
+		077DF3302420A26400DDD3A2 /* PSSalesmanHomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSalesmanHomeCell.h; sourceTree = "<group>"; };
+		077DF3312420A26400DDD3A2 /* PSSalesmanHomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSalesmanHomeCell.m; sourceTree = "<group>"; };
+		077DF3322420A26400DDD3A2 /* PSSalesmanHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PSSalesmanHomeCell.xib; sourceTree = "<group>"; };
+		077DF3352420AB3500DDD3A2 /* PSSalesmanHomeRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSalesmanHomeRequest.h; sourceTree = "<group>"; };
+		077DF3362420AB3500DDD3A2 /* PSSalesmanHomeRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSalesmanHomeRequest.m; sourceTree = "<group>"; };
+		077DF3382420ACDF00DDD3A2 /* PSClientInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSClientInfoModel.h; sourceTree = "<group>"; };
+		077DF3392420ACDF00DDD3A2 /* PSClientInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSClientInfoModel.m; sourceTree = "<group>"; };
+		077DF33B2420B99900DDD3A2 /* PSSalesmanVisitRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSalesmanVisitRequest.h; sourceTree = "<group>"; };
+		077DF33C2420B99900DDD3A2 /* PSSalesmanVisitRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSalesmanVisitRequest.m; sourceTree = "<group>"; };
+		077DF33E2420BD6300DDD3A2 /* PSSalesmanOrderListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSalesmanOrderListVC.h; sourceTree = "<group>"; };
+		077DF33F2420BD6300DDD3A2 /* PSSalesmanOrderListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSalesmanOrderListVC.m; sourceTree = "<group>"; };
+		077DF3422420BE8A00DDD3A2 /* PSSalesmanOrderViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSalesmanOrderViewModel.h; sourceTree = "<group>"; };
+		077DF3432420BE8A00DDD3A2 /* PSSalesmanOrderViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSalesmanOrderViewModel.m; sourceTree = "<group>"; };
+		077DF3462420C1FB00DDD3A2 /* PSSalesmanOrderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSalesmanOrderCell.h; sourceTree = "<group>"; };
+		077DF3472420C1FB00DDD3A2 /* PSSalesmanOrderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSalesmanOrderCell.m; sourceTree = "<group>"; };
+		077DF3482420C1FB00DDD3A2 /* PSSalesmanOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PSSalesmanOrderCell.xib; sourceTree = "<group>"; };
+		077DF34B2420E5B100DDD3A2 /* PSSalesmanOrderListRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSalesmanOrderListRequest.h; sourceTree = "<group>"; };
+		077DF34C2420E5B100DDD3A2 /* PSSalesmanOrderListRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSalesmanOrderListRequest.m; sourceTree = "<group>"; };
+		077DF34E2420E68100DDD3A2 /* PSSalesmanOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSalesmanOrderModel.h; sourceTree = "<group>"; };
+		077DF34F2420E68100DDD3A2 /* PSSalesmanOrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSalesmanOrderModel.m; sourceTree = "<group>"; };
 		5E0DA287668D7F803D260F93 /* Pods-PetroleumSale.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetroleumSale.release.xcconfig"; path = "Target Support Files/Pods-PetroleumSale/Pods-PetroleumSale.release.xcconfig"; sourceTree = "<group>"; };
 		82F32C0E600E707E9041F40E /* Pods_PetroleumSale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetroleumSale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8E5ED2B00D7D724F1DC7FB5 /* Pods-PetroleumSale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetroleumSale.debug.xcconfig"; path = "Target Support Files/Pods-PetroleumSale/Pods-PetroleumSale.debug.xcconfig"; sourceTree = "<group>"; };
@@ -856,6 +896,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		077DF32024209EC200DDD3A2 /* salesman */ = {
+			isa = PBXGroup;
+			children = (
+				077DF32124209EF800DDD3A2 /* PSSalemanHomeVC.h */,
+				077DF32224209EF800DDD3A2 /* PSSalemanHomeVC.m */,
+			);
+			path = salesman;
+			sourceTree = "<group>";
+		};
+		077DF32424209F0400DDD3A2 /* salesman */ = {
+			isa = PBXGroup;
+			children = (
+				077DF32524209F2A00DDD3A2 /* PSSalesmanOrderVC.h */,
+				077DF32624209F2A00DDD3A2 /* PSSalesmanOrderVC.m */,
+				077DF33E2420BD6300DDD3A2 /* PSSalesmanOrderListVC.h */,
+				077DF33F2420BD6300DDD3A2 /* PSSalesmanOrderListVC.m */,
+			);
+			path = salesman;
+			sourceTree = "<group>";
+		};
+		077DF3282420A18A00DDD3A2 /* salesman */ = {
+			isa = PBXGroup;
+			children = (
+				077DF3292420A1C900DDD3A2 /* PSSalesmanHomeViewModel.h */,
+				077DF32A2420A1C900DDD3A2 /* PSSalesmanHomeViewModel.m */,
+			);
+			path = salesman;
+			sourceTree = "<group>";
+		};
+		077DF32C2420A20500DDD3A2 /* salesmanVIews */ = {
+			isa = PBXGroup;
+			children = (
+				077DF3302420A26400DDD3A2 /* PSSalesmanHomeCell.h */,
+				077DF3312420A26400DDD3A2 /* PSSalesmanHomeCell.m */,
+				077DF3322420A26400DDD3A2 /* PSSalesmanHomeCell.xib */,
+			);
+			path = salesmanVIews;
+			sourceTree = "<group>";
+		};
+		077DF3412420BE4800DDD3A2 /* salesman */ = {
+			isa = PBXGroup;
+			children = (
+				077DF3422420BE8A00DDD3A2 /* PSSalesmanOrderViewModel.h */,
+				077DF3432420BE8A00DDD3A2 /* PSSalesmanOrderViewModel.m */,
+			);
+			path = salesman;
+			sourceTree = "<group>";
+		};
+		077DF3452420C1D300DDD3A2 /* salesman */ = {
+			isa = PBXGroup;
+			children = (
+				077DF3462420C1FB00DDD3A2 /* PSSalesmanOrderCell.h */,
+				077DF3472420C1FB00DDD3A2 /* PSSalesmanOrderCell.m */,
+				077DF3482420C1FB00DDD3A2 /* PSSalesmanOrderCell.xib */,
+			);
+			path = salesman;
+			sourceTree = "<group>";
+		};
 		7272E80AEAC297A64745D2C9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1396,6 +1494,7 @@
 		C20E97832387B688005C07EF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				077DF32024209EC200DDD3A2 /* salesman */,
 				C23774AF23C6D92E00C77BD5 /* petrolStation */,
 				C2003B3B23B09E630010BDB9 /* sender */,
 				C216E7FB239F945200A6E699 /* driver */,
@@ -1407,6 +1506,7 @@
 		C20E97842387B692005C07EF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				077DF3282420A18A00DDD3A2 /* salesman */,
 				C2845D1C24025FB500FAA2B7 /* customer */,
 				C2845D1E24025FD000FAA2B7 /* sender */,
 				C2845D1D24025FC400FAA2B7 /* driver */,
@@ -1418,6 +1518,7 @@
 		C20E97852387B698005C07EF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				077DF32C2420A20500DDD3A2 /* salesmanVIews */,
 				C23774B323C6D96500C77BD5 /* petrolStationView */,
 				C2003B4423B0A55D0010BDB9 /* sender */,
 				C26DA24A23A3894800BF4E8C /* deliveryView */,
@@ -1442,6 +1543,8 @@
 				C2845D14240221E100FAA2B7 /* PSStationCarModel.m */,
 				C2D0031223D329C1005962CB /* PSStationOrderModel.h */,
 				C2D0031323D329C1005962CB /* PSStationOrderModel.m */,
+				077DF3382420ACDF00DDD3A2 /* PSClientInfoModel.h */,
+				077DF3392420ACDF00DDD3A2 /* PSClientInfoModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1449,6 +1552,7 @@
 		C20E97872387B6CF005C07EF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				077DF3412420BE4800DDD3A2 /* salesman */,
 				C25A91032394FCF100CC3293 /* PSOrderViewModel.h */,
 				C25A91042394FCF100CC3293 /* PSOrderViewModel.m */,
 				C2003B5C23B0C26F0010BDB9 /* PSSenderDeliverViewModel.h */,
@@ -1463,6 +1567,7 @@
 		C20E97882387B6CF005C07EF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				077DF3452420C1D300DDD3A2 /* salesman */,
 				C2003B4323B0A54A0010BDB9 /* sender */,
 				C2566B02239BE07F00D7AE9E /* picsViews */,
 				C29FB88A239655D7001A891B /* confirmView */,
@@ -1476,6 +1581,7 @@
 		C20E97892387B6CF005C07EF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				077DF32424209F0400DDD3A2 /* salesman */,
 				C2003B3F23B0A0130010BDB9 /* sender */,
 				C2692DF123895CC0007123B0 /* PSOrderVC.h */,
 				C2692DF223895CC0007123B0 /* PSOrderVC.m */,
@@ -1503,6 +1609,8 @@
 				C2003B7F23B1D9E00010BDB9 /* PSBillInfoModel.m */,
 				C2003B7B23B1D9790010BDB9 /* PSDriverModel.h */,
 				C2003B7C23B1D9790010BDB9 /* PSDriverModel.m */,
+				077DF34E2420E68100DDD3A2 /* PSSalesmanOrderModel.h */,
+				077DF34F2420E68100DDD3A2 /* PSSalesmanOrderModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1744,6 +1852,8 @@
 				C21CA56D24050490007D4DF9 /* PSSenederPickOneSelfListReqest.m */,
 				C21CA56F24050542007D4DF9 /* PSSenderPickerOneSelfNumSaveRequest.h */,
 				C21CA57024050542007D4DF9 /* PSSenderPickerOneSelfNumSaveRequest.m */,
+				077DF34B2420E5B100DDD3A2 /* PSSalesmanOrderListRequest.h */,
+				077DF34C2420E5B100DDD3A2 /* PSSalesmanOrderListRequest.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -2038,6 +2148,10 @@
 				C2845D172402558F00FAA2B7 /* PSNewStationCarNumRequest.m */,
 				C2845D22240260CB00FAA2B7 /* PSReserveConfirmRequest.h */,
 				C2845D23240260CB00FAA2B7 /* PSReserveConfirmRequest.m */,
+				077DF3352420AB3500DDD3A2 /* PSSalesmanHomeRequest.h */,
+				077DF3362420AB3500DDD3A2 /* PSSalesmanHomeRequest.m */,
+				077DF33B2420B99900DDD3A2 /* PSSalesmanVisitRequest.h */,
+				077DF33C2420B99900DDD3A2 /* PSSalesmanVisitRequest.m */,
 			);
 			path = request;
 			sourceTree = "<group>";
@@ -2252,6 +2366,7 @@
 				C2692E3D23895E26007123B0 /* RELoginViewController.xib in Resources */,
 				C2845D2E24026DA300FAA2B7 /* PSReseveConfirmFooterView.xib in Resources */,
 				C25A91022394FC8300CC3293 /* PSOrdelListCell.xib in Resources */,
+				077DF3342420A26400DDD3A2 /* PSSalesmanHomeCell.xib in Resources */,
 				C277610923F3EDF7004BAC2F /* PSStationCarSelectCell.xib in Resources */,
 				C2090F4A23A860F200998955 /* PSPhotoCanCell.xib in Resources */,
 				C29B99BB238C02A6000923B5 /* FSAddNewAddressTVCell.xib in Resources */,
@@ -2289,6 +2404,7 @@
 				C29B99CA238C0337000923B5 /* address.json in Resources */,
 				C216E7F9239F773500A6E699 /* iPhone@2x.png in Resources */,
 				C2566B0F239BE74100D7AE9E /* PSCollectionPicCell.xib in Resources */,
+				077DF34A2420C1FB00DDD3A2 /* PSSalesmanOrderCell.xib in Resources */,
 				C27709DA23A4BC4C0077F45A /* PSHistoryNameCell.xib in Resources */,
 				C29B9996238B834D000923B5 /* PSMineHeaderView.xib in Resources */,
 				C2003B6323B0C4660010BDB9 /* PSSenderDeliveryCell.xib in Resources */,
@@ -2362,6 +2478,7 @@
 				C2692E3B23895E26007123B0 /* REAggreementVC.m in Sources */,
 				C2090F5223A8637C00998955 /* PSPhotoViewModel.m in Sources */,
 				C21CA57124050542007D4DF9 /* PSSenderPickerOneSelfNumSaveRequest.m in Sources */,
+				077DF3372420AB3500DDD3A2 /* PSSalesmanHomeRequest.m in Sources */,
 				C228C1BD23D2AEDF00784AF5 /* PSStationOrderCell.m in Sources */,
 				C25A9108239505EF00CC3293 /* PSOrderModel.m in Sources */,
 				C2845D3A24027BF700FAA2B7 /* PSAccountCell.m in Sources */,
@@ -2371,6 +2488,7 @@
 				C2C16B1423B4626100EB8697 /* PSCarNumVC.m in Sources */,
 				C27709E023A4C13B0077F45A /* UICollectionView+ZYCalculateCollectionHeight.m in Sources */,
 				C20E974E2387B54B005C07EF /* BasePullTableVC.m in Sources */,
+				077DF34D2420E5B100DDD3A2 /* PSSalesmanOrderListRequest.m in Sources */,
 				C20E974B2387B54B005C07EF /* BaseTableVC.m in Sources */,
 				C20E976F2387B54B005C07EF /* NSString+RECategory.m in Sources */,
 				C20E97602387B54B005C07EF /* ZJContentView.m in Sources */,
@@ -2388,6 +2506,7 @@
 				C20E97492387B54B005C07EF /* BaseViewController.m in Sources */,
 				C2566B01239BD87700D7AE9E /* PSOrderPicVC.m in Sources */,
 				C284C75D238D0A720025FE30 /* PSGetPersonDataReqeust.m in Sources */,
+				077DF3502420E68100DDD3A2 /* PSSalesmanOrderModel.m in Sources */,
 				C277610423F3EC75004BAC2F /* PSStationCarSelectVC.m in Sources */,
 				C29B99D6238C03E4000923B5 /* PSAddresReceiveModel.m in Sources */,
 				C20E97522387B54B005C07EF /* BaseRequestHeader.m in Sources */,
@@ -2395,6 +2514,7 @@
 				C20E97632387B54B005C07EF /* ZJScrollSegmentView.m in Sources */,
 				C20E97712387B54B005C07EF /* PlaceHolderTextView.m in Sources */,
 				C29FB88323964FA8001A891B /* PSOrderConfirmVC.m in Sources */,
+				077DF3492420C1FB00DDD3A2 /* PSSalesmanOrderCell.m in Sources */,
 				C2044E652398FC1000E4C371 /* PSCanConfirmRequst.m in Sources */,
 				C2D0031423D329C1005962CB /* PSStationOrderModel.m in Sources */,
 				C2D0031123D328A0005962CB /* PSStationOrderListRequest.m in Sources */,
@@ -2418,6 +2538,7 @@
 				C2845D24240260CB00FAA2B7 /* PSReserveConfirmRequest.m in Sources */,
 				C29B99F2238CD982000923B5 /* PSAddressEditRequest.m in Sources */,
 				C2692E3823895E26007123B0 /* RERegistRequest.m in Sources */,
+				077DF3442420BE8A00DDD3A2 /* PSSalesmanOrderViewModel.m in Sources */,
 				C29FB88D239655F9001A891B /* PSConfirmHeaderView.m in Sources */,
 				C25A91052394FCF100CC3293 /* PSOrderViewModel.m in Sources */,
 				C284C77D238E27440025FE30 /* PSHomeFooterView.m in Sources */,
@@ -2477,6 +2598,7 @@
 				C2507F0B2392B82F007AB682 /* PSWebViewController.m in Sources */,
 				C29B99EB238CBCB5000923B5 /* PSCanReturnRecordCell.m in Sources */,
 				C20E97452387B54B005C07EF /* REMainTabManager.m in Sources */,
+				077DF33D2420B99900DDD3A2 /* PSSalesmanVisitRequest.m in Sources */,
 				C25A910C2395060300CC3293 /* PSOrderListRequest.m in Sources */,
 				C284C74D238CF86C0025FE30 /* PSMessageCell.m in Sources */,
 				C25A2F5C23978ED5008C9717 /* PSOrderConfirmSuccessView.m in Sources */,
@@ -2485,8 +2607,10 @@
 				C2003B8823B1E5950010BDB9 /* PSDriverBottomView.m in Sources */,
 				C260CC53238660AC00D51CF4 /* main.m in Sources */,
 				C2F8775523EFCBFB00B8A65C /* PSStationPhoteRequest.m in Sources */,
+				077DF3402420BD6300DDD3A2 /* PSSalesmanOrderListVC.m in Sources */,
 				C2845D2124025FF600FAA2B7 /* PSReserveStationViewModel.m in Sources */,
 				C2C1AB67238A519C00693FFC /* PSMineTableCell.m in Sources */,
+				077DF32324209EF800DDD3A2 /* PSSalemanHomeVC.m in Sources */,
 				C26C609E2398C1700013A1D8 /* PSGetUploadPath.m in Sources */,
 				C28E61CF23A8FC4100B1B401 /* PSDriverOrderListRequest.m in Sources */,
 				C20E97642387B54B005C07EF /* ZJScrollPageView.m in Sources */,
@@ -2532,6 +2656,7 @@
 				C20E974D2387B54B005C07EF /* BaseRefreshFooter.m in Sources */,
 				C25A91012394FC8300CC3293 /* PSOrdelListCell.m in Sources */,
 				C284C763238D18DB0025FE30 /* PSPersonAccountSaveRequest.m in Sources */,
+				077DF32724209F2A00DDD3A2 /* PSSalesmanOrderVC.m in Sources */,
 				C27709D323A4B4320077F45A /* PSGetCanVC.m in Sources */,
 				C284C777238E21540025FE30 /* PSHomeRequest.m in Sources */,
 				C2692E3623895E26007123B0 /* REGetVerfyBase64Request.m in Sources */,
@@ -2577,9 +2702,11 @@
 				C20E97572387B54B005C07EF /* BaseModel.m in Sources */,
 				C20E977C2387B59C005C07EF /* FSConstString.m in Sources */,
 				C2003B6923B1CC950010BDB9 /* PSSenderDeliveryUnSendRequest.m in Sources */,
+				077DF33A2420ACDF00DDD3A2 /* PSClientInfoModel.m in Sources */,
 				C20E974A2387B54B005C07EF /* BaseCollectionVC.m in Sources */,
 				C2003B4B23B0A7440010BDB9 /* PSSenderOrderCell.m in Sources */,
 				C2003B6223B0C4660010BDB9 /* PSSenderDeliveryCell.m in Sources */,
+				077DF32B2420A1C900DDD3A2 /* PSSalesmanHomeViewModel.m in Sources */,
 				C2C16B0423B31A7700EB8697 /* PSPertrolStationView.m in Sources */,
 				C216E7F3239E718500A6E699 /* PSGetCheckImageRequest.m in Sources */,
 				C29FB87A23962CBF001A891B /* PSShopCartModel.m in Sources */,
@@ -2589,6 +2716,7 @@
 				C2044E622398F51000E4C371 /* PSMessageListRequest.m in Sources */,
 				C21CA56E24050490007D4DF9 /* PSSenederPickOneSelfListReqest.m in Sources */,
 				C284C773238E1CE80025FE30 /* PSHomeModel.m in Sources */,
+				077DF3332420A26400DDD3A2 /* PSSalesmanHomeCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2741,7 +2869,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shengdao.oilSale;
 				PRODUCT_NAME = "老板加油";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2766,7 +2894,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shengdao.oilSale;
 				PRODUCT_NAME = "老板加油";
 				PROVISIONING_PROFILE_SPECIFIER = "";

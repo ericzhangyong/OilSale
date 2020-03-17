@@ -16,6 +16,8 @@
 #import "PSSenderOrderListVC.h"
 #import "PSSenderDeleryVC.h"
 #import "PSPetrolStationHomeVC.h"
+#import "PSSalemanHomeVC.h"
+#import "PSSalesmanOrderVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -31,10 +33,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) PSDriverHomeVC *driverHomeVC; // 司机首页
 @property (nonatomic,strong,readonly) PSSenderOrderListVC *senderVC;//派单首页
 @property (nonatomic,strong,readonly) PSPetrolStationHomeVC *petrolStationVC;//委托加油点首页
-
+@property (nonatomic,strong,readonly) PSSalemanHomeVC *salesmanVC;//销售员首页
 
 @property (nonatomic, strong, readonly) PSOrderVC *orderVC; // 订单
 @property (nonatomic, strong, readonly) PSSenderDeleryVC *sendDeliverVC; // 派单运单列表
+@property (nonatomic, strong, readonly) PSSalesmanOrderVC *salesmanOrderVC; // 销售员订单列表
+
 @property (nonatomic, strong, readonly) PSShopCartVC *shopCartVC; // 购物车
 @property (nonatomic, strong, readonly) PSMineVC *mineVC; // 我的
 

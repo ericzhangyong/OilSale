@@ -33,14 +33,16 @@
         self.userType = UserTypeSender;
     }else if ([user_role_id isEqualToString:@"2"]){
         self.userType = UserTypeDriver;
-    }else if ([user_role_id isEqualToString:@"4"]||[user_role_id isEqualToString:@"5"]){
+    }else if ([user_role_id isEqualToString:@"4"]){
+        self.userType = UserTypeSalesman;
+    }
+    else if ([user_role_id isEqualToString:@"5"]){
         self.userType = UserTypePetrolStation;
     }
     else{
         self.userType = UserTypeCustomer;
     }
-
-//    self.userType = UserTypePetrolStation;//user_role_id.integerValue;
+   
 }
 
 

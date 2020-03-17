@@ -23,7 +23,11 @@
 @property (nonatomic, strong, readwrite) PSDriverHomeVC *driverHomeVC; // 司机首页
 @property (nonatomic, strong, readwrite) PSSenderOrderListVC *senderVC; // 派单首页
 @property (nonatomic,strong,readwrite) PSPetrolStationHomeVC *petrolStationVC;//委托加油点首页
+@property (nonatomic,strong,readwrite) PSSalemanHomeVC *salesmanVC;//销售员首页
+
 @property (nonatomic, strong, readwrite) PSOrderVC *orderVC; // 订单
+@property (nonatomic, strong, readwrite) PSSalesmanOrderVC *salesmanOrderVC; // 销售员订单列表
+
 @property (nonatomic, strong, readwrite) PSSenderDeleryVC *sendDeliverVC; // 派单运单列表
 @property (nonatomic, strong, readwrite) PSShopCartVC *shopCartVC; //购物车
 @property (nonatomic, strong, readwrite) PSMineVC *mineVC; // 我的
@@ -83,6 +87,8 @@
         return [self getSenderTabbarVC];
     }else if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypePetrolStation){
         return [self getPetrolStattionTabbarVC];
+    }else if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeSalesman){
+        return [self getSalesmanTabbarVC];
     }
     else{
         return [self getCustomerTabbarVC];
@@ -231,6 +237,40 @@
     tabBarController.delegate = self;
     return tabBarController;
 }
+-(CYLTabBarController *)getSalesmanTabbarVC{
+    BaseNavViewController *nav1 = [[BaseNavViewController alloc] initWithRootViewController:self.salesmanVC];
+    BaseNavViewController *nav2 = [[BaseNavViewController alloc] initWithRootViewController:self.salesmanOrderVC];
+    BaseNavViewController *nav3 = [[BaseNavViewController alloc] initWithRootViewController:self.mineVC];
+    
+    UIImage *image_home_u = [[UIImage imageNamed:@"hp_home_icon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *image_home_s = [[UIImage imageNamed:@"hp_home_icon_a"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    UIImage *image_delivery_u = [[UIImage imageNamed:@"hp_icon_waybill"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *image_delivery_s = [[UIImage imageNamed:@"hp_icon_waybill_a"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    UIImage *image_mine_u = [[UIImage imageNamed:@"hp_icon_me"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *image_mine_s = [[UIImage imageNamed:@"hp_icon_me_a"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    NSDictionary *dict1 = @{CYLTabBarItemTitle:@"首页",
+                            CYLTabBarItemImage:image_home_u,
+                            CYLTabBarItemSelectedImage:image_home_s};
+    NSDictionary *dict2 = @{CYLTabBarItemTitle:@"订单",
+                            CYLTabBarItemImage:image_delivery_u,
+                            CYLTabBarItemSelectedImage:image_delivery_s};
+    NSDictionary *dict3 = @{CYLTabBarItemTitle:@"我的",
+                            CYLTabBarItemImage:image_mine_u,
+                            CYLTabBarItemSelectedImage:image_mine_s};
+    NSArray *tabBarItemsAttributes = @[dict1, dict2,dict3];
+    NSArray *tabBarViewControllers = @[nav1, nav2,nav3];
+    
+    CYLTabBarController *tabBarController = [[CYLTabBarController alloc] init];
+    tabBarController.tabBarItemsAttributes = tabBarItemsAttributes;
+    [tabBarController setViewControllers:tabBarViewControllers];
+    [tabBarController.tabBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]];
+    
+    tabBarController.delegate = self;
+    return tabBarController;
+}
 
 
 -(void)reloadAllChildrenVC{
@@ -304,6 +344,12 @@
     }
     return _petrolStationVC;
 }
+-(PSSalemanHomeVC *)salesmanVC{
+    if (!_salesmanVC) {
+        _salesmanVC = [PSSalemanHomeVC new];
+    }
+    return _salesmanVC;
+}
 
 - (PSSenderOrderListVC *)senderVC{
     if (!_senderVC) {
@@ -325,6 +371,12 @@
     return _sendDeliverVC;
 }
 
+-(PSSalesmanOrderVC *)salesmanOrderVC{
+    if (!_salesmanOrderVC) {
+        _salesmanOrderVC = [PSSalesmanOrderVC new];
+    }
+    return _salesmanOrderVC;
+}
 -(PSShopCartVC *)shopCartVC{
     if (!_shopCartVC) {
         _shopCartVC = [[PSShopCartVC alloc] init];

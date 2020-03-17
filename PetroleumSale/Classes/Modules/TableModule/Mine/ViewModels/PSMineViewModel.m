@@ -60,6 +60,21 @@
         stationReservesModel.content = [NSString stringWithFormat:@"%@%@",userInfo.reserves,userInfo.reserves_unit];
         stationReservesModel.iconImageUrl = @"userpg_list_record";
         [self.dataSource addObject:stationReservesModel];
+    }else if (userInfo.userType == UserTypeSalesman){
+       //
+        PSMineSetModel *inviteModel =[PSMineSetModel new];
+        inviteModel.mineCellType = PSMineCellTypeStationInvite;
+        inviteModel.title = @"我的邀请码";
+        inviteModel.iconImageUrl = @"userpg_list_adress_salesman";
+        inviteModel.content = @"2435267";
+        [self.dataSource addObject:inviteModel];
+        
+        PSMineSetModel *messageModel = [PSMineSetModel new];
+        messageModel.mineCellType = PSMineCellTypeMessage;
+        messageModel.title = @"消息通知";
+        messageModel.content = userInfo.notice_un_read_num;
+        messageModel.iconImageUrl = @"userpg_list_news";
+        [self.dataSource addObject:messageModel];
     }
     else{
         PSMineSetModel *accountMoney = [PSMineSetModel new];
@@ -207,7 +222,7 @@
 -(BOOL)ps_getIsShowTableCellRightArrowIndex:(NSInteger)index{
     
     PSMineSetModel *setModel = [self getMineSetModelAtIndex:index];
-    if (setModel.mineCellType == PSMineCellTypeStationReserves) {
+    if (setModel.mineCellType == PSMineCellTypeStationReserves||setModel.mineCellType == PSMineCellTypeStationInvite) {
         return NO;
     }else{
         return YES;
