@@ -130,6 +130,18 @@ extern NSString *const method_stationPhoto;
 extern NSString *const method_stationPhotoSave;
 
 
+#pragma mark- 销售员接口
+/** 销售员首页 */
+extern NSString *const method_salesmanHome;
+/** 销售员拜访 */
+extern NSString *const method_salesmanVisit;
+/** 销售员订单列表 */
+extern NSString *const method_salesmanOrderlist;
+/** 销售员我的*/
+extern NSString *const method_salesmanMine;
+
+
+
 
 
 @interface BaseConfigUrl : NSObject

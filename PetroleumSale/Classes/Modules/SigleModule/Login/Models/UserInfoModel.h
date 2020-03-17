@@ -17,7 +17,8 @@ typedef NS_ENUM(NSInteger,UserType){
     UserTypeCustomer = 1, //客户角色
     UserTypeDriver,   //司机角色
     UserTypeSender,    //派单角色
-    UserTypePetrolStation    //委托加油点
+    UserTypePetrolStation,    //委托加油点
+    UserTypeSalesman    //销售员角色
 
 };
 @interface UserInfoModel : BaseModel
@@ -71,6 +72,8 @@ typedef NS_ENUM(NSInteger,UserType){
 @property (nonatomic,assign) BOOL user_file_upload;
 /// 若已经上传审核图片，则由当前接口返回
 @property (nonatomic,copy) NSArray *verify_pic_url;
+/// x销售员的邀请码
+@property (nonatomic,copy) NSArray *invite_code;
 
 
 

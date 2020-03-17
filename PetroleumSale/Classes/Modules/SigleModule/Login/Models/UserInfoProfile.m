@@ -148,6 +148,7 @@
                 NSDictionary *user_info = dict[@"user_info"];
                 NSArray *verify_pic_url = dict[@"verify_pic_url"];
                 NSString *balance = dict[@"balance"];
+                NSString *invite_code = dict[@"invite_code"];
                 
                 //加油点储量
                 NSDictionary *reservesDict = dict[@"farp_reserves"];
