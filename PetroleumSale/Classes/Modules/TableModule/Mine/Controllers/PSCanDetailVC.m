@@ -20,10 +20,6 @@
 @property (nonatomic,strong) UILabel *label_unReturnBucketCount;//吨桶
 @property (nonatomic,strong) UILabel *label_unReturnNozzleCount;//加油枪
 
-//@property (nonatomic,strong) UILabel *label_recentRepayTitle;
-//@property (nonatomic,strong) UILabel *label_recnteRepayContent;
-//@property (nonatomic,strong) UILabel *label_oneRepayTitle;
-//@property (nonatomic,strong) UIButton *btn_oneReapay;
 
 @property (nonatomic,strong) UIView *view_header;
 
@@ -169,13 +165,6 @@
 
 -(void)updateUI{
     
-//    NSString *unRepayCount = self.listModel.no_returned_bucket_num;
-//    NSString *conent = [NSString stringWithFormat:@"未还%@桶",unRepayCount];
-//    NSMutableAttributedString *attr = [[NSMutableAttributedString alloc] initWithString:conent attributes:@{NSFontAttributeName:[UIFont systemWEPingFangRegularOfSize:15],NSForegroundColorAttributeName:color_666666}];
-//    NSRange range = [conent rangeOfString:unRepayCount];
-//    if (range.location != NSNotFound) {
-//        [attr addAttributes:@{NSFontAttributeName:[UIFont systemWEPingFangRegularOfSize:40],NSForegroundColorAttributeName:color_4084FF} range:range];
-//    }
     self.label_unReturnBucketCount.attributedText = [self getUnReturnCountWithCount:self.listModel.no_returned_bucket_num title:@"铁桶"];
     self.label_unRetureIbcCount.attributedText = [self getUnReturnCountWithCount:self.listModel.no_returned_ibc_num title:@"吨桶"];
     self.label_unReturnNozzleCount.attributedText = [self getUnReturnCountWithCount:self.listModel.no_returned_nozzle_num title:@"加油枪"];
@@ -221,45 +210,6 @@
     return _label_unReturnNozzleCount;
 }
 
-//-(UIButton *)btn_oneReapay{
-//    if (!_btn_oneReapay) {
-//        _btn_oneReapay =[UIButton buttonWithType:UIButtonTypeSystem];
-//        [_btn_oneReapay setTitle:@"确认" forState:UIControlStateNormal];
-//        _btn_oneReapay.backgroundColor = color_4084FF;
-//        [_btn_oneReapay setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//        _btn_oneReapay.layer.masksToBounds = YES;
-//        _btn_oneReapay.layer.cornerRadius = 18;
-//        [_btn_oneReapay addTarget:self action:@selector(btn_oneReapayClick) forControlEvents:UIControlEventTouchUpInside];
-//    }
-//    return _btn_oneReapay;
-//}
-//-(UILabel *)label_recentRepayTitle{
-//    if (!_label_recentRepayTitle) {
-//        _label_recentRepayTitle = [UILabel new];
-//        _label_recentRepayTitle.font = [UIFont systemWEPingFangRegularOfSize:14];
-//        _label_recentRepayTitle.textColor = color_333333;
-//        _label_recentRepayTitle.textAlignment = NSTextAlignmentLeft;
-//    }
-//    return _label_recentRepayTitle;
-//}
-//-(UILabel *)label_recnteRepayContent{
-//    if (!_label_recnteRepayContent) {
-//        _label_recnteRepayContent = [UILabel new];
-//        _label_recnteRepayContent.font = [UIFont systemWEPingFangRegularOfSize:14];
-//        _label_recnteRepayContent.textColor = color_333333;
-//        _label_recnteRepayContent.textAlignment = NSTextAlignmentRight;
-//    }
-//    return _label_recnteRepayContent;
-//}
-//-(UILabel *)label_oneRepayTitle{
-//    if (!_label_oneRepayTitle) {
-//        _label_oneRepayTitle = [UILabel new];
-//        _label_oneRepayTitle.font = [UIFont systemWEPingFangRegularOfSize:14];
-//        _label_oneRepayTitle.textColor = color_333333;
-//        _label_oneRepayTitle.textAlignment = NSTextAlignmentLeft;
-//    }
-//    return _label_oneRepayTitle;
-//}
 
 -(PSCanListModel *)listModel{
     if (!_listModel) {

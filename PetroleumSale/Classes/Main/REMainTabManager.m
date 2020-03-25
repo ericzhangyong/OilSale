@@ -9,15 +9,15 @@
 #import "REMainTabManager.h"
 #import "BaseNavViewController.h"
 #import "UIImage+BaseImageCategory.h"
-#import "UIImage+BaseImageCategory.h"
 #import "UserInfoProfile.h"
 #import "RELoginViewController.h"
 #import "PSPhotoButton.h"
 
 
 
+
 @interface REMainTabManager()<UITabBarControllerDelegate>
-@property (strong, nonatomic, readwrite) CYLTabBarController *tabBarController;
+@property (strong, nonatomic, readwrite) PSMainTabBarVC *tabBarController;
 
 @property (nonatomic, strong, readwrite) PSHomeVC *homeVC; // 首页
 @property (nonatomic, strong, readwrite) PSDriverHomeVC *driverHomeVC; // 司机首页
@@ -48,39 +48,17 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [self setupApperance];
+        
+        [self.tabBarController setUpApperance];
     }
     return self;
 
 }
-- (void)setupApperance {
-    
-//    [PSPhotoButton registerPlusButton];
-
-    UIColor *nColor = color_999999;
-    UIColor *sColor = color_4084FF;
-    NSDictionary *att  = [NSDictionary dictionaryWithObjectsAndKeys:nColor,NSForegroundColorAttributeName, nil];
-    NSDictionary *att1 = [NSDictionary dictionaryWithObjectsAndKeys:sColor,NSForegroundColorAttributeName, nil];
-    [[UITabBarItem appearance] setTitleTextAttributes:att forState:UIControlStateNormal];
-    [[UITabBarItem appearance] setTitleTextAttributes:att1 forState:UIControlStateSelected];
-
-    [[UITabBar appearance] setShadowImage:[UIImage new]];
-    [[UITabBar appearance] setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]];
-    
-    
-    if (@available(iOS 13.0, *)) {
-        UITabBarAppearance *tabBarAppearance = [[UITabBarAppearance alloc] init];
-        tabBarAppearance.backgroundImage = [UIImage imageWithColor:[UIColor whiteColor]];
-        tabBarAppearance.shadowColor = color_EFEFEF;
-        self.tabBarController.tabBar.standardAppearance = tabBarAppearance;
-    }
-
-}
 
 
-
-- (CYLTabBarController *)addKidsViewControllers {
+- (PSMainTabBarVC *)addKidsViewControllers {
    
+
     if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeDriver) {
         return [self getDriverTabbarVC];
     }else if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeSender){
@@ -95,7 +73,7 @@
     }
 }
 
--(CYLTabBarController *)getCustomerTabbarVC{
+-(PSMainTabBarVC *)getCustomerTabbarVC{
     
     BaseNavViewController *nav1 = [[BaseNavViewController alloc] initWithRootViewController:self.homeVC];
     BaseNavViewController *nav2 = [[BaseNavViewController alloc] initWithRootViewController:self.orderVC];
@@ -115,7 +93,7 @@
     UIImage *image_mine_s = [[UIImage imageNamed:@"hp_icon_me_a"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     
-    CYLTabBarController *tabBarController = [[CYLTabBarController alloc] init];
+    PSMainTabBarVC *tabBarController = [[PSMainTabBarVC alloc] init];
     NSDictionary *dict1 = @{CYLTabBarItemTitle:@"首页",
                             CYLTabBarItemImage:image_home_u,
                             CYLTabBarItemSelectedImage:image_home_s};
@@ -139,7 +117,7 @@
     return tabBarController;
 }
 
--(CYLTabBarController *)getDriverTabbarVC{
+-(PSMainTabBarVC *)getDriverTabbarVC{
     
     [PSPhotoButton registerPlusButton];
 
@@ -163,14 +141,14 @@
     NSArray *tabBarItemsAttributes = @[dict1, dict2];
     NSArray *tabBarViewControllers = @[nav1, nav2];
     
-    CYLTabBarController *tabBarController = [[CYLTabBarController alloc] initWithViewControllers:tabBarViewControllers tabBarItemsAttributes:tabBarItemsAttributes imageInsets:UIEdgeInsetsZero titlePositionAdjustment:UIOffsetZero];
+    PSMainTabBarVC *tabBarController = [[PSMainTabBarVC alloc] initWithViewControllers:tabBarViewControllers tabBarItemsAttributes:tabBarItemsAttributes imageInsets:UIEdgeInsetsZero titlePositionAdjustment:UIOffsetZero];
 
     [tabBarController.tabBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]];
     
     tabBarController.delegate = self;
     return tabBarController;
 }
--(CYLTabBarController *)getSenderTabbarVC{
+-(PSMainTabBarVC *)getSenderTabbarVC{
     BaseNavViewController *nav1 = [[BaseNavViewController alloc] initWithRootViewController:self.senderVC];
     BaseNavViewController *nav2 = [[BaseNavViewController alloc] initWithRootViewController:self.sendDeliverVC];
     BaseNavViewController *nav3 = [[BaseNavViewController alloc] initWithRootViewController:self.mineVC];
@@ -197,7 +175,7 @@
     NSArray *tabBarItemsAttributes = @[dict1, dict2,dict3];
     NSArray *tabBarViewControllers = @[nav1, nav2,nav3];
     
-    CYLTabBarController *tabBarController = [[CYLTabBarController alloc] init];
+    PSMainTabBarVC *tabBarController = [[PSMainTabBarVC alloc] init];
     tabBarController.tabBarItemsAttributes = tabBarItemsAttributes;
     [tabBarController setViewControllers:tabBarViewControllers];
     [tabBarController.tabBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]];
@@ -205,7 +183,7 @@
     tabBarController.delegate = self;
     return tabBarController;
 }
--(CYLTabBarController *)getPetrolStattionTabbarVC{
+-(PSMainTabBarVC *)getPetrolStattionTabbarVC{
     
     [PSPhotoButton registerPlusButton];
 
@@ -230,14 +208,14 @@
     NSArray *tabBarItemsAttributes = @[dict1, dict2];
     NSArray *tabBarViewControllers = @[nav1, nav2];
     
-    CYLTabBarController *tabBarController = [[CYLTabBarController alloc] initWithViewControllers:tabBarViewControllers tabBarItemsAttributes:tabBarItemsAttributes imageInsets:UIEdgeInsetsZero titlePositionAdjustment:UIOffsetZero];
+    PSMainTabBarVC *tabBarController = [[PSMainTabBarVC alloc] initWithViewControllers:tabBarViewControllers tabBarItemsAttributes:tabBarItemsAttributes imageInsets:UIEdgeInsetsZero titlePositionAdjustment:UIOffsetZero];
 
     [tabBarController.tabBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]];
     
     tabBarController.delegate = self;
     return tabBarController;
 }
--(CYLTabBarController *)getSalesmanTabbarVC{
+-(PSMainTabBarVC *)getSalesmanTabbarVC{
     BaseNavViewController *nav1 = [[BaseNavViewController alloc] initWithRootViewController:self.salesmanVC];
     BaseNavViewController *nav2 = [[BaseNavViewController alloc] initWithRootViewController:self.salesmanOrderVC];
     BaseNavViewController *nav3 = [[BaseNavViewController alloc] initWithRootViewController:self.mineVC];
@@ -263,7 +241,7 @@
     NSArray *tabBarItemsAttributes = @[dict1, dict2,dict3];
     NSArray *tabBarViewControllers = @[nav1, nav2,nav3];
     
-    CYLTabBarController *tabBarController = [[CYLTabBarController alloc] init];
+    PSMainTabBarVC *tabBarController = [[PSMainTabBarVC alloc] init];
     tabBarController.tabBarItemsAttributes = tabBarItemsAttributes;
     [tabBarController setViewControllers:tabBarViewControllers];
     [tabBarController.tabBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]];
@@ -276,6 +254,7 @@
 -(void)reloadAllChildrenVC{
     [self claarAllVC];
     self.tabBarController = [self addKidsViewControllers];
+//    [self.tabBarController setUpApperance];
     UIApplication.sharedApplication.delegate.window.rootViewController = self.tabBarController;
 }
 -(void)claarAllVC{
@@ -319,7 +298,7 @@
 
 #pragma mark- lazy
 
-- (CYLTabBarController *)tabBarController {
+- (PSMainTabBarVC *)tabBarController {
     if (!_tabBarController) {
         _tabBarController = [self addKidsViewControllers];
     }
@@ -390,8 +369,6 @@
     }
     return _mineVC;
 }
-
-
 
 
 @end

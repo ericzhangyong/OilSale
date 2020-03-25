@@ -72,7 +72,7 @@
 -(UIView *)view_contain{
     if (!_view_contain) {
         _view_contain = [UIView new];
-        _view_contain.backgroundColor = color_F3F3F3;
+        _view_contain.backgroundColor = color_lightDart_333333;
         _view_contain.layer.masksToBounds = YES;
         _view_contain.layer.cornerRadius = 20;
     }

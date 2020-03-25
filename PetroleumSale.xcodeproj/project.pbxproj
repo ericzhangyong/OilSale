@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07489B7B242901F500EB2928 /* UIColor+BaseLightDartColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 07489B7A242901F500EB2928 /* UIColor+BaseLightDartColor.m */; };
+		07489B812429A35B00EB2928 /* PSMainTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07489B802429A35B00EB2928 /* PSMainTabBarVC.m */; };
 		077DF32324209EF800DDD3A2 /* PSSalemanHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 077DF32224209EF800DDD3A2 /* PSSalemanHomeVC.m */; };
 		077DF32724209F2A00DDD3A2 /* PSSalesmanOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 077DF32624209F2A00DDD3A2 /* PSSalesmanOrderVC.m */; };
 		077DF32B2420A1C900DDD3A2 /* PSSalesmanHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 077DF32A2420A1C900DDD3A2 /* PSSalesmanHomeViewModel.m */; };
@@ -315,6 +317,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07489B79242901F400EB2928 /* UIColor+BaseLightDartColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+BaseLightDartColor.h"; sourceTree = "<group>"; };
+		07489B7A242901F500EB2928 /* UIColor+BaseLightDartColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BaseLightDartColor.m"; sourceTree = "<group>"; };
+		07489B7F2429A35B00EB2928 /* PSMainTabBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSMainTabBarVC.h; sourceTree = "<group>"; };
+		07489B802429A35B00EB2928 /* PSMainTabBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSMainTabBarVC.m; sourceTree = "<group>"; };
 		077DF32124209EF800DDD3A2 /* PSSalemanHomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSalemanHomeVC.h; sourceTree = "<group>"; };
 		077DF32224209EF800DDD3A2 /* PSSalemanHomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSalemanHomeVC.m; sourceTree = "<group>"; };
 		077DF32524209F2A00DDD3A2 /* PSSalesmanOrderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSalesmanOrderVC.h; sourceTree = "<group>"; };
@@ -1100,6 +1106,8 @@
 			children = (
 				C20E96CA2387B549005C07EF /* REMainTabManager.h */,
 				C20E96C92387B549005C07EF /* REMainTabManager.m */,
+				07489B7F2429A35B00EB2928 /* PSMainTabBarVC.h */,
+				07489B802429A35B00EB2928 /* PSMainTabBarVC.m */,
 				C216E7FF239FAF1600A6E699 /* PSPhotoButton.h */,
 				C216E800239FAF1600A6E699 /* PSPhotoButton.m */,
 			);
@@ -1318,8 +1326,10 @@
 		C20E97242387B54A005C07EF /* UIColor */ = {
 			isa = PBXGroup;
 			children = (
-				C20E97252387B54A005C07EF /* UIColor+HexColor.m */,
 				C20E97262387B54A005C07EF /* UIColor+HexColor.h */,
+				C20E97252387B54A005C07EF /* UIColor+HexColor.m */,
+				07489B79242901F400EB2928 /* UIColor+BaseLightDartColor.h */,
+				07489B7A242901F500EB2928 /* UIColor+BaseLightDartColor.m */,
 			);
 			path = UIColor;
 			sourceTree = "<group>";
@@ -2489,6 +2499,7 @@
 				C27709E023A4C13B0077F45A /* UICollectionView+ZYCalculateCollectionHeight.m in Sources */,
 				C20E974E2387B54B005C07EF /* BasePullTableVC.m in Sources */,
 				077DF34D2420E5B100DDD3A2 /* PSSalesmanOrderListRequest.m in Sources */,
+				07489B812429A35B00EB2928 /* PSMainTabBarVC.m in Sources */,
 				C20E974B2387B54B005C07EF /* BaseTableVC.m in Sources */,
 				C20E976F2387B54B005C07EF /* NSString+RECategory.m in Sources */,
 				C20E97602387B54B005C07EF /* ZJContentView.m in Sources */,
@@ -2610,6 +2621,7 @@
 				077DF3402420BD6300DDD3A2 /* PSSalesmanOrderListVC.m in Sources */,
 				C2845D2124025FF600FAA2B7 /* PSReserveStationViewModel.m in Sources */,
 				C2C1AB67238A519C00693FFC /* PSMineTableCell.m in Sources */,
+				07489B7B242901F500EB2928 /* UIColor+BaseLightDartColor.m in Sources */,
 				077DF32324209EF800DDD3A2 /* PSSalemanHomeVC.m in Sources */,
 				C26C609E2398C1700013A1D8 /* PSGetUploadPath.m in Sources */,
 				C28E61CF23A8FC4100B1B401 /* PSDriverOrderListRequest.m in Sources */,
@@ -2862,6 +2874,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CS7ZPKG5FL;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PetroleumSale/Classes/ThirdParty/Release",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PetroleumSale/Classes/Const/PrefixHeader.pch";
 				INFOPLIST_FILE = PetroleumSale/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -2887,6 +2904,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CS7ZPKG5FL;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PetroleumSale/Classes/ThirdParty/Release",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PetroleumSale/Classes/Const/PrefixHeader.pch";
 				INFOPLIST_FILE = PetroleumSale/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

@@ -55,7 +55,7 @@
     self.btn_right.frame = CGRectMake(0, 0, 44, self.navigationController.navigationBar.bounds.size.height);
     [self.btn_right setTitle:@"编辑" forState:UIControlStateNormal];
     [self.btn_right setTitle:@"完成" forState:UIControlStateSelected];
-    [self.btn_right setTitleColor:color_333333 forState:UIControlStateNormal];
+    [self.btn_right setTitleColor:color_lightDart_333333 forState:UIControlStateNormal];
     UIBarButtonItem *btnItem = [[UIBarButtonItem alloc] initWithCustomView:self.btn_right];
     self.navigationItem.rightBarButtonItem = btnItem;
     
@@ -122,7 +122,7 @@
             [weakSelf deleteCar];
         }
     };
-    self.tableView.backgroundColor = color_F3F3F3;
+    self.tableView.backgroundColor = color_lightDart_f3f3f3;
     [self.tableView registerNib:[UINib  nibWithNibName:NSStringFromClass(PSPetrolStationCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSPetrolStationCell.class)];
 }
 

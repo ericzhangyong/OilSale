@@ -124,9 +124,8 @@
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *view =[UIView new];
-    view.backgroundColor = [UIColor randomColor];
     view.frame  = CGRectMake(15, 0, 200, 24);
-    view.backgroundColor= [UIColor whiteColor];
+    view.backgroundColor= color_lightDart_white;
     UILabel *label = [UILabel new];
     label.text = @"桶装油";
     if (self.homeViewModel.dataSource.count==2 && section == 1) {
@@ -134,7 +133,7 @@
     }
     label.frame  = CGRectMake(15, 0, 200, 24);
     label.font = [UIFont systemWEPingFangBoldFontOfSize:17];
-    label.textColor = color_333333;
+    label.textColor = color_lightDart_333333;
     [view addSubview:label];
     return view;
 }

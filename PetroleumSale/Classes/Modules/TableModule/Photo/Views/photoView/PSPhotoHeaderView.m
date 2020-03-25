@@ -10,12 +10,14 @@
 
 @interface PSPhotoHeaderView()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *layoutHeight_nav;
+@property (weak, nonatomic) IBOutlet UIView *view_contain;
 
 @end
 @implementation PSPhotoHeaderView
 
 -(void)initBaseSubViews{
     
+    self.view_contain.backgroundColor = color_lightDart_f3f3f3;
     
 }
 

@@ -73,7 +73,7 @@
     }else{
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
-    self.tableView.backgroundColor = color_F3F3F3;
+    self.tableView.backgroundColor = color_lightDart_f3f3f3;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSPhotoCanCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSPhotoCanCell.class)];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSPhotoOilGunCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSPhotoOilGunCell.class)];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSPhotoStationCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSPhotoStationCell.class)];
@@ -205,13 +205,13 @@
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *view = [UIView new];
-    view.backgroundColor = color_F3F3F3;
+    view.backgroundColor = color_lightDart_f3f3f3_333333;
     return view;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     UIView *view = [UIView new];
-    view.backgroundColor = color_F3F3F3;
+    view.backgroundColor = color_lightDart_f3f3f3_333333;
     return view;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

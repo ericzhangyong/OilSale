@@ -156,7 +156,7 @@
                     weakSelf.userInfo.reserves = reservesDict[@"reserves"];
                     weakSelf.userInfo.reserves_unit = reservesDict[@"reserves_unit"];
                 }
-
+                weakSelf.userInfo.invite_code = invite_code;
                 weakSelf.userInfo.not_returned_bucket_num = not_returned_bucket_num;
                 weakSelf.userInfo.notice_un_read_num = notice_un_read_num.stringValue;
                 weakSelf.userInfo.receipt_addr = receipt_addr;

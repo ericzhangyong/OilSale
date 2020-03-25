@@ -19,6 +19,7 @@
 -(void)awakeFromNib{
     [super awakeFromNib];
     
+    self.backgroundColor = color_lightDart_f3f3f3;
     self.conrol_accountBalance.selected = YES;
     self.btn_accountBalance.selected = YES;
     

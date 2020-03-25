@@ -12,7 +12,9 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    
+    self.contentView.backgroundColor = color_lightDart_white;
 }
 
 

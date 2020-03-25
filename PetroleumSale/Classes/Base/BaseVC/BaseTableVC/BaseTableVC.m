@@ -36,7 +36,7 @@
         _tableView.dataSource = self;
         _tableView.showsVerticalScrollIndicator = YES;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tableView.backgroundColor = [UIColor whiteColor];
+        _tableView.backgroundColor = color_lightDart_white;
         UIView *view = [UIView new];
         view.backgroundColor = [UIColor clearColor];
         [_tableView setTableFooterView:view];

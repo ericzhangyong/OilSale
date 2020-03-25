@@ -35,7 +35,7 @@
 
 -(void)initBaseViews{
     
-    self.view.backgroundColor= color_F3F3F3;
+    self.view.backgroundColor= color_lightDart_f3f3f3;
     [self.view addSubview:self.view_carNum];
     [self.view_carNum addSubview:self.label_carNum];
     [self.view_carNum addSubview:self.tf_inputCarNum];
@@ -97,7 +97,7 @@
     if (!_label_carNum) {
         _label_carNum = [UILabel new];
         _label_carNum.text = @"车牌号";
-        _label_carNum.textColor = color_333333;
+        _label_carNum.textColor = color_lightDart_333333;
         _label_carNum.font = [UIFont systemWEPingFangRegularOfSize:14];
         
     }
@@ -108,7 +108,7 @@
     if (!_tf_inputCarNum) {
         _tf_inputCarNum = [[UITextField alloc] initWithFrame:CGRectMake(0, 18, kScreenWidth-100, 30)];
         _tf_inputCarNum.font = [UIFont systemWEPingFangRegularOfSize:14];
-        _tf_inputCarNum.textColor = color_333333;
+        _tf_inputCarNum.textColor = color_lightDart_333333;
         _tf_inputCarNum.placeholder = @"请输入车牌号";
     }
     return _tf_inputCarNum;

@@ -14,6 +14,9 @@
     [super awakeFromNib];
     self.label_content.layer.masksToBounds = YES;
     self.label_content.layer.cornerRadius = 8;
+    
+    self.contentView.backgroundColor = color_lightDart_white;
+
 }
 
 

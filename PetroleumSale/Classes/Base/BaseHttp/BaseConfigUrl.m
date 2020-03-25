@@ -78,6 +78,8 @@ NSString *const method_salesmanHome = @"sale/qry_client_list.do";
 NSString *const method_salesmanVisit = @"sale/visit_client.do";
 NSString *const method_salesmanOrderlist = @"sale/qry_client_order_list.do";
 NSString *const method_salesmanMine = @"sale/qry_sale_mine.do";
+NSString *const method_salesmanMineMessage = @"sale/qry_sale_notice_list.do";
+NSString *const method_salesmanMineMessageRead = @"sale/set_sale_notice_readed.do";
 
 
 

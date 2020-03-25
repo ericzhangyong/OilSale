@@ -13,6 +13,7 @@
 #import "PSOrderPicVC.h"
 #import "UIView+BaseCategory.h"
 #import "PSAgreementVC.h"
+#import "MMAlertView+BaseAlertManger.h"
 
 @interface PSOrderListVC ()
 
@@ -43,7 +44,7 @@
 
 -(void)initBaseViews{
     
-    self.tableView.backgroundColor = color_F3F3F3;
+    self.tableView.backgroundColor = color_lightDart_f3f3f3;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSOrdelListCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSOrdelListCell.class)];
 }
 
@@ -110,10 +111,13 @@
     PSOrderBottomBtnType type = [self.orderViewModel ps_getBottomBtnTypeWithIsLeft:YES AtIndex:indexPath.row];
     WEAK_SELF;
     if (type == PSOrderBottomBtnTypeCancelOrder) {
-       [self.orderViewModel requestOrderOperateWithOperateType:2 order_id:[self.orderViewModel ps_getOrderIdAtIndex:indexPath.row]  order_code:[self.orderViewModel ps_getOrderCodeAtIndex:indexPath.row] complete:^(BOOL isFinished) {
-           [weakSelf.orderViewModel ps_deleteOrderIndex:indexPath.row];
-           [weakSelf.tableView reloadData];
-       }];
+        [MMAlertView showWithTitle:@"是否确定取消订单！" detail:@"" cancelBtn:@"取消" sureBtn:@"确定" handler:^{
+            [weakSelf.orderViewModel requestOrderOperateWithOperateType:2 order_id:[weakSelf.orderViewModel ps_getOrderIdAtIndex:indexPath.row]  order_code:[weakSelf.orderViewModel ps_getOrderCodeAtIndex:indexPath.row] complete:^(BOOL isFinished) {
+                [weakSelf.orderViewModel ps_deleteOrderIndex:indexPath.row];
+                [weakSelf.tableView reloadData];
+            }];
+        }];
+      
     }else if(type == PSOrderBottomBtnTypeCheckContract){
         
         PSAgreementVC *aggreeMent = [[PSAgreementVC alloc] init];

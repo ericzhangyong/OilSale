@@ -35,7 +35,7 @@
 -(void)initBaseViews{
     
 
-    self.tableView.backgroundColor = color_F3F3F3;
+    self.tableView.backgroundColor = color_lightDart_f3f3f3;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSAccountCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSAccountCell.class)];
 
     
@@ -91,7 +91,7 @@
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *view =[UIView new];
     view.frame = CGRectMake(0, 0, kScreenWidth, 50);
-    view.backgroundColor = color_F3F3F3;
+    view.backgroundColor = color_lightDart_333333;
     UILabel *label = [UILabel new];
     label.text = @"对账单";
     label.textColor = color_333333;

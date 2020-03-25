@@ -62,7 +62,7 @@
     CGRect fixframe = self.frame;
     subLayer.frame= fixframe;
     subLayer.cornerRadius=5;
-    subLayer.backgroundColor=[UIColor whiteColor].CGColor;
+    subLayer.backgroundColor=  [UIColor whiteColor].CGColor;
     subLayer.masksToBounds=NO;
     subLayer.shadowColor = shadowColor.CGColor;//shadowColor阴影颜色
     subLayer.shadowOffset = shadowOffset;//shadowOffset阴影偏移,x向右偏移3，y向下偏移2，默认(0, -3),这个跟shadowRadius配合使用

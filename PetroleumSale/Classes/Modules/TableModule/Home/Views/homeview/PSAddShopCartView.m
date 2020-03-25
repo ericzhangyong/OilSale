@@ -43,7 +43,7 @@
     //frame 90
     
     UIView *folderView = [UIView new];
-    folderView.backgroundColor = [UIColor whiteColor];
+    folderView.backgroundColor = [UIColor clearColor];
     [self addSubview:folderView];
 //    [folderView mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.edges.insets(UIEdgeInsetsZero);
@@ -63,7 +63,7 @@
     self.btn_folder = foldBtn;
     
     UIView *addView = [UIView new];
-    addView.backgroundColor = [UIColor whiteColor];
+    addView.backgroundColor = color_lightDart_white;
 //    addView.layer.cornerRadius = 15;
     [self addSubview:addView];
 
@@ -87,7 +87,7 @@
 
     
     UITextField *tf_input = [[UITextField alloc] init];
-    tf_input.textColor = color_333333;
+    tf_input.textColor = color_lightDart_333333;
     tf_input.textAlignment = NSTextAlignmentCenter;
     tf_input.font = [UIFont fontWithName:@"PingFang-SC-Medium" size:15];
     tf_input.returnKeyType = UIReturnKeyDone;
@@ -341,7 +341,7 @@
         _label_dunType = [UILabel new];
 //        _label_dunType.text = @"吨";
         _label_dunType.font = [UIFont systemWEPingFangRegularOfSize:14];
-        _label_dunType.textColor = color_333333;
+        _label_dunType.textColor = color_lightDart_333333;
     }
     return _label_dunType;
 }

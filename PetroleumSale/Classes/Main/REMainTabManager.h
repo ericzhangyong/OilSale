@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CYLTabBarController.h"
+//#import "CYLTabBarController.h"
 #import "PSHomeVC.h"
 #import "PSOrderVC.h"
 #import "PSShopCartVC.h"
@@ -18,6 +18,7 @@
 #import "PSPetrolStationHomeVC.h"
 #import "PSSalemanHomeVC.h"
 #import "PSSalesmanOrderVC.h"
+#import "PSMainTabBarVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -27,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
-@property (strong, nonatomic, readonly) CYLTabBarController *tabBarController;
+@property (strong, nonatomic, readonly) PSMainTabBarVC *tabBarController;
 
 @property (nonatomic, strong, readonly) PSHomeVC *homeVC; // 首页
 @property (nonatomic, strong, readonly) PSDriverHomeVC *driverHomeVC; // 司机首页

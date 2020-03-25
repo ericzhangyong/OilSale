@@ -39,7 +39,7 @@
 }
 -(void)initBaseViews{
     
-    self.view.backgroundColor = color_F3F3F3;
+    self.view.backgroundColor = color_lightDart_f3f3f3;
     [self.view addSubview:self.view_segment];
     [self.view addSubview:self.view_content];
     

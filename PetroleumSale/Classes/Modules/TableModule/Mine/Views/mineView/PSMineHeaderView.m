@@ -20,6 +20,8 @@
     UITapGestureRecognizer *tapGest = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick)];
     [self.view_user addGestureRecognizer:tapGest];
     
+    self.view_user.backgroundColor = color_lightDart_white;
+    
 }
 
 -(void)layoutSubviews{

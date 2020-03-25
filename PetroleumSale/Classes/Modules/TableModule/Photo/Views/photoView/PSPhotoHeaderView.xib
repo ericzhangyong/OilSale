@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -106,7 +106,7 @@
                                     </connections>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="K8G-qm-Z3b" secondAttribute="trailing" constant="15" id="3p6-f7-XMI"/>
                                 <constraint firstItem="6qZ-sF-vYx" firstAttribute="leading" secondItem="ere-2c-1ie" secondAttribute="leading" constant="15" id="3v9-Wc-LBL"/>
@@ -217,6 +217,7 @@
                 <outlet property="label_title" destination="bbs-kD-CcX" id="ITT-LH-7Ur"/>
                 <outlet property="layoutHeight_nav" destination="zGV-Oz-sBc" id="1iq-j8-Jta"/>
                 <outlet property="layoutWidth_name" destination="5qC-7f-JAd" id="N0K-Fu-AjS"/>
+                <outlet property="view_contain" destination="sAB-s2-S66" id="JXk-7s-SLC"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="87.723214285714278"/>
         </view>

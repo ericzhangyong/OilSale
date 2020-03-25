@@ -40,7 +40,7 @@
 
 -(void)setUpViews{
     
-    self.contentView.backgroundColor = color_F3F3F3;
+    self.contentView.backgroundColor = color_lightDart_f3f3f3;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSMineCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSMineCell.class)];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSMineAddressCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSMineAddressCell.class)];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSMineImageCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSMineImageCell.class)];
@@ -49,7 +49,7 @@
     
     self.tableView.layer.cornerRadius = 4;
     self.tableView.layer.masksToBounds = YES;
-    self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.backgroundColor = color_lightDart_white;
     [self.contentView addSubview:self.tableView];
     
     
@@ -95,7 +95,6 @@
         cell.imageView_icon.image = [UIImage imageNamed:iconnUrl];
         cell.label_title.text = title;
         cell.label_content.text = content;
-        cell.backgroundColor = [UIColor randomColor];
         return cell;
     }else if (cellType == PSMineCellTypeMessage){
         PSMineMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(PSMineMessageCell.class) forIndexPath:indexPath];
@@ -107,7 +106,6 @@
             width = [content widthWithFont:[UIFont systemWEPingFangRegularOfSize:11]]+10;
         }
         cell.layoutWith_labelContent.constant = width;
-        cell.backgroundColor = [UIColor randomColor];
 
         return cell;
     }
@@ -130,7 +128,6 @@
         cell.imageView_icon.image = [UIImage imageNamed:iconnUrl];
         cell.label_title.text = title;
         cell.label_content.text = content;
-        cell.backgroundColor = [UIColor randomColor];
         cell.imageView_rightArrow.hidden = ![self.mineViewModel ps_getIsShowTableCellRightArrowIndex:indexPath.row];
 
         return cell;

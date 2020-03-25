@@ -18,6 +18,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
+    self.label_title.textColor = color_lightDart_333333;
+    self.contentView.backgroundColor = color_lightDart_f3f3f3;
     [self.btn_upDown addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
 }
 

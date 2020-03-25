@@ -33,7 +33,7 @@
 
 -(void)initNavView{
     
-    self.view.backgroundColor = color_F3F3F3;
+    self.view.backgroundColor = color_lightDart_f3f3f3;
     [self.view addSubview:self.view_nav];
     [self.view_nav mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.equalTo(self.view);
@@ -107,6 +107,7 @@
         _view_segmentContain.backgroundColor = [UIColor whiteColor];
         _view_segmentContain.layer.cornerRadius= 4;
         _view_segmentContain.clipsToBounds = YES;
+        _view_segmentContain.backgroundColor = color_lightDart_white_black;
     }
     return _view_segmentContain;
 }
@@ -124,7 +125,7 @@
         _view_segment = [[ZJScrollSegmentView alloc] initWithFrame:CGRectMake(0, MasNavHeight+5, kScreenWidth, 60) segmentStyle:style delegate:self titles:@[@"当前订单",@"历史订单"] titleDidClick:^(ZJTitleView *titleView, NSInteger index) {
             [weakSelf scroToPageIndex:index];
         }];
-        _view_segment.backgroundColor = [UIColor whiteColor];
+        _view_segment.backgroundColor = [UIColor clearColor];
     }
     return _view_segment;
 }

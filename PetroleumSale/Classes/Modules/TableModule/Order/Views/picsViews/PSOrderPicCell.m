@@ -28,6 +28,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
+    self.contentView.backgroundColor = color_lightDart_f3f3f3;
     self.collectionView_pic.delegate = self;
     self.collectionView_pic.dataSource =self;
     [self.collectionView_pic registerNib:[UINib nibWithNibName:NSStringFromClass(PSCollectionPicCell.class) bundle:nil] forCellWithReuseIdentifier:NSStringFromClass(PSCollectionPicCell.class)];

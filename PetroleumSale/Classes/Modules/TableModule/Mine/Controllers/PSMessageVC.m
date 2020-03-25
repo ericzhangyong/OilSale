@@ -40,37 +40,13 @@
 }
 -(void)initBaseViews{
     
-    self.tableView.backgroundColor = color_F3F3F3;
+    self.tableView.backgroundColor = color_lightDart_f3f3f3;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSMessageCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSMessageCell.class)];
 }
 
 -(void)loadWebDataSource{
     [super loadWebDataSource];
-    
-//    PSMessageModel *model = [PSMessageModel new];
-//    model.title = @"关于柴油价格上升的通知";
-//    model.content = @"关于柴油价格上升的通知关于柴油价格上升的通知关于柴油 价格上升的通知关于柴油价格上升的通知关于柴油价格上升的通知关于柴油价格上升的通知关。";
-//    model.publish_time = @"2019.11.01 15:34:33 ";
-//    model.read_flag = NO;
-//    model.isOpened = NO;
-//    [self.dataSource addObject:model];
-//
-//    PSMessageModel *model1 = [PSMessageModel new];
-//    model1.title = @"关于柴油价格上升的通知";
-//    model1.content = @"关于柴油价格上升的通知关于柴油价格上升的通知关于柴油 价格上升的通知关于柴油价格上升的通知关于柴油价格上升的通知关于柴油价格上升的通知关。";
-//    model1.publish_time = @"2019.03.01 15:34:35 ";
-//    model1.read_flag = NO;
-//    model1.isOpened = YES;
-//    [self.dataSource addObject:model1];
-//
-//    PSMessageModel *model2 = [PSMessageModel new];
-//    model2.title = @"关于柴油价格上升的通知";
-//    model2.content = @"关于柴油价格上升的通知关于柴油价格上升的通知关于柴油 价格上升的通知关于柴油价格上升的通知关于柴油价格上升的通知关于柴油价格上升的通知关。";
-//    model2.publish_time = @"2019.03.01 15:34:35 ";
-//    model2.read_flag = YES;
-//    model2.isOpened = NO;
-//    [self.dataSource addObject:model2];
-    
+ 
     PSMessageListRequest *listRequest = [PSMessageListRequest new];
     if (self.pullPageIndex == 1) {
         NSDate *date = [NSDate date];

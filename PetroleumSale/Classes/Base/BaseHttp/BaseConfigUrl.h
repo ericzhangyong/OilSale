@@ -139,6 +139,10 @@ extern NSString *const method_salesmanVisit;
 extern NSString *const method_salesmanOrderlist;
 /** 销售员我的*/
 extern NSString *const method_salesmanMine;
+/** 销售员我的消息*/
+extern NSString *const method_salesmanMineMessage;
+/** 销售员我的消息已读*/
+extern NSString *const method_salesmanMineMessageRead;
 
 
 

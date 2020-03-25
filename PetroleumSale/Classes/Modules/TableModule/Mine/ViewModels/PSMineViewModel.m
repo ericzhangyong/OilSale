@@ -66,7 +66,7 @@
         inviteModel.mineCellType = PSMineCellTypeStationInvite;
         inviteModel.title = @"我的邀请码";
         inviteModel.iconImageUrl = @"userpg_list_adress_salesman";
-        inviteModel.content = @"2435267";
+        inviteModel.content = userInfo.invite_code;
         [self.dataSource addObject:inviteModel];
         
         PSMineSetModel *messageModel = [PSMineSetModel new];

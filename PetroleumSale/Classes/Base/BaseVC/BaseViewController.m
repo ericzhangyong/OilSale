@@ -17,10 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if (@available(ios 13.0,*)) {
-        self.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
-    }
-    self.view.backgroundColor = [UIColor whiteColor];
+//    if (@available(ios 13.0,*)) {
+//        self.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+//    }
+    
+    self.view.backgroundColor = color_lightDart_white;
     [self initBaseDatas];
     [self initNavView];
     [self initBaseViews];
@@ -37,6 +38,9 @@
     
 }
 
+-(void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection{
+    
+}
 
 
 #pragma mark- 设置导航栏

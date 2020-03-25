@@ -41,6 +41,11 @@
     self.navigationBar.translucent = NO;
 }
 
+-(void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection{
+    
+    
+}
+
 - (UIImageView *)findHairlineImageViewUnder:(UIView *)view{
     if ([view isKindOfClass:[UIImageView class]] && view.bounds.size.height <= 1.0) {
         return (UIImageView *)view;

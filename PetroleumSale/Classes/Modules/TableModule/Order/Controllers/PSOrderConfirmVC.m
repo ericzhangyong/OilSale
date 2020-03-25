@@ -63,7 +63,7 @@
 
 -(void)reloadHeaderAndFooter{
     
-    self.tableView.backgroundColor = color_F3F3F3;
+    self.tableView.backgroundColor = color_lightDart_f3f3f3;
     UIView *headerView  = [UIView new   ];
     headerView.frame = CGRectMake(0, 0, kScreenWidth, 100);
     [headerView addSubview:self.view_header];

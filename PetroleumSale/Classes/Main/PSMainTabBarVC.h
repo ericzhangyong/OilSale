@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PSMainTabBarVC : CYLTabBarController
 
+-(void)setUpApperance;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -33,10 +33,10 @@
     }else{
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
-    self.tableView.backgroundColor = color_F3F3F3;
+    self.tableView.backgroundColor = color_lightDart_f3f3f3;
     self.tableView.tableHeaderView = self.view_header;
     UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 10)];
-    footer.backgroundColor = color_F3F3F3;
+    footer.backgroundColor = color_lightDart_333333;
     self.tableView.tableFooterView = footer;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSSenderOrderCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSSenderOrderCell.class)];
 }

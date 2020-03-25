@@ -102,7 +102,7 @@ static CGFloat const SubmitCoverUploadWidth         =       300;
     
     self.aboveLineView.hidden= YES;
     self.downLineView.hidden = YES;
-    self.view.backgroundColor = color_F3F3F3;
+    self.view.backgroundColor = color_lightDart_f3f3f3;
     if ([self.headImgPath hasPrefix:@"http"]) {
         [self.headImageView setImageWithUrl:self.headImgPath placeholder:defaultHolder160_160];
     }else{

@@ -16,7 +16,10 @@
     
     if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeDriver) {
         return method_messageDriverList;
-    }else{
+    }else if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeSalesman){
+        return method_salesmanMineMessage;
+    }
+    else{
         return method_messageList;
     }
 }

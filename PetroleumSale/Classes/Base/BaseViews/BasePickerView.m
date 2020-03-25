@@ -121,7 +121,7 @@
     return [UIFont fontWithName:@"PingFangSC-Regular" size:18];
 }
 -(UIColor *)getLabelColor{
-    return fsColor_333333;
+    return color_lightDart_333333;
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{

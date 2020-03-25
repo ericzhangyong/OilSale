@@ -78,6 +78,11 @@
     
     
     PSStationOrderListRequest *stationORderLIst  = [PSStationOrderListRequest new];
+    if (page == 1) {
+        PSStationOrderModel *lastModel = self.dataSource.lastObject;
+        stationORderLIst.order_time = lastModel.farp_order_info.order_time;
+    }
+    stationORderLIst.order_type = self.listType == PSStationOrderListTypeCurrent?1:3;
     [stationORderLIst postRequestCompleted:^(BaseResponse * _Nonnull response) {
         if (response.isFinished) {
             NSArray *data = [PSStationOrderModel convertModelWithJsonArr:response.result[@"farp_order_list"]];

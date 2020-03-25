@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btn_save;
 
 
+@property (weak, nonatomic) IBOutlet UIView *view_input;
 
 @end
 
@@ -28,7 +29,8 @@
     
     
     self.navigationItem.title = @"车辆信息";
-    
+    self.view_input.backgroundColor = color_lightDart_white;
+    self.view.backgroundColor = color_lightDart_white_black;
     
     
     

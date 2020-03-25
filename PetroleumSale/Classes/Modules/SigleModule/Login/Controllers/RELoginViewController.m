@@ -133,7 +133,7 @@ API_AVAILABLE(ios(13.0))
         self.navigationItem.leftBarButtonItem = [self barButtonWithNormalImage:[UIImage imageNamed:@"hp_icon_back_a"] highlightedImage:[UIImage imageNamed:@"hp_icon_back_a"] target:self selector:@selector(back)];
     }
     if (self.loginViewModel.loginType == RELoginTypeSecretCode || self.loginViewModel.loginType == RELoginTypeLoginSmsCode) {
-      self.navigationItem.rightBarButtonItem= [self barButtonWithText:@"注册" textColor:color_333333 textFont:[UIFont systemWEPingFangRegularOfSize:16] target:self selector:@selector(btnRegistClick)];
+      self.navigationItem.rightBarButtonItem= [self barButtonWithText:@"注册" textColor:color_lightDart_333333 textFont:[UIFont systemWEPingFangRegularOfSize:16] target:self selector:@selector(btnRegistClick)];
     }
     self.navigationItem.title = self.loginViewModel.fs_getNavTitle;
     
@@ -562,7 +562,7 @@ static NSInteger tf_phoneNumIndex = 0;
         style.adjustCoverOrLineWidth = NO;
         style.autoAdjustTitlesWidth = NO;
         style.scrollLineColor  = color_FB9510;
-        style.selectedTitleColor = color_333333;
+        style.selectedTitleColor = color_lightDart_333333;
         style.titleFont = [UIFont systemWEPingFangBoldFontOfSize:18];
         style.normalTitleColor = color_666666;
         _view_segment  = [[ZJScrollSegmentView alloc] initWithFrame:CGRectMake(30,30, kScreenWidth-30*2, 38) segmentStyle:style delegate:nil titles:@[@"密码登录",@"验证码登录"] titleDidClick:^(ZJTitleView *titleView, NSInteger index) {

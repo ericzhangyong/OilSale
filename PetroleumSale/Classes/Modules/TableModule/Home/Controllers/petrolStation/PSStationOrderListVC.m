@@ -33,7 +33,7 @@
 
 -(void)initBaseViews{
     
-    self.tableView.backgroundColor = color_F3F3F3;
+    self.tableView.backgroundColor = color_lightDart_f3f3f3;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSStationOrderCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSStationOrderCell.class)];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSStationOrderHistoryCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSStationOrderHistoryCell.class)];
 }
@@ -69,7 +69,7 @@
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *view = [UIView new];
-    view.backgroundColor = color_F3F3F3;
+    view.backgroundColor = color_lightDart_white;
     return view;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{

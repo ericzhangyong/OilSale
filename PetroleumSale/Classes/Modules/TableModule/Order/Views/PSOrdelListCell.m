@@ -13,6 +13,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
+    self.contentView.backgroundColor = color_lightDart_f3f3f3;
     self.view_contain.layer.masksToBounds = YES;
     self.view_contain.layer.cornerRadius = 4;
     

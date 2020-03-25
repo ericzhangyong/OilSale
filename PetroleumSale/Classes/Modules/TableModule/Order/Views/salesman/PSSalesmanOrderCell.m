@@ -12,7 +12,9 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+
+    self.contentView.backgroundColor = color_lightDart_f3f3f3;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

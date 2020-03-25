@@ -35,7 +35,7 @@
 
 -(void)initBaseSubViews{
     
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = color_lightDart_white;
     [self addSubview:self.scoroll_banner];
 //    [self addSubview:self.imageView_background];
     [self addSubview:self.view_todayPrice];
@@ -175,7 +175,7 @@
     if (!_view_todayPrice) {
         _view_todayPrice = [UIView new];
         _view_todayPrice.layer.cornerRadius = 5;
-        _view_todayPrice.backgroundColor =  [UIColor whiteColor];
+        _view_todayPrice.backgroundColor =  color_lightDart_white_black;
         _view_todayPrice.layer.masksToBounds = YES;
     }
     return _view_todayPrice;
@@ -184,7 +184,7 @@
     if (!_label_todayPriceTitle) {
         _label_todayPriceTitle = [UILabel new];
         _label_todayPriceTitle.font =[UIFont systemWEPingFangRegularOfSize:15];
-        _label_todayPriceTitle.textColor = color_333333;
+        _label_todayPriceTitle.textColor = color_lightDart_333333;
     }
     return _label_todayPriceTitle;
 }
@@ -199,6 +199,7 @@
 -(UIView *)view_notice{
     if (!_view_notice) {
         _view_notice = [UIView new];
+        _view_notice.backgroundColor = color_lightDart_white_black;
     }
     return _view_notice;
 }
@@ -213,7 +214,7 @@
     if (!_label_notice) {
         _label_notice =[UILabel new];
         _label_notice.font =[UIFont systemWEPingFangRegularOfSize:12];
-        _label_notice.textColor = color_333333;
+        _label_notice.textColor = color_lightDart_333333;
     }
     return _label_notice;
 }

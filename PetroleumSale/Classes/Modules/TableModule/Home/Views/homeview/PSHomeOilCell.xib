@@ -165,6 +165,7 @@
                 <outlet property="layoutWidth_notConatinTax" destination="Pkh-o7-dZj" id="8WM-hB-8Sf"/>
                 <outlet property="view_addShopCart" destination="B9h-AP-vow" id="xob-gV-Zkj"/>
                 <outlet property="view_contain" destination="siK-T4-0UB" id="te5-kB-k2E"/>
+                <outlet property="view_tax" destination="zQf-q1-M57" id="NvU-qv-iC6"/>
             </connections>
             <point key="canvasLocation" x="138.40579710144928" y="87.053571428571431"/>
         </tableViewCell>

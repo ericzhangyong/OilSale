@@ -103,7 +103,7 @@
 -(UILabel *)label_notice{
     if (!_label_notice) {
         _label_notice = [UILabel new];
-        _label_notice.textColor = color_333333;
+        _label_notice.textColor = color_lightDart_333333;
         _label_notice.font = [UIFont systemWEPingFangBoldFontOfSize:25];
         _label_notice.text = @"恭喜你下单成功";
         _label_notice.textAlignment = NSTextAlignmentCenter;

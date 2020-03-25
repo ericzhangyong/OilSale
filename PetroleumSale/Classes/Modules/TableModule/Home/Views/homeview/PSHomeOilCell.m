@@ -12,6 +12,7 @@
 @interface PSHomeOilCell ()
 
 @property (weak, nonatomic) IBOutlet UIView *view_contain;
+@property (weak, nonatomic) IBOutlet UIView *view_tax;
 
 @end
 @implementation PSHomeOilCell
@@ -19,7 +20,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    
+    self.view_tax.backgroundColor = color_lightDart_fafafa;
 }
 
 

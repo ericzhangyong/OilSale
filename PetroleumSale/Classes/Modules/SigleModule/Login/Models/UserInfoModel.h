@@ -73,7 +73,7 @@ typedef NS_ENUM(NSInteger,UserType){
 /// 若已经上传审核图片，则由当前接口返回
 @property (nonatomic,copy) NSArray *verify_pic_url;
 /// x销售员的邀请码
-@property (nonatomic,copy) NSArray *invite_code;
+@property (nonatomic,copy) NSString *invite_code;
 
 
 

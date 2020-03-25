@@ -42,7 +42,7 @@
 }
 -(void)initBaseViews{
     
-    self.tableView.backgroundColor = color_F3F3F3;
+    self.tableView.backgroundColor = color_lightDart_f3f3f3;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSReserveStationCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSReserveStationCell.class)];
     
     UIView *view = [UIView new];
@@ -98,7 +98,7 @@
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     
     UIView *view =[UIView new];
-    view.backgroundColor = color_F3F3F3;
+    view.backgroundColor = color_lightDart_333333;
     return view;
 }
 

@@ -107,6 +107,7 @@
     [visitRuest postRequestCompleted:^(BaseResponse * _Nonnull response) {
         if (response.isFinished) {
             
+            model.visit_state = @"1";
             complete(YES);
         }else{
             complete(NO);

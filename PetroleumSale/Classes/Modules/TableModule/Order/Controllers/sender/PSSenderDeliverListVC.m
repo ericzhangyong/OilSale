@@ -49,7 +49,7 @@
         }];
     }
     
-    self.tableView.backgroundColor = color_F3F3F3;
+    self.tableView.backgroundColor = color_lightDart_f3f3f3;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSSenderDeliveryCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSSenderDeliveryCell.class)];
 }
 -(void)initBaseDatas{

@@ -29,7 +29,7 @@
 
 -(void)initNavView{
     
-    self.view.backgroundColor = color_F3F3F3;
+//    self.view.backgroundColor = color_F3F3F3;
     [self.view addSubview:self.view_nav];
     [self.view_nav mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.equalTo(self.view);
@@ -98,7 +98,8 @@
            
             if (isFinished) {
                 
-                [weakSelf.tableView reloadData];
+                [weakSelf loadWebDataSource];
+//                [weakSelf.tableView reloadData];
             }
         }];
     };

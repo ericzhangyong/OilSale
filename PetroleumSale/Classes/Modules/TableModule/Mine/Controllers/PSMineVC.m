@@ -42,7 +42,7 @@
     }else{
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
-    self.view.backgroundColor = color_F3F3F3;
+    self.view.backgroundColor = color_lightDart_f3f3f3;
     [self.tableView registerClass:PSMineTableCell.class forCellReuseIdentifier:NSStringFromClass(PSMineTableCell.class)];
     
 }
@@ -59,7 +59,7 @@
     self.view_header.label_nickName.text = self.mineViewModel.ps_getUserNickName;
     self.view_header.label_phone.text = self.mineViewModel.ps_getUserPhone;
     
-    self.tableView.backgroundColor = color_F3F3F3;
+    self.tableView.backgroundColor = color_lightDart_f3f3f3;
     self.view_footer.label_notice.attributedText = self.mineViewModel.ps_getShouHouString;
     self.tableView.tableFooterView = self.view_footer;
     self.view_footer.label_notice.hidden = !self.mineViewModel.isCustomerRole;

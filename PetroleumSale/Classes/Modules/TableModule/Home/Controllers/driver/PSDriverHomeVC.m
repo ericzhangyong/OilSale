@@ -43,7 +43,7 @@
 
 -(void)initBaseViews{
     
-    self.view.backgroundColor = color_F3F3F3;
+    self.view.backgroundColor = color_lightDart_f3f3f3;
     [self.view addSubview:self.view_header];
     [self.view_header addSubview:self.imageView_background];
     [self.view_header addSubview:self.label_title];
@@ -106,7 +106,7 @@
 -(UIView *)view_header{
     if (!_view_header) {
         _view_header = [UIView new];
-        _view_header.backgroundColor = color_F3F3F3;
+        _view_header.backgroundColor = color_lightDart_333333;
     }
     return _view_header;
 }
@@ -144,7 +144,7 @@
         _view_segment = [[ZJScrollSegmentView alloc] initWithFrame:CGRectMake(0, 49+SafeTop, kScreenWidth-15*2, 74) segmentStyle:style delegate:self titles:@[@"待送货",@"历史送货单"] titleDidClick:^(ZJTitleView *titleView, NSInteger index) {
             [weakSelf scrollTopageWithIndex:index];
         }];
-        _view_segment.backgroundColor = [UIColor whiteColor];
+        _view_segment.backgroundColor = color_lightDart_white;
         _view_segment.layer.masksToBounds = YES;
         _view_segment.layer.cornerRadius = 4;
     }
