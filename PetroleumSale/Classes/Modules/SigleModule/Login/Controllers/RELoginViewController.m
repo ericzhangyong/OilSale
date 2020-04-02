@@ -137,6 +137,7 @@ API_AVAILABLE(ios(13.0))
     }
     self.navigationItem.title = self.loginViewModel.fs_getNavTitle;
     
+    self.view.backgroundColor = color_lightDart_white_black;
     [self setUpTitle];
     //labelITtle
     self.label_title.text = self.loginViewModel.fs_getThemeTitle;

@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 #define color_lightDart_fafafa [UIColor color_lightDart_hexString:@"fafafa"]
 #define color_lightDart_f3f3f3_333333 [UIColor color_lightDart_hexString:@"f3f3f3" darkHexStr:@"333333"]
 #define color_lightDart_f3f3f3_000000 [UIColor color_lightDart_hexString:@"f3f3f3" darkHexStr:@"000000"]
+#define color_lightDart_E9E9E9 [UIColor color_lightDart_hexString:@"E9E9E9"]
 
 
 @interface UIColor (BaseLightDartColor)

@@ -95,7 +95,7 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="2LU-cT-dhx"/>
                                 <constraint firstItem="cgN-OB-Q2x" firstAttribute="leading" secondItem="xJJ-QB-U0a" secondAttribute="leading" id="4Bg-Y7-uWM"/>
@@ -128,7 +128,7 @@
                                     <textInputTraits key="textInputTraits" textContentType="address-line1"/>
                                 </textField>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="N1f-gJ-YQH"/>
                                 <constraint firstAttribute="trailing" secondItem="WRa-my-CHs" secondAttribute="trailing" constant="110" id="ccy-Tf-Cdb"/>
@@ -159,7 +159,7 @@
                                     <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                 </textField>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="on1-bs-imP" firstAttribute="top" secondItem="DsD-mN-kq5" secondAttribute="bottom" constant="12" id="FgQ-6z-ELS"/>
                                 <constraint firstAttribute="height" constant="60" id="VEX-CR-rHj"/>
@@ -214,7 +214,7 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="yWI-K5-Ytb" firstAttribute="leading" secondItem="PJr-AY-STc" secondAttribute="leading" id="BE4-aT-jOx"/>
                                 <constraint firstAttribute="bottom" secondItem="yWI-K5-Ytb" secondAttribute="bottom" id="KO8-d0-YcU"/>
@@ -247,7 +247,7 @@
                                     <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="address-line1"/>
                                 </textField>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="kI7-me-aeY" firstAttribute="top" secondItem="rsr-z6-Oiv" secondAttribute="bottom" constant="12" id="GLb-uA-Kv4"/>
                                 <constraint firstItem="rsr-z6-Oiv" firstAttribute="leading" secondItem="eTl-0M-WGN" secondAttribute="leading" id="MP6-l4-jAG"/>
@@ -278,7 +278,7 @@
                                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 </textField>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="f0y-da-MUM" secondAttribute="trailing" id="6SB-dc-4WB"/>
                                 <constraint firstAttribute="height" constant="60" id="Gd3-G5-Gey"/>
@@ -290,7 +290,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.29411764709999999" green="0.70196078429999997" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstItem="cL4-Tl-I4Z" firstAttribute="leading" secondItem="nyp-9R-G4V" secondAttribute="leading" id="Gd2-4F-JW8"/>
                         <constraint firstAttribute="trailing" secondItem="xJJ-QB-U0a" secondAttribute="trailing" id="HKz-dY-gI2"/>

@@ -62,7 +62,7 @@
     self.tableView.backgroundColor = color_lightDart_f3f3f3;
     self.view_footer.label_notice.attributedText = self.mineViewModel.ps_getShouHouString;
     self.tableView.tableFooterView = self.view_footer;
-    self.view_footer.label_notice.hidden = !self.mineViewModel.isCustomerRole;
+//    self.view_footer.label_notice.hidden = !self.mineViewModel.isCustomerRole;
     WEAK_SELF;
     self.view_footer.outLoginClick = ^(BOOL isClick){
         

@@ -20,6 +20,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
+    self.backgroundColor = color_lightDart_white;
     self.view_tax.backgroundColor = color_lightDart_fafafa;
 }
 

@@ -164,14 +164,25 @@
 -(NSMutableAttributedString *)ps_getShouHouString{
 
     NSString *dianhua = UserInfoProfile.shareUserInfo.userInfo.sales_service_hotline;
-    NSString *content = [NSString stringWithFormat:@"售后服务：%@",dianhua];
-    NSMutableAttributedString *attr = [[NSMutableAttributedString alloc] initWithString:content attributes:@{NSFontAttributeName:[UIFont systemWEPingFangRegularOfSize:14],NSForegroundColorAttributeName:color_666666}];
-    if (![BaseVerifyUtils isNullOrSpaceStr:dianhua]) {
-        NSRange range = [content rangeOfString:dianhua];
-        if (range.location != NSNotFound) {
-            [attr addAttributes:@{NSForegroundColorAttributeName:color_4084FF} range:range];
+    NSString *phone = [NSString stringWithFormat:@"售后服务：%@",dianhua];
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    NSString *build = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    NSMutableString *contentStr = [NSMutableString string];
+    if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeCustomer) {
+        [contentStr appendFormat:@"%@\n",phone];
+    }
+    [contentStr appendFormat:@"版本号：%@(build%@)",version,build];
+    
+    NSMutableAttributedString *attr = [[NSMutableAttributedString alloc] initWithString:contentStr attributes:@{NSFontAttributeName:[UIFont systemWEPingFangRegularOfSize:14],NSForegroundColorAttributeName:color_666666}];
+    if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeCustomer) {
+        if (![BaseVerifyUtils isNullOrSpaceStr:dianhua]) {
+            NSRange range = [phone rangeOfString:dianhua];
+            if (range.location != NSNotFound) {
+                [attr addAttributes:@{NSForegroundColorAttributeName:color_4084FF} range:range];
+            }
         }
     }
+    
     return attr;
 }
 

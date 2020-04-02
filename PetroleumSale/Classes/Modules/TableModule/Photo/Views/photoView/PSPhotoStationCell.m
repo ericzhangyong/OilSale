@@ -42,9 +42,9 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    self.view_volume.backgroundColor = color_lightDart_f3f3f3_333333;
+    self.view_volume.backgroundColor = color_lightDart_f3f3f3;
     self.contentView.backgroundColor = color_lightDart_f3f3f3_000000;
-    self.collectionView_pic.backgroundColor = color_lightDart_f3f3f3_333333;
+    self.collectionView_pic.backgroundColor = color_lightDart_f3f3f3;
     self.collectionView_pic.delegate = self;
     self.collectionView_pic.dataSource =self;
     [self.collectionView_pic registerNib:[UINib nibWithNibName:NSStringFromClass(PSCollectionPhotoImageCell.class) bundle:nil] forCellWithReuseIdentifier:NSStringFromClass(PSCollectionPhotoImageCell.class)];

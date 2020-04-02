@@ -199,7 +199,7 @@
 -(UIView *)view_notice{
     if (!_view_notice) {
         _view_notice = [UIView new];
-        _view_notice.backgroundColor = color_lightDart_white_black;
+        _view_notice.backgroundColor = color_lightDart_white;
     }
     return _view_notice;
 }

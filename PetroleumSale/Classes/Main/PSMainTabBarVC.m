@@ -40,7 +40,7 @@
     
     if (@available(iOS 13.0, *)) {
         UITabBarAppearance *tabBarAppearance = [[UITabBarAppearance alloc] init];
-        tabBarAppearance.backgroundImage = [UIImage imageWithColor:color_lightDart_white];
+        tabBarAppearance.backgroundImage = [UIImage imageWithColor:color_lightDart_white_black];
         tabBarAppearance.shadowColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
             if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
                 return color_333333;

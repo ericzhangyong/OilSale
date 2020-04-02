@@ -254,7 +254,7 @@
 -(void)reloadAllChildrenVC{
     [self claarAllVC];
     self.tabBarController = [self addKidsViewControllers];
-//    [self.tabBarController setUpApperance];
+    [self.tabBarController setUpApperance];
     UIApplication.sharedApplication.delegate.window.rootViewController = self.tabBarController;
 }
 -(void)claarAllVC{

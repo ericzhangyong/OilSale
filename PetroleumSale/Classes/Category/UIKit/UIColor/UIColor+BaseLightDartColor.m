@@ -73,7 +73,8 @@
     return @{
         @"333333":[UIColor whiteColor],
         @"f3f3f3":color_333333,
-        @"fafafa":color_333333
+        @"fafafa":[UIColor blackColor],
+        @"E9E9E9":color_333333
     };
 }
 

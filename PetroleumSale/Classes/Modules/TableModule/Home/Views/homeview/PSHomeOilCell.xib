@@ -89,10 +89,10 @@
                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="21" maxY="0.0"/>
                                         <state key="normal" title="含税¥6.05/升" image="shoppingcart_choose">
-                                            <color key="titleColor" red="0.25098039220000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <state key="selected" title="含税¥6.05/升" image="shoppingcart_tax_a">
-                                            <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.25098039215686274" green="0.51764705882352935" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="actionLeftBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="7yl-y1-LCj"/>
@@ -109,7 +109,7 @@
                                             <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <state key="selected" title="含税¥6.05/升" image="shoppingcart_tax_a">
-                                            <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.25098039220000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="actionRightBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="yJg-1X-G2f"/>

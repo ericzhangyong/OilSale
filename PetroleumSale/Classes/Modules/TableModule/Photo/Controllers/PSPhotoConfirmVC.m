@@ -205,13 +205,13 @@
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *view = [UIView new];
-    view.backgroundColor = color_lightDart_f3f3f3_333333;
+    view.backgroundColor = color_lightDart_f3f3f3;
     return view;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     UIView *view = [UIView new];
-    view.backgroundColor = color_lightDart_f3f3f3_333333;
+    view.backgroundColor = color_lightDart_f3f3f3;
     return view;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

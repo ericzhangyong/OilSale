@@ -14,13 +14,14 @@
 
 -(void)initBaseSubViews{
     
+    self.backgroundColor = color_lightDart_white;
     self.view_user.layer.cornerRadius = 5;
     self.view_user.layer.masksToBounds = YES;
     
     UITapGestureRecognizer *tapGest = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick)];
     [self.view_user addGestureRecognizer:tapGest];
     
-    self.view_user.backgroundColor = color_lightDart_white;
+    self.view_user.backgroundColor = color_lightDart_white_black;
     
 }
 

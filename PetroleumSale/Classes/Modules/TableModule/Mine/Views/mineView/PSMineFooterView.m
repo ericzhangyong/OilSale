@@ -60,6 +60,7 @@
             [attr addAttribute:NSForegroundColorAttributeName value:color_4084FF range:range];
         }
         _label_notice.attributedText = attr;
+        _label_notice.numberOfLines = 0;
         _label_notice.textAlignment = NSTextAlignmentCenter;
     }
     return _label_notice;
