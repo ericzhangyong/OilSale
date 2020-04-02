@@ -76,6 +76,22 @@
         messageModel.iconImageUrl = @"userpg_list_news";
         [self.dataSource addObject:messageModel];
     }
+    else if (userInfo.userType == UserTypeKeeper){
+        
+        PSMineSetModel *wareHourseModel =[PSMineSetModel new];
+        wareHourseModel.mineCellType = PSMineCellTypeKeeperWareHourse;
+        wareHourseModel.title = @"仓库地址";
+        wareHourseModel.iconImageUrl = @"userpg_list_adress";
+        wareHourseModel.content = @"";
+        [self.dataSource addObject:wareHourseModel];
+        
+        PSMineSetModel *messageModel = [PSMineSetModel new];
+        messageModel.mineCellType = PSMineCellTypeMessage;
+        messageModel.title = @"消息通知";
+        messageModel.content = userInfo.notice_un_read_num;
+        messageModel.iconImageUrl = @"userpg_list_news";
+        [self.dataSource addObject:messageModel];
+    }
     else{
         PSMineSetModel *accountMoney = [PSMineSetModel new];
         accountMoney.mineCellType = PSMineCellTypeAcountMoney;

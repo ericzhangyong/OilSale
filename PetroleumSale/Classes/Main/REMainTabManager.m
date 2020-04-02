@@ -24,12 +24,17 @@
 @property (nonatomic, strong, readwrite) PSSenderOrderListVC *senderVC; // 派单首页
 @property (nonatomic,strong,readwrite) PSPetrolStationHomeVC *petrolStationVC;//委托加油点首页
 @property (nonatomic,strong,readwrite) PSSalemanHomeVC *salesmanVC;//销售员首页
+@property (nonatomic,strong,readwrite) PSKeeperHomeVC *keepVC;//仓库管理员首页
+
 
 @property (nonatomic, strong, readwrite) PSOrderVC *orderVC; // 订单
 @property (nonatomic, strong, readwrite) PSSalesmanOrderVC *salesmanOrderVC; // 销售员订单列表
 
+@property (nonatomic, strong, readwrite) PSWareHouseVC *keepWareHouseVC; // 仓库
 @property (nonatomic, strong, readwrite) PSSenderDeleryVC *sendDeliverVC; // 派单运单列表
 @property (nonatomic, strong, readwrite) PSShopCartVC *shopCartVC; //购物车
+@property (nonatomic, strong, readwrite) PSPropertyVC *propertyVC; // 资产
+
 @property (nonatomic, strong, readwrite) PSMineVC *mineVC; // 我的
 
 @end
@@ -67,6 +72,9 @@
         return [self getPetrolStattionTabbarVC];
     }else if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeSalesman){
         return [self getSalesmanTabbarVC];
+    }
+    else if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeKeeper){
+        return [self getKeeperTabbarVC];
     }
     else{
         return [self getCustomerTabbarVC];
@@ -250,6 +258,60 @@
     return tabBarController;
 }
 
+-(PSMainTabBarVC *)getKeeperTabbarVC{
+    
+    BaseNavViewController *nav1 = [[BaseNavViewController alloc] initWithRootViewController:self.keepVC];
+    BaseNavViewController *nav2 = [[BaseNavViewController alloc] initWithRootViewController:self.keepWareHouseVC];
+    BaseNavViewController *nav3 = [[BaseNavViewController alloc] initWithRootViewController:self.sendDeliverVC];
+    BaseNavViewController *nav4 = [[BaseNavViewController alloc] initWithRootViewController:self.propertyVC];
+    BaseNavViewController *nav5 = [[BaseNavViewController alloc] initWithRootViewController:self.mineVC];
+
+    
+    UIImage *image_home_u = [[UIImage imageNamed:@"hp_icon_stock"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *image_home_s = [[UIImage imageNamed:@"hp_icon_stock_a"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    UIImage *image_warehouse_u = [[UIImage imageNamed:@"hp_icon_warehouse"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *image_warehouse_s = [[UIImage imageNamed:@"hp_icon_warehouse_a"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    UIImage *image_shopCart_u = [[UIImage imageNamed:@"hp_icon_waybill"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *image_shopCart_s = [[UIImage imageNamed:@"hp_icon_waybill_a"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    UIImage *image_property_u = [[UIImage imageNamed:@"hp_icon_property"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *image_property_s = [[UIImage imageNamed:@"hp_icon_property_a"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    UIImage *image_mine_u = [[UIImage imageNamed:@"hp_icon_me"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *image_mine_s = [[UIImage imageNamed:@"hp_icon_me_a"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    
+    PSMainTabBarVC *tabBarController = [[PSMainTabBarVC alloc] init];
+    NSDictionary *dict1 = @{CYLTabBarItemTitle:@"进货",
+                            CYLTabBarItemImage:image_home_u,
+                            CYLTabBarItemSelectedImage:image_home_s};
+    NSDictionary *dict2 = @{CYLTabBarItemTitle:@"仓库",
+                            CYLTabBarItemImage:image_warehouse_u,
+                            CYLTabBarItemSelectedImage:image_warehouse_s};
+    NSDictionary *dict3 = @{CYLTabBarItemTitle:@"运单",
+                            CYLTabBarItemImage:image_shopCart_u,
+                            CYLTabBarItemSelectedImage:image_shopCart_s};
+    NSDictionary *dict4 = @{CYLTabBarItemTitle:@"资产",
+                            CYLTabBarItemImage:image_property_u,
+                            CYLTabBarItemSelectedImage:image_property_s};
+    NSDictionary *dict5 = @{CYLTabBarItemTitle:@"我的",
+                            CYLTabBarItemImage:image_mine_u,
+                            CYLTabBarItemSelectedImage:image_mine_s};
+    
+    NSArray *tabBarItemsAttributes = @[dict1, dict2,dict3,dict4,dict5];
+    tabBarController.tabBarItemsAttributes = tabBarItemsAttributes;
+    [tabBarController setViewControllers:@[nav1, nav2,nav3,nav4,nav5]];
+    [tabBarController.tabBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]];
+    
+    tabBarController.delegate = self;
+    return tabBarController;
+}
+
+
+
+
 
 -(void)reloadAllChildrenVC{
     [self claarAllVC];
@@ -329,6 +391,12 @@
     }
     return _salesmanVC;
 }
+-(PSKeeperHomeVC *)keepVC{
+    if (!_keepVC) {
+        _keepVC = [PSKeeperHomeVC new];
+    }
+    return _keepVC;
+}
 
 - (PSSenderOrderListVC *)senderVC{
     if (!_senderVC) {
@@ -341,6 +409,12 @@
         _orderVC = [PSOrderVC new];
     }
     return _orderVC;
+}
+-(PSWareHouseVC *)keepWareHouseVC{
+    if (!_keepWareHouseVC) {
+        _keepWareHouseVC     = [PSWareHouseVC new];
+    }
+    return _keepWareHouseVC;
 }
 
 -(PSSenderDeleryVC *)sendDeliverVC{
@@ -361,6 +435,12 @@
         _shopCartVC = [[PSShopCartVC alloc] init];
     }
     return _shopCartVC;
+}
+-(PSPropertyVC *)propertyVC{
+    if (!_propertyVC) {
+        _propertyVC  = [PSPropertyVC    new];
+    }
+    return _propertyVC;
 }
 
 -(PSMineVC *)mineVC{

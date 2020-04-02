@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072BBD362436172000EBE005 /* PSKeeperHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072BBD352436172000EBE005 /* PSKeeperHomeVC.m */; };
+		072BBD3E2436183E00EBE005 /* PSWareHouseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072BBD3D2436183E00EBE005 /* PSWareHouseVC.m */; };
+		072BBD462436194B00EBE005 /* PSPropertyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072BBD452436194B00EBE005 /* PSPropertyVC.m */; };
 		07489B7B242901F500EB2928 /* UIColor+BaseLightDartColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 07489B7A242901F500EB2928 /* UIColor+BaseLightDartColor.m */; };
 		07489B812429A35B00EB2928 /* PSMainTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07489B802429A35B00EB2928 /* PSMainTabBarVC.m */; };
 		077DF32324209EF800DDD3A2 /* PSSalemanHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 077DF32224209EF800DDD3A2 /* PSSalemanHomeVC.m */; };
@@ -317,6 +320,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		072BBD342436172000EBE005 /* PSKeeperHomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSKeeperHomeVC.h; sourceTree = "<group>"; };
+		072BBD352436172000EBE005 /* PSKeeperHomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSKeeperHomeVC.m; sourceTree = "<group>"; };
+		072BBD3C2436183E00EBE005 /* PSWareHouseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSWareHouseVC.h; sourceTree = "<group>"; };
+		072BBD3D2436183E00EBE005 /* PSWareHouseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSWareHouseVC.m; sourceTree = "<group>"; };
+		072BBD442436194B00EBE005 /* PSPropertyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSPropertyVC.h; sourceTree = "<group>"; };
+		072BBD452436194B00EBE005 /* PSPropertyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSPropertyVC.m; sourceTree = "<group>"; };
 		07489B79242901F400EB2928 /* UIColor+BaseLightDartColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+BaseLightDartColor.h"; sourceTree = "<group>"; };
 		07489B7A242901F500EB2928 /* UIColor+BaseLightDartColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BaseLightDartColor.m"; sourceTree = "<group>"; };
 		07489B7F2429A35B00EB2928 /* PSMainTabBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSMainTabBarVC.h; sourceTree = "<group>"; };
@@ -902,6 +911,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		072BBD33243616F400EBE005 /* keeper */ = {
+			isa = PBXGroup;
+			children = (
+				072BBD342436172000EBE005 /* PSKeeperHomeVC.h */,
+				072BBD352436172000EBE005 /* PSKeeperHomeVC.m */,
+			);
+			path = keeper;
+			sourceTree = "<group>";
+		};
+		072BBD37243617CD00EBE005 /* WareHouse */ = {
+			isa = PBXGroup;
+			children = (
+				072BBD3B243617FD00EBE005 /* Models */,
+				072BBD3A243617F600EBE005 /* Views */,
+				072BBD39243617EA00EBE005 /* ViewModels */,
+				072BBD38243617E100EBE005 /* Controllers */,
+			);
+			path = WareHouse;
+			sourceTree = "<group>";
+		};
+		072BBD38243617E100EBE005 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				072BBD3C2436183E00EBE005 /* PSWareHouseVC.h */,
+				072BBD3D2436183E00EBE005 /* PSWareHouseVC.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		072BBD39243617EA00EBE005 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		072BBD3A243617F600EBE005 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		072BBD3B243617FD00EBE005 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		072BBD3F243618CD00EBE005 /* Property */ = {
+			isa = PBXGroup;
+			children = (
+				072BBD412436192C00EBE005 /* Models */,
+				072BBD432436192C00EBE005 /* Views */,
+				072BBD422436192C00EBE005 /* ViewModels */,
+				072BBD402436192C00EBE005 /* Controllers */,
+			);
+			path = Property;
+			sourceTree = "<group>";
+		};
+		072BBD402436192C00EBE005 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				072BBD442436194B00EBE005 /* PSPropertyVC.h */,
+				072BBD452436194B00EBE005 /* PSPropertyVC.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		072BBD412436192C00EBE005 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		072BBD422436192C00EBE005 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		072BBD432436192C00EBE005 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		077DF32024209EC200DDD3A2 /* salesman */ = {
 			isa = PBXGroup;
 			children = (
@@ -1440,6 +1540,8 @@
 		C20E977D2387B624005C07EF /* TableModule */ = {
 			isa = PBXGroup;
 			children = (
+				072BBD3F243618CD00EBE005 /* Property */,
+				072BBD37243617CD00EBE005 /* WareHouse */,
 				C26DA25023A393A000BF4E8C /* Photo */,
 				C20E977F2387B666005C07EF /* Home */,
 				C20E97822387B67E005C07EF /* Order */,
@@ -1504,6 +1606,7 @@
 		C20E97832387B688005C07EF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				072BBD33243616F400EBE005 /* keeper */,
 				077DF32024209EC200DDD3A2 /* salesman */,
 				C23774AF23C6D92E00C77BD5 /* petrolStation */,
 				C2003B3B23B09E630010BDB9 /* sender */,
@@ -2498,6 +2601,7 @@
 				C2C16B1423B4626100EB8697 /* PSCarNumVC.m in Sources */,
 				C27709E023A4C13B0077F45A /* UICollectionView+ZYCalculateCollectionHeight.m in Sources */,
 				C20E974E2387B54B005C07EF /* BasePullTableVC.m in Sources */,
+				072BBD362436172000EBE005 /* PSKeeperHomeVC.m in Sources */,
 				077DF34D2420E5B100DDD3A2 /* PSSalesmanOrderListRequest.m in Sources */,
 				07489B812429A35B00EB2928 /* PSMainTabBarVC.m in Sources */,
 				C20E974B2387B54B005C07EF /* BaseTableVC.m in Sources */,
@@ -2591,10 +2695,12 @@
 				C20E97662387B54B005C07EF /* UIImage+BaseImageCategory.m in Sources */,
 				C214E63F23F4ED5600BEFBC5 /* PSCustomerCarSelecBottomView.m in Sources */,
 				C228C1B923D2ABDB00784AF5 /* PSStationOrderListVC.m in Sources */,
+				072BBD462436194B00EBE005 /* PSPropertyVC.m in Sources */,
 				C2692E2A23895E26007123B0 /* RELoginViewModel.m in Sources */,
 				C2003B7D23B1D9790010BDB9 /* PSDriverModel.m in Sources */,
 				C20E975B2387B54B005C07EF /* BasePopSheetView.m in Sources */,
 				C20E975D2387B54B005C07EF /* UIView+ZJFrame.m in Sources */,
+				072BBD3E2436183E00EBE005 /* PSWareHouseVC.m in Sources */,
 				C2692E2B23895E26007123B0 /* UserInfoProfile.m in Sources */,
 				C20E975C2387B54B005C07EF /* BaseWeakTimer.m in Sources */,
 				C25A90FD2394F38000CC3293 /* PSOrderListVC.m in Sources */,

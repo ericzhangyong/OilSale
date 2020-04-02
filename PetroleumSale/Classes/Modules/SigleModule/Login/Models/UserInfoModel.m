@@ -42,6 +42,8 @@
     else{
         self.userType = UserTypeCustomer;
     }
+    
+    self.userType = UserTypeKeeper;
    
 }
 

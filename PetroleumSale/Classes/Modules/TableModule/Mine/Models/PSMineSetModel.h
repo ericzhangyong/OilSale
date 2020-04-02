@@ -20,7 +20,8 @@ typedef NS_ENUM(NSInteger,PSMineCellType){
     PSMineCellTypeAcountMoney, //记账金额
     PSMineCellTypeStationAddress,//加油点地址
     PSMineCellTypeStationReserves, //加油点储量
-    PSMineCellTypeStationInvite //邀请码
+    PSMineCellTypeStationInvite, //邀请码
+    PSMineCellTypeKeeperWareHourse //仓库
 
 
 

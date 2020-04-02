@@ -18,7 +18,8 @@ typedef NS_ENUM(NSInteger,UserType){
     UserTypeDriver,   //司机角色
     UserTypeSender,    //派单角色
     UserTypePetrolStation,    //委托加油点
-    UserTypeSalesman    //销售员角色
+    UserTypeSalesman,    //销售员角色
+    UserTypeKeeper  //仓库管理员
 
 };
 @interface UserInfoModel : BaseModel
