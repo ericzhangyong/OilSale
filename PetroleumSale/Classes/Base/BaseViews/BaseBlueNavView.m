@@ -11,6 +11,9 @@
 @interface BaseBlueNavView ()
 @property (nonatomic,strong) UIImageView *imageView_blue;
 @property (nonatomic,strong) UILabel *label_title;
+
+@property (nonatomic,strong) UIButton *btn_right;
+
 @end
 @implementation BaseBlueNavView
 
@@ -27,13 +30,37 @@
     [self.label_title mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(SafeTop+10);
         make.left.right.equalTo(self);
-    }];;
+    }];
+    
+    self.btn_right.hidden = YES;
+    [self addSubview:self.btn_right];
+    [self.btn_right mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.label_title);
+        make.right.equalTo(self.mas_right).offset(15);
+    }];
 }
 
 -(void)setTitle:(NSString *)title{
     _title = title;
     self.label_title.text = title;
 }
+
+-(void)showRightBtnWithTitle:(NSString *)title callBack:(void(^)(BOOL isClick))callBack{
+    
+    self.btn_right.hidden = NO;
+    
+    if (callBack) {
+        self.rightBtnCallBack = callBack;
+    }
+    [self.btn_right setTitle:title forState:UIControlStateNormal];
+    
+}
+
+-(void)btnClick{
+    
+    self.rightBtnCallBack(YES);
+}
+
 
 #pragma mark- lazy
 -(UIImageView *)imageView_blue{
@@ -55,6 +82,18 @@
         _label_title.text = @"石化销售平台";
     }
     return _label_title;
+}
+
+
+-(UIButton *)btn_right{
+    if (!_btn_right) {
+        _btn_right = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_btn_right addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+        [_btn_right setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _btn_right.titleLabel.font = [UIFont systemWEPingFangRegularOfSize:15];
+        _btn_right.titleLabel.textAlignment = NSTextAlignmentRight;
+    }
+    return _btn_right;
 }
 
 @end

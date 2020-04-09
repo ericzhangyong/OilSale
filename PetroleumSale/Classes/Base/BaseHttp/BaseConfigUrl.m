@@ -81,6 +81,12 @@ NSString *const method_salesmanMine = @"sale/qry_sale_mine.do";
 NSString *const method_salesmanMineMessage = @"sale/qry_sale_notice_list.do";
 NSString *const method_salesmanMineMessageRead = @"sale/set_sale_notice_readed.do";
 
+#pragma mark- 仓库接口
+NSString *const method_keeperMineMessageRead = @"storage/qry_storage_notice_list.do";
+NSString *const method_keeperHomelist = @"storage/qry_stock_info.do";
+
+
+
 
 
 

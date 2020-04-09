@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "REMainTabManager.h"
+#import <flutter_boost/FlutterBoost.h>
+#import "PSPlatformRouter.h"
+
 @interface AppDelegate ()
 
 @end
@@ -18,20 +21,17 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     
-
+    PSPlatformRouter *platformRouter = PSPlatformRouter.new;
+    [FlutterBoostPlugin.sharedInstance startFlutterWithPlatform:platformRouter onStart:^(FlutterEngine * _Nonnull engine) {
+        
+    }];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];;
+    self.window.backgroundColor= [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    self.window.rootViewController = [REMainTabManager sharedManager].tabBarController;
     
     
-    
-    
-    
-//    if (@available(ios 13.0, *)) {
-//
-//    }else{
-        self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];;
-        self.window.backgroundColor= [UIColor whiteColor];
-        [self.window makeKeyAndVisible];
-        self.window.rootViewController = [REMainTabManager sharedManager].tabBarController;
-//    }
     return YES;
 }
 

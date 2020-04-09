@@ -3,11 +3,15 @@ platform :ios, '9.0'
 source 'https://github.com/CocoaPods/Specs.git'
 
 
+flutter_application_path = '../flutter_petrolSale_lib'
+load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 
 
 target 'PetroleumSale' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+
+  install_all_flutter_pods(flutter_application_path)
 
   
   

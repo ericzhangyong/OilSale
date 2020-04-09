@@ -14,6 +14,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @property (nonatomic,copy) NSString *title;
+
+
+-(void)showRightBtnWithTitle:(NSString *)title
+                    callBack:(void(^)(BOOL isClick))callBack;
+
+
+/// <#des#>
+@property (nonatomic,copy) void(^rightBtnCallBack)(BOOL isClick);
+
 @end
 
 NS_ASSUME_NONNULL_END

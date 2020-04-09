@@ -145,6 +145,11 @@ extern NSString *const method_salesmanMineMessage;
 extern NSString *const method_salesmanMineMessageRead;
 
 
+#pragma mark- 仓库接口
+/** 仓库我的消息*/
+extern NSString *const method_keeperMineMessageRead;
+/** 仓库首页*/
+extern NSString *const method_keeperHomelist;
 
 
 
