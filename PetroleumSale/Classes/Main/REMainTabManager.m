@@ -30,7 +30,7 @@
 @property (nonatomic, strong, readwrite) PSOrderVC *orderVC; // 订单
 @property (nonatomic, strong, readwrite) PSSalesmanOrderVC *salesmanOrderVC; // 销售员订单列表
 
-@property (nonatomic, strong, readwrite) PSWareHouseVC *keepWareHouseVC; // 仓库
+@property (nonatomic, strong, readwrite) PSKeeperOrderVC *keepOrderVC; // 仓库
 @property (nonatomic, strong, readwrite) PSSenderDeleryVC *sendDeliverVC; // 派单运单列表
 @property (nonatomic, strong, readwrite) PSShopCartVC *shopCartVC; //购物车
 @property (nonatomic, strong, readwrite) PSPropertyVC *propertyVC; // 资产
@@ -261,7 +261,7 @@
 -(PSMainTabBarVC *)getKeeperTabbarVC{
     
     BaseNavViewController *nav1 = [[BaseNavViewController alloc] initWithRootViewController:self.keepVC];
-    BaseNavViewController *nav2 = [[BaseNavViewController alloc] initWithRootViewController:self.keepWareHouseVC];
+    BaseNavViewController *nav2 = [[BaseNavViewController alloc] initWithRootViewController:self.keepOrderVC];
     BaseNavViewController *nav3 = [[BaseNavViewController alloc] initWithRootViewController:self.sendDeliverVC];
     BaseNavViewController *nav4 = [[BaseNavViewController alloc] initWithRootViewController:self.propertyVC];
     BaseNavViewController *nav5 = [[BaseNavViewController alloc] initWithRootViewController:self.mineVC];
@@ -410,11 +410,11 @@
     }
     return _orderVC;
 }
--(PSWareHouseVC *)keepWareHouseVC{
-    if (!_keepWareHouseVC) {
-        _keepWareHouseVC     = [PSWareHouseVC new];
+-(PSKeeperOrderVC *)keepOrderVC{
+    if (!_keepOrderVC) {
+        _keepOrderVC     = [PSKeeperOrderVC new];
     }
-    return _keepWareHouseVC;
+    return _keepOrderVC;
 }
 
 -(PSSenderDeleryVC *)sendDeliverVC{

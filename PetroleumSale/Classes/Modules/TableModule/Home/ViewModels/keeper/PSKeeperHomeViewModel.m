@@ -20,7 +20,6 @@
     return self.dataSource[index];
 }
 
-
 -(NSString *)ps_getOrderNumAtIndex:(NSInteger)index{
     
     PSKeeperStockModel *model = [self ps_getStockModelAtIndex:index];
@@ -80,6 +79,7 @@
         if (response.isFinished) {
             
             self.oil_price = response.result[@"oil_price"];
+            self.oil_total = @"12345";
             NSArray *data= [PSKeeperStockModel convertModelWithJsonArr:response.result[@"stock_info_list"]];
             if (page == 1) {
                 [self.dataSource setArray:data];

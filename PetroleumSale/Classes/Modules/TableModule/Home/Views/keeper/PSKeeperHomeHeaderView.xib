@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -97,13 +96,16 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="5On-P5-2xE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="PVL-Xe-Bgc"/>
-                <constraint firstItem="5On-P5-2xE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="UPg-v5-a08"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="5On-P5-2xE" secondAttribute="bottom" id="eF8-qJ-adJ"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5On-P5-2xE" secondAttribute="trailing" constant="15" id="vys-96-oD4"/>
+                <constraint firstItem="5On-P5-2xE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="999" constant="10" id="PVL-Xe-Bgc"/>
+                <constraint firstItem="5On-P5-2xE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" priority="999" constant="15" id="U0b-Px-raN"/>
+                <constraint firstAttribute="trailing" secondItem="5On-P5-2xE" secondAttribute="trailing" priority="999" constant="15" id="eg4-lg-JX9"/>
+                <constraint firstAttribute="bottom" secondItem="5On-P5-2xE" secondAttribute="bottom" priority="999" id="fQs-lt-zQs"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="label_oilCount" destination="cKR-SW-Hed" id="C1j-CL-Bw0"/>
+                <outlet property="label_todayPrice" destination="gff-2M-0Va" id="ysJ-oI-ita"/>
+            </connections>
             <point key="canvasLocation" x="138.40579710144928" y="99.776785714285708"/>
         </view>
     </objects>

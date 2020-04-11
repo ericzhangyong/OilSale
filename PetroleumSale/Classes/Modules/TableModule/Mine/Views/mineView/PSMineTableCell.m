@@ -177,11 +177,11 @@
         [self.contentView.navViewController pushViewController:accountVC animated:YES];
     }else if (cellType == PSMineCellTypeKeeperWareHourse){
         
-        [PSModulePageRouter openWareHoursePageWithParam:@{} PageFinish:^(NSDictionary * _Nonnull result) {
-            
-        } complete:^(BOOL isFinish) {
-            
-        }];
+//        [PSModulePageRouter openWareHoursePageWithParam:@{} PageFinish:^(NSDictionary * _Nonnull result) {
+//            
+//        } complete:^(BOOL isFinish) {
+//            
+//        }];
     }
 
 }

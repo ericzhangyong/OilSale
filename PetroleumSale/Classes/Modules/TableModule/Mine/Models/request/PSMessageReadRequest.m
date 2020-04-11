@@ -18,6 +18,8 @@
         return method_messageDriverSetRead;
     }else if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeSalesman){
         return method_salesmanMineMessageRead;
+    }else if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeKeeper){
+        return method_keeperMineMessageRead;
     }
     else{
         return method_messageSetRead;

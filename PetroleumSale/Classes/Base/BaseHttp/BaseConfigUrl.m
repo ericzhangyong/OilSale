@@ -82,8 +82,15 @@ NSString *const method_salesmanMineMessage = @"sale/qry_sale_notice_list.do";
 NSString *const method_salesmanMineMessageRead = @"sale/set_sale_notice_readed.do";
 
 #pragma mark- 仓库接口
-NSString *const method_keeperMineMessageRead = @"storage/qry_storage_notice_list.do";
+NSString *const method_keeperMineMessage = @"storage/qry_storage_notice_list.do";
 NSString *const method_keeperHomelist = @"storage/qry_stock_info.do";
+NSString *const method_keeperMineMessageRead = @"storage/set_storage_notice_readed.do";
+NSString *const method_keeperOrderList = @"storage/qry_verify_order.do";
+NSString *const method_keeperMine= @"storage/qry_storage_mine.do";
+NSString *const method_keeperAgressOrder= @"storage/operate_verify_order.do";
+NSString *const method_keeperPropertyClientList= @"storage/qry_client_property_info.do";
+NSString *const method_keeperPropertyMineList= @"storage/qry_my_property_info.do";
+NSString *const method_keeperPropertyHandle= @"storage/back_property_info.do";
 
 
 

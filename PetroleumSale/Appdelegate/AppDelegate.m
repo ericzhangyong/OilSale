@@ -8,8 +8,8 @@
 
 #import "AppDelegate.h"
 #import "REMainTabManager.h"
-#import <flutter_boost/FlutterBoost.h>
-#import "PSPlatformRouter.h"
+//#import <flutter_boost/FlutterBoost.h>
+//#import "PSPlatformRouter.h"
 
 @interface AppDelegate ()
 
@@ -21,10 +21,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     
-    PSPlatformRouter *platformRouter = PSPlatformRouter.new;
-    [FlutterBoostPlugin.sharedInstance startFlutterWithPlatform:platformRouter onStart:^(FlutterEngine * _Nonnull engine) {
-        
-    }];
+//    PSPlatformRouter *platformRouter = PSPlatformRouter.new;
+//    [FlutterBoostPlugin.sharedInstance startFlutterWithPlatform:platformRouter onStart:^(FlutterEngine * _Nonnull engine) {
+//
+//    }];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];;
     self.window.backgroundColor= [UIColor whiteColor];

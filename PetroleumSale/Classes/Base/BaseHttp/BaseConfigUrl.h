@@ -147,9 +147,23 @@ extern NSString *const method_salesmanMineMessageRead;
 
 #pragma mark- 仓库接口
 /** 仓库我的消息*/
+extern NSString *const method_keeperMineMessage;
+/** 仓库我的消息已读*/
 extern NSString *const method_keeperMineMessageRead;
 /** 仓库首页*/
 extern NSString *const method_keeperHomelist;
+/** 仓库订单列表*/
+extern NSString *const method_keeperOrderList;
+/** 仓库我的*/
+extern NSString *const method_keeperMine;
+/** 仓库订单 同意*/
+extern NSString *const method_keeperAgressOrder;
+/** 仓库客户资产*/
+extern NSString *const method_keeperPropertyClientList;
+/** 仓库我的资产*/
+extern NSString *const method_keeperPropertyMineList;
+/** 仓库处理我的资产*/
+extern NSString *const method_keeperPropertyHandle;
 
 
 

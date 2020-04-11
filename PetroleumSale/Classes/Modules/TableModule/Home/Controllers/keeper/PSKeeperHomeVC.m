@@ -11,6 +11,7 @@
 #import "PSKeeperHomeCell.h"
 #import "PSKeeperHomeHeaderView.h"
 #import "BaseBlueNavView.h"
+#import "PSKeeperCrateOrderVC.h"
 
 @interface PSKeeperHomeVC ()
 @property (nonatomic,strong) PSKeeperHomeViewModel *keepViewModel;
@@ -29,6 +30,7 @@
 
 -(void)initBaseViews{
     
+    self.view.backgroundColor = color_lightDart_f3f3f3;
     [self.view addSubview:self.view_nav];
     self.view_nav.title = @"仓库";
     [self.view_nav mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -39,26 +41,30 @@
     WEAK_SELF;
     [self.view_nav showRightBtnWithTitle:@"创建进货订单" callBack:^(BOOL isClick) {
         
-        
+        PSKeeperCrateOrderVC *createOrderVC = [PSKeeperCrateOrderVC new];
+        [weakSelf.navigationController pushViewController:createOrderVC animated:YES];
     }];
     
     self.tableView.backgroundColor = [UIColor clearColor];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSKeeperHomeCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSKeeperHomeCell.class)];
     
-    UIView *header = [UIView new];
-    header.frame = CGRectMake(0, 0, kScreenWidth, 86);
-    [header addSubview:self.view_header];
-    self.tableView.tableHeaderView = header;
-    self.view_header.label_todayPrice.text = self.keepViewModel.oil_price;
-    self.view_header.label_oilCount.text = self.keepViewModel.oil_total;
-    
+    [self reloadHeaderView];
     [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view).offset(MasNavHeight);
         make.left.right.bottom.equalTo(self.view);
     }];
     
+}
+-(void)reloadHeaderView{
     
-    
+    UIView *header = [UIView new];
+    header.frame = CGRectMake(0, 0, kScreenWidth, 86);
+    [header addSubview:self.view_header];
+    self.view_header.frame = header.bounds;
+    self.tableView.tableHeaderView = header;
+    self.view_header.label_todayPrice.text = self.keepViewModel.oil_price;
+    self.view_header.label_oilCount.text = self.keepViewModel.oil_total;
+     
 }
 
 -(UITableViewStyle)re_tableViewStryle{
@@ -71,6 +77,7 @@
     [self.keepViewModel requestHomelistWithPage:self.pullPageIndex Complete:^(BOOL isFinished, NSArray * _Nonnull dataArr) {
         
         if (isFinished) {
+            [weakSelf reloadHeaderView];
             [weakSelf.tableView reloadData];
             [weakSelf endRefreshingWithCount:dataArr.count];
         }else{
@@ -152,6 +159,7 @@
     if (!_view_header) {
 //        _view_header = [[PSKeeperHomeHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 96)];
         _view_header = [PSKeeperHomeHeaderView initNibView];
+        _view_header.frame = CGRectMake(0, 0, kScreenWidth, 96);
     }
     return _view_header;
 }

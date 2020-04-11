@@ -20,6 +20,8 @@
         return method_stationMine;
     }else if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeSalesman){
         return method_salesmanMine;
+    }else if(UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeKeeper){
+        return method_keeperMine;
     }
     else{
         return method_userInfo;

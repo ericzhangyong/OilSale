@@ -19,7 +19,7 @@
     }else if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeSalesman){
         return method_salesmanMineMessage;
     }else if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeKeeper){
-        return method_keeperMineMessageRead;
+        return method_keeperMineMessage;
     }
     else{
         return method_messageList;

@@ -36,7 +36,8 @@
     [self addSubview:self.btn_right];
     [self.btn_right mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.label_title);
-        make.right.equalTo(self.mas_right).offset(15);
+        make.right.equalTo(self.mas_right).offset(-15);
+        make.width.mas_equalTo(100);
     }];
 }
 

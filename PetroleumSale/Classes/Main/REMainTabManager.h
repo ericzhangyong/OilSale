@@ -20,7 +20,7 @@
 #import "PSSalesmanOrderVC.h"
 #import "PSMainTabBarVC.h"
 #import "PSKeeperHomeVC.h"
-#import "PSWareHouseVC.h"
+#import "PSKeeperOrderVC.h"
 #import "PSPropertyVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -45,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) PSOrderVC *orderVC; // 订单
 @property (nonatomic, strong, readonly) PSSenderDeleryVC *sendDeliverVC; // 派单运单列表
 @property (nonatomic, strong, readonly) PSSalesmanOrderVC *salesmanOrderVC; // 销售员订单列表
-@property (nonatomic, strong, readonly) PSWareHouseVC *keepWareHouseVC; // 仓库
+@property (nonatomic, strong, readonly) PSKeeperOrderVC *keepOrderVC; // 订单
 @property (nonatomic, strong, readonly) PSShopCartVC *shopCartVC; // 购物车
 @property (nonatomic, strong, readonly) PSPropertyVC *propertyVC; // 资产
 
