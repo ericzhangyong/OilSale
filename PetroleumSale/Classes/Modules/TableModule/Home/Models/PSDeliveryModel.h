@@ -34,6 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 购买数量
 @property (nonatomic,copy) NSString *bucket_num;
 
+
 @property (nonatomic,copy) NSString *bucket_pic_url;
 
 /// 商品信息

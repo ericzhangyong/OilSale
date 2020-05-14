@@ -13,6 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 //测试环境
 #define RootUrl @"http://api.shengdaoshiyou.com:8080/api/v1"//@"http://106.14.63.137/api/v1"
 
+//正式环境
+//https://api.shengdaoshiyou.com:8443/
+
+
 #pragma mark- 用户登录控制器
 
 
@@ -164,6 +168,12 @@ extern NSString *const method_keeperPropertyClientList;
 extern NSString *const method_keeperPropertyMineList;
 /** 仓库处理我的资产*/
 extern NSString *const method_keeperPropertyHandle;
+/** 仓库地址列表*/
+extern NSString *const method_keeperWareHourseList;
+/** 仓库地址编辑*/
+extern NSString *const method_keeperWareHourseEdit;
+/** 创建进货订单*/
+extern NSString *const method_keeperCreateOrder;
 
 
 

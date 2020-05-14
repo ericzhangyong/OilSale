@@ -58,7 +58,7 @@
         bucketType = model.commodity_name;
     }
     NSString *num = model.nozzle_num;
-    if ([BaseVerifyUtils isNullOrSpaceStr:model.nozzle_num]) {
+    if (![BaseVerifyUtils isNullOrSpaceStr:model.bucket_num]) {
         num = model.bucket_num;
     }
     return [NSString stringWithFormat:@"%@ x %@",bucketType,num];
@@ -99,7 +99,7 @@
             }else{
                 [self.dataSource addObjectsFromArray:data];
             }
-            complete(YES,@[@"ddd",@"ddd"]);
+            complete(YES,data);
         }else{
             complete(NO,@[]);
         }

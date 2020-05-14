@@ -7,13 +7,15 @@
 //
 
 #import "PSKeeperCrateOrderVC.h"
+#import "PSKeeperCreateOrderRequest.h"
 
 @interface PSKeeperCrateOrderVC ()
 
 
-@property (weak, nonatomic) IBOutlet UILabel *label_orderNum;
-@property (weak, nonatomic) IBOutlet UILabel *label_varity;
-@property (weak, nonatomic) IBOutlet UILabel *label_number;
+@property (weak, nonatomic) IBOutlet UITextField *tf_num;
+@property (weak, nonatomic) IBOutlet UITextField *tf_verity;
+@property (weak, nonatomic) IBOutlet UITextField *tf_bianhao;
+
 @property (weak, nonatomic) IBOutlet UITextField *tf_density;
 @property (weak, nonatomic) IBOutlet UITextField *tf_weight;
 @property (weak, nonatomic) IBOutlet UIButton *btn_save;
@@ -32,10 +34,35 @@
 
 - (IBAction)actionSave:(UIButton *)sender {
     
+    if ([BaseVerifyUtils isNullOrSpaceStr:self.tf_num.text]) {
+        [MBProgressHUD toastMessageAtMiddle:@"请输入进货单号"];
+        return;
+    }
+    if ([BaseVerifyUtils isNullOrSpaceStr:self.tf_num.text]) {
+        [MBProgressHUD toastMessageAtMiddle:@"请输入种类"];
+        return;
+    }
+    if ([BaseVerifyUtils isNullOrSpaceStr:self.tf_num.text]) {
+        [MBProgressHUD toastMessageAtMiddle:@"请输入编号"];
+        return;
+    }
+    if ([BaseVerifyUtils isNullOrSpaceStr:self.tf_num.text]) {
+        [MBProgressHUD toastMessageAtMiddle:@"请输入密度"];
+        return;
+    }
+    if ([BaseVerifyUtils isNullOrSpaceStr:self.tf_num.text]) {
+        [MBProgressHUD toastMessageAtMiddle:@"请输入重量"];
+        return;
+    }
     
-    [MBProgressHUD toastMessageAtMiddle:@"保存成功"];
-    [self.navigationController popViewControllerAnimated:YES];
-    
+    PSKeeperCreateOrderRequest *create = [PSKeeperCreateOrderRequest new];
+    [create postRequestCompleted:^(BaseResponse * _Nonnull response) {
+        if (response.isFinished) {
+            [MBProgressHUD toastMessageAtMiddle:@"保存成功"];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }];
+
 }
 
 @end

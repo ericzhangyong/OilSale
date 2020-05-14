@@ -27,6 +27,15 @@
         }
     }
 }
+-(void)didSelectWithIndex:(NSInteger)index{
+    if (index>=self.dataSource.count) {
+        
+    }else{
+        self.currentSelectIndex = index;
+        self.photoModel = self.dataSource[index];
+    }
+
+}
 
 -(BOOL)billOrderIsHaveOilGun{
     return YES;

@@ -39,12 +39,13 @@
     else if ([user_role_id isEqualToString:@"5"]){
         self.userType = UserTypePetrolStation;
     }
+    else if ([user_role_id isEqualToString:@"6"]){
+        self.userType = UserTypeKeeper;
+    }
     else{
         self.userType = UserTypeCustomer;
     }
-    
-    self.userType = UserTypeKeeper;
-   
+  
 }
 
 

@@ -7,8 +7,14 @@
 //
 
 #import "PSReseveConfirmFooterView.h"
+#import "UIButton+EnlargeArea.h"
 
 @implementation PSReseveConfirmFooterView
+
+-(void)initBaseSubViews{
+    
+    [self.btn_selelcted setEnlargeEdgeWithTop:20 right:20 bottom:20 left:20];
+}
 
 
 - (IBAction)actionSelectStatie:(UIButton *)sender {

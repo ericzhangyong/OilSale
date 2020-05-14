@@ -9,6 +9,7 @@
 #import "PSDriverViemModel.h"
 #import "PSSenderDriverListRequest.h"
 #import "PSSenderSendRequest.h"
+#import "UserInfoProfile.h"
 
 @implementation PSDriverViemModel
 
@@ -36,7 +37,11 @@
 -(NSString *)ps_getOrderNoAtIndex:(NSInteger)index row:(NSInteger)row{
     
     PSBillInfoModel *billModel  = [self ps_getBillInfoModelAtIndex:index row:row];
-    return [NSString stringWithFormat:@"订单号：%@",billModel.WbCode];
+    NSString *title = @"送货单号";
+    if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeKeeper) {
+        title = @"送货单号";
+    }
+    return [NSString stringWithFormat:@"%@：%@",title,billModel.WbCode];
 }
 -(NSString *)ps_getDriverNameAtIndex:(NSInteger)index{
     

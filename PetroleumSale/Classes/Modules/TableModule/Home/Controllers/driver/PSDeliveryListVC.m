@@ -42,6 +42,7 @@
 
 -(void)initBaseViews{
     
+    self.view.backgroundColor = color_lightDart_f3f3f3;
     self.tableView.backgroundColor = color_lightDart_f3f3f3;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSDeliveryCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSDeliveryCell.class)];
 }
@@ -88,7 +89,7 @@
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *view = [UIView new];
-    view.backgroundColor = color_lightDart_333333;
+    view.backgroundColor = color_lightDart_f3f3f3;
     return view;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -119,7 +120,7 @@
     WEAK_SELF;
     cell.btnDidSelecBlock = ^(BOOL isSelected) {
         if (weakSelf.didSelecBlock) {
-            weakSelf.didSelecBlock([weakSelf.deliverViewModel ps_getDeliverNoAtIndex:indexPath.section]);
+            weakSelf.didSelecBlock([weakSelf.deliverViewModel ps_getDeliverNoAtIndex:indexPath.section],index);
             [weakSelf.navigationController popViewControllerAnimated:YES];
         }
     };
@@ -133,7 +134,7 @@
     }
     
     if (self.didSelecBlock) {
-        self.didSelecBlock([self.deliverViewModel ps_getDeliverNoCodeAtIndex:indexPath.section]);
+        self.didSelecBlock([self.deliverViewModel ps_getDeliverNoCodeAtIndex:indexPath.section],indexPath.section);
         [self.navigationController popViewControllerAnimated:YES];
     }
 }

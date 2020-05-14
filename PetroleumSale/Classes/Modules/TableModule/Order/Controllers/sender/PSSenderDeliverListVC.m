@@ -35,7 +35,7 @@
 
 -(void)initBaseViews{
     
-    
+    self.view.backgroundColor = color_lightDart_f3f3f3;
     if (self.deliveryViewModel.listType == PSSenderDeliverListTypeUnSended) {
         [self.view addSubview:self.view_bottom];
         [self.view_bottom mas_makeConstraints:^(MASConstraintMaker *make) {

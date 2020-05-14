@@ -77,7 +77,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSPhotoCanCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSPhotoCanCell.class)];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSPhotoOilGunCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSPhotoOilGunCell.class)];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSPhotoStationCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSPhotoStationCell.class)];
-    
+    [self reloadHeaderView];
 }
 
 -(void)loadWebDataSource{
@@ -177,8 +177,8 @@
         }
     }
     [listVC setSelectResultArr:data];
-    listVC.didSelecBlock = ^(NSString * _Nonnull deliverOrderNo) {
-        [weakSelf.photoViewModel didSelectWithOrderNoCode:deliverOrderNo];
+    listVC.didSelecBlock = ^(NSString * _Nonnull deliverOrderNo,NSInteger index) {
+        [weakSelf.photoViewModel didSelectWithIndex:index];
         [weakSelf reloadHeaderView];
         [weakSelf.tableView reloadData];
     };

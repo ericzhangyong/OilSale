@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PSGetCanRequest : BaseRequest
 
 /// 铁桶数量
-@property (nonatomic,copy) NSString *bucket_num;
+@property (nonatomic,assign) NSInteger bucket_num;
 /// 吨桶数量
 @property (nonatomic,assign) NSInteger ibc_num;
 /// 加油枪数量

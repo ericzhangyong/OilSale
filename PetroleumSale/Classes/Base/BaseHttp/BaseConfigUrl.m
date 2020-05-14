@@ -91,6 +91,12 @@ NSString *const method_keeperAgressOrder= @"storage/operate_verify_order.do";
 NSString *const method_keeperPropertyClientList= @"storage/qry_client_property_info.do";
 NSString *const method_keeperPropertyMineList= @"storage/qry_my_property_info.do";
 NSString *const method_keeperPropertyHandle= @"storage/back_property_info.do";
+NSString *const method_keeperWareHourseList= @"storage/qry_storage_addr.do";
+NSString *const method_keeperWareHourseEdit= @"storage/edit_storage_addr.do";
+
+NSString *const method_keeperCreateOrder= @"storage/sub_stock_info.do";
+
+
 
 
 

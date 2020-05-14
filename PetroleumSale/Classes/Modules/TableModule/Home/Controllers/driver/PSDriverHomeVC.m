@@ -106,7 +106,7 @@
 -(UIView *)view_header{
     if (!_view_header) {
         _view_header = [UIView new];
-        _view_header.backgroundColor = color_lightDart_333333;
+        _view_header.backgroundColor = color_lightDart_f3f3f3;
     }
     return _view_header;
 }

@@ -17,7 +17,7 @@
 +(NSDictionary<NSString *,id> *)modelCustomPropertyMapper{
     return @{@"region":@[@"region",@"rec_region"],
              @"order_time":@[@"order_time",@"way_bill_time"],
-             @"order_buy_num":@[@"order_buy_num",@"order_buy_num"],
+             @"bucket_num":@[@"bucket_num",@"order_buy_num"],
              @"complete_address":@[@"complete_address",@"rec_complete_address"]
     };
 }

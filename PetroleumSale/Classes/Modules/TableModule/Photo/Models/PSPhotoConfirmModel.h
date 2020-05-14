@@ -35,6 +35,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *nozzle_order_id;
 /// 加油枪的个数
 @property (nonatomic,copy) NSString *nozzle_num;
+/// 购买数量
+@property (nonatomic,copy) NSString *order_buy_num;
+
+
 
 @property (nonatomic,copy) NSString *bucket_pic_url;
 
@@ -65,6 +69,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *weight;
 /// 毛重
 @property (nonatomic,copy) NSString *gross_weight;
+
+
+//@property (nonatomic,copy) NSString *order_buy_num;
+
 
 
 @property (nonatomic,assign) BOOL isOilGunCell;

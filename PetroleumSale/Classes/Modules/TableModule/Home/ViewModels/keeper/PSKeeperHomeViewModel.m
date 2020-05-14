@@ -69,7 +69,7 @@
     
     
     PSKeepHomeRequest *listRequest = [PSKeepHomeRequest new];
-    
+
     if (page !=  1) {
         PSKeeperStockModel *lastModel = self.dataSource.lastObject;
         listRequest.stock_time = lastModel.stock_time;
@@ -79,7 +79,7 @@
         if (response.isFinished) {
             
             self.oil_price = response.result[@"oil_price"];
-            self.oil_total = @"12345";
+            self.oil_total = response.result[@"stock_volume_total"];
             NSArray *data= [PSKeeperStockModel convertModelWithJsonArr:response.result[@"stock_info_list"]];
             if (page == 1) {
                 [self.dataSource setArray:data];

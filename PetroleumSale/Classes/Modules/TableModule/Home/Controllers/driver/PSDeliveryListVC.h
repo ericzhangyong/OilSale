@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(instancetype)initWithDeliveryListTypeL:(DeliveryListType)deliverListType;
 
 @property (nonatomic,copy) NSArray *selectResultArr;
-@property (nonatomic,copy) void(^didSelecBlock)(NSString *deliverOrderNo);
+@property (nonatomic,copy) void(^didSelecBlock)(NSString *deliverOrderNo,NSInteger index);
 
 
 

@@ -117,7 +117,7 @@
     
     PSGetCanRequest *canRequest = [PSGetCanRequest new];
     canRequest.phone_num= self.tf_phoneNum.text.getNoWhiteLineAndSpaceString;
-    canRequest.bucket_num = self.tf_tieCan.text.getNoWhiteLineAndSpaceString;
+    canRequest.bucket_num = self.tf_tieCan.text.getNoWhiteLineAndSpaceString.integerValue;
     canRequest.ibc_num = self.tf_dunCan.text.getNoWhiteLineAndSpaceString.integerValue;
     canRequest.nozzle_num = self.tf_oilGun.text.getNoWhiteLineAndSpaceString.integerValue;
     [canRequest postRequestCompleted:^(BaseResponse * _Nonnull response) {

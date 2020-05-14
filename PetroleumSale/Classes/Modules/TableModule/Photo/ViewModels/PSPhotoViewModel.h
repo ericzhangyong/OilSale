@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) NSInteger currentSelectIndex;
 
 -(void)didSelectWithOrderNoCode:(NSString *)orderCode;
+-(void)didSelectWithIndex:(NSInteger)index;
 
 
 -(BOOL)billOrderIsHaveOilGun;

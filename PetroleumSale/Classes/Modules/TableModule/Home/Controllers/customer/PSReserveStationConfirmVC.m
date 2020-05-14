@@ -98,7 +98,7 @@
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     
     UIView *view =[UIView new];
-    view.backgroundColor = color_lightDart_333333;
+    view.backgroundColor = color_lightDart_f3f3f3;
     return view;
 }
 
@@ -116,7 +116,7 @@
     PSReserveStationCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(PSReserveStationCell.class)];
     
     
-    cell.label_carNum.text = [self.reserveViewModel ps_getCarNumAtIndex:indexPath.row];
+    cell.label_carNum.text = [self.reserveViewModel ps_getCarNumAtIndex:indexPath.section];
     cell.label_address.text = [self.reserveViewModel ps_getAddress];
     [cell.imageView_header setImageWithUrl:[self.reserveViewModel ps_getStationPic] placeholder:defaultHolder160_160];
     return cell;

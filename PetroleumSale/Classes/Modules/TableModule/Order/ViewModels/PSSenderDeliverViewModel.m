@@ -27,7 +27,7 @@
 -(NSString *)ps_getDeliverNoAtIndex:(NSInteger)index{
     
     PSSenderDeliveryModel *senderOrderModel = [self ps_getSenderOrderModelAtIndex:index];
-    return [NSString stringWithFormat:@"运单号：%@",senderOrderModel.order_info.order_code];
+    return [NSString stringWithFormat:@"送货单号：%@",senderOrderModel.order_info.order_code];
 }
 
 -(NSString *)ps_getDeliverWay_bill_idAtIndex:(NSInteger)index{

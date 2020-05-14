@@ -25,6 +25,7 @@
 #import "UserInfoProfile.h"
 #import "PSAccountVC.h"
 #import "PSModulePageRouter.h"
+#import "PSKeeperWareHourseVC.h"
 
 @interface PSMineTableCell ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
@@ -176,6 +177,9 @@
         
         [self.contentView.navViewController pushViewController:accountVC animated:YES];
     }else if (cellType == PSMineCellTypeKeeperWareHourse){
+       
+        PSKeeperWareHourseVC *wareHourse= [PSKeeperWareHourseVC new];
+        [self.contentView.navViewController pushViewController:wareHourse animated:YES];
         
 //        [PSModulePageRouter openWareHoursePageWithParam:@{} PageFinish:^(NSDictionary * _Nonnull result) {
 //            
