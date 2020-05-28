@@ -35,4 +35,13 @@
     }
 }
 
+- (IBAction)actionCheckOrder:(UIButton *)sender {
+    
+    if (self.clickBlock) {
+        self.clickBlock(NO);
+    }
+}
+
+
+
 @end

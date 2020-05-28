@@ -107,7 +107,8 @@ typedef NS_ENUM(NSInteger,PSOrderBottomBtnType){
 /// @param complete 回调
 -(void)requestOrderOperateWithOperateType:(NSInteger)operateType
                                  order_id:(NSString *)order_id
-                               order_code:(NSString *)order_code      complete:(completeBlock)complete;
+                               order_code:(NSString *)order_code
+                                 complete:(completeDataBlock)complete;
 @end
 
 NS_ASSUME_NONNULL_END

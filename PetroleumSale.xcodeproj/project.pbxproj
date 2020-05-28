@@ -25,6 +25,18 @@
 		072BBD362436172000EBE005 /* PSKeeperHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072BBD352436172000EBE005 /* PSKeeperHomeVC.m */; };
 		072BBD3E2436183E00EBE005 /* PSWareHouseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072BBD3D2436183E00EBE005 /* PSWareHouseVC.m */; };
 		072BBD462436194B00EBE005 /* PSPropertyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072BBD452436194B00EBE005 /* PSPropertyVC.m */; };
+		073A60642470172F0059E050 /* PSImageListVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 073A60632470172F0059E050 /* PSImageListVCViewController.m */; };
+		073A6068247018CC0059E050 /* PSImageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 073A6066247018CC0059E050 /* PSImageListCell.m */; };
+		073A6069247018CC0059E050 /* PSImageListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 073A6067247018CC0059E050 /* PSImageListCell.xib */; };
+		073A606C24701AE50059E050 /* PSImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 073A606B24701AE50059E050 /* PSImageModel.m */; };
+		073A6070247024E30059E050 /* PSHeadImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 073A606E247024E30059E050 /* PSHeadImageCell.m */; };
+		073A6071247024E30059E050 /* PSHeadImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 073A606F247024E30059E050 /* PSHeadImageCell.xib */; };
+		073A607424703FFF0059E050 /* PSSenderStationOrderListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073A607324703FFF0059E050 /* PSSenderStationOrderListRequest.m */; };
+		073A60772470A70D0059E050 /* PSSenderSendFarpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073A60762470A70D0059E050 /* PSSenderSendFarpRequest.m */; };
+		073A607A2470B4300059E050 /* PSSenderStoreListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073A60792470B4300059E050 /* PSSenderStoreListRequest.m */; };
+		073A607D2470B5AC0059E050 /* PSSenderSelectStoreVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 073A607C2470B5AC0059E050 /* PSSenderSelectStoreVC.m */; };
+		073A60812470BBD80059E050 /* PSSenderStoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 073A607F2470BBD80059E050 /* PSSenderStoreCell.m */; };
+		073A60822470BBD80059E050 /* PSSenderStoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 073A60802470BBD80059E050 /* PSSenderStoreCell.xib */; };
 		07489B7B242901F500EB2928 /* UIColor+BaseLightDartColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 07489B7A242901F500EB2928 /* UIColor+BaseLightDartColor.m */; };
 		07489B812429A35B00EB2928 /* PSMainTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07489B802429A35B00EB2928 /* PSMainTabBarVC.m */; };
 		07501B0F243A1410006AE069 /* PSPlatformRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 07501B0E243A1410006AE069 /* PSPlatformRouter.m */; };
@@ -68,7 +80,9 @@
 		07ABDDC82454773D002093A4 /* PSWarehourseEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07ABDDC62454773D002093A4 /* PSWarehourseEditVC.m */; };
 		07ABDDC92454773D002093A4 /* PSWarehourseEditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07ABDDC72454773D002093A4 /* PSWarehourseEditVC.xib */; };
 		07ABDDCC24547BFB002093A4 /* PSWareHourseEditReqeust.m in Sources */ = {isa = PBXBuildFile; fileRef = 07ABDDCB24547BFB002093A4 /* PSWareHourseEditReqeust.m */; };
+		07B95488247A7CF5007BE731 /* PSStationChangeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B95487247A7CF5007BE731 /* PSStationChangeModel.m */; };
 		07B9DD9D2456F49900D0CE67 /* PSKeeperCreateOrderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B9DD9C2456F49900D0CE67 /* PSKeeperCreateOrderRequest.m */; };
+		07D7E61A246D830900389AEE /* save.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D7E619246D830900389AEE /* save.xib */; };
 		C2003B3E23B09EAC0010BDB9 /* PSSenderOrderListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2003B3D23B09EAC0010BDB9 /* PSSenderOrderListVC.m */; };
 		C2003B4223B0A0560010BDB9 /* PSSenderDeleryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2003B4123B0A0560010BDB9 /* PSSenderDeleryVC.m */; };
 		C2003B4723B0A5720010BDB9 /* PSSendListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2003B4623B0A5720010BDB9 /* PSSendListHeaderView.m */; };
@@ -394,6 +408,27 @@
 		072BBD3D2436183E00EBE005 /* PSWareHouseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSWareHouseVC.m; sourceTree = "<group>"; };
 		072BBD442436194B00EBE005 /* PSPropertyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSPropertyVC.h; sourceTree = "<group>"; };
 		072BBD452436194B00EBE005 /* PSPropertyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSPropertyVC.m; sourceTree = "<group>"; };
+		073A60622470172F0059E050 /* PSImageListVCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSImageListVCViewController.h; sourceTree = "<group>"; };
+		073A60632470172F0059E050 /* PSImageListVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSImageListVCViewController.m; sourceTree = "<group>"; };
+		073A6065247018CC0059E050 /* PSImageListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSImageListCell.h; sourceTree = "<group>"; };
+		073A6066247018CC0059E050 /* PSImageListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSImageListCell.m; sourceTree = "<group>"; };
+		073A6067247018CC0059E050 /* PSImageListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PSImageListCell.xib; sourceTree = "<group>"; };
+		073A606A24701AE50059E050 /* PSImageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSImageModel.h; sourceTree = "<group>"; };
+		073A606B24701AE50059E050 /* PSImageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSImageModel.m; sourceTree = "<group>"; };
+		073A606D247024E30059E050 /* PSHeadImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSHeadImageCell.h; sourceTree = "<group>"; };
+		073A606E247024E30059E050 /* PSHeadImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSHeadImageCell.m; sourceTree = "<group>"; };
+		073A606F247024E30059E050 /* PSHeadImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PSHeadImageCell.xib; sourceTree = "<group>"; };
+		073A607224703FFF0059E050 /* PSSenderStationOrderListRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSenderStationOrderListRequest.h; sourceTree = "<group>"; };
+		073A607324703FFF0059E050 /* PSSenderStationOrderListRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSenderStationOrderListRequest.m; sourceTree = "<group>"; };
+		073A60752470A70D0059E050 /* PSSenderSendFarpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSenderSendFarpRequest.h; sourceTree = "<group>"; };
+		073A60762470A70D0059E050 /* PSSenderSendFarpRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSenderSendFarpRequest.m; sourceTree = "<group>"; };
+		073A60782470B4300059E050 /* PSSenderStoreListRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSenderStoreListRequest.h; sourceTree = "<group>"; };
+		073A60792470B4300059E050 /* PSSenderStoreListRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSenderStoreListRequest.m; sourceTree = "<group>"; };
+		073A607B2470B5AC0059E050 /* PSSenderSelectStoreVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSenderSelectStoreVC.h; sourceTree = "<group>"; };
+		073A607C2470B5AC0059E050 /* PSSenderSelectStoreVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSenderSelectStoreVC.m; sourceTree = "<group>"; };
+		073A607E2470BBD80059E050 /* PSSenderStoreCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSenderStoreCell.h; sourceTree = "<group>"; };
+		073A607F2470BBD80059E050 /* PSSenderStoreCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSenderStoreCell.m; sourceTree = "<group>"; };
+		073A60802470BBD80059E050 /* PSSenderStoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PSSenderStoreCell.xib; sourceTree = "<group>"; };
 		07489B79242901F400EB2928 /* UIColor+BaseLightDartColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+BaseLightDartColor.h"; sourceTree = "<group>"; };
 		07489B7A242901F500EB2928 /* UIColor+BaseLightDartColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BaseLightDartColor.m"; sourceTree = "<group>"; };
 		07489B7F2429A35B00EB2928 /* PSMainTabBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSMainTabBarVC.h; sourceTree = "<group>"; };
@@ -471,8 +506,11 @@
 		07ABDDC72454773D002093A4 /* PSWarehourseEditVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PSWarehourseEditVC.xib; sourceTree = "<group>"; };
 		07ABDDCA24547BFB002093A4 /* PSWareHourseEditReqeust.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSWareHourseEditReqeust.h; sourceTree = "<group>"; };
 		07ABDDCB24547BFB002093A4 /* PSWareHourseEditReqeust.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSWareHourseEditReqeust.m; sourceTree = "<group>"; };
+		07B95486247A7CF5007BE731 /* PSStationChangeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSStationChangeModel.h; sourceTree = "<group>"; };
+		07B95487247A7CF5007BE731 /* PSStationChangeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSStationChangeModel.m; sourceTree = "<group>"; };
 		07B9DD9B2456F49900D0CE67 /* PSKeeperCreateOrderRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSKeeperCreateOrderRequest.h; sourceTree = "<group>"; };
 		07B9DD9C2456F49900D0CE67 /* PSKeeperCreateOrderRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSKeeperCreateOrderRequest.m; sourceTree = "<group>"; };
+		07D7E619246D830900389AEE /* save.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = save.xib; sourceTree = "<group>"; };
 		5E0DA287668D7F803D260F93 /* Pods-PetroleumSale.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetroleumSale.release.xcconfig"; path = "Target Support Files/Pods-PetroleumSale/Pods-PetroleumSale.release.xcconfig"; sourceTree = "<group>"; };
 		82F32C0E600E707E9041F40E /* Pods_PetroleumSale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetroleumSale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8E5ED2B00D7D724F1DC7FB5 /* Pods-PetroleumSale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetroleumSale.debug.xcconfig"; path = "Target Support Files/Pods-PetroleumSale/Pods-PetroleumSale.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1308,6 +1346,8 @@
 			children = (
 				C2003B3C23B09EAB0010BDB9 /* PSSenderOrderListVC.h */,
 				C2003B3D23B09EAC0010BDB9 /* PSSenderOrderListVC.m */,
+				073A607B2470B5AC0059E050 /* PSSenderSelectStoreVC.h */,
+				073A607C2470B5AC0059E050 /* PSSenderSelectStoreVC.m */,
 			);
 			path = sender;
 			sourceTree = "<group>";
@@ -1355,6 +1395,9 @@
 				C2003B4823B0A7440010BDB9 /* PSSenderOrderCell.h */,
 				C2003B4923B0A7440010BDB9 /* PSSenderOrderCell.m */,
 				C2003B4A23B0A7440010BDB9 /* PSSenderOrderCell.xib */,
+				073A607E2470BBD80059E050 /* PSSenderStoreCell.h */,
+				073A607F2470BBD80059E050 /* PSSenderStoreCell.m */,
+				073A60802470BBD80059E050 /* PSSenderStoreCell.xib */,
 			);
 			path = sender;
 			sourceTree = "<group>";
@@ -2040,6 +2083,8 @@
 				C2845D4024027E1700FAA2B7 /* PSAccountInfoModel.m */,
 				07ABDDC2245471A6002093A4 /* PSKeeperWareHourseAddModel.h */,
 				07ABDDC3245471A6002093A4 /* PSKeeperWareHourseAddModel.m */,
+				073A606A24701AE50059E050 /* PSImageModel.h */,
+				073A606B24701AE50059E050 /* PSImageModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2057,6 +2102,8 @@
 				C29B99F7238CF6AC000923B5 /* PSMessageVC.m */,
 				C284C752238D06610025FE30 /* PSPersonEditVC.h */,
 				C284C753238D06610025FE30 /* PSPersonEditVC.m */,
+				073A60622470172F0059E050 /* PSImageListVCViewController.h */,
+				073A60632470172F0059E050 /* PSImageListVCViewController.m */,
 				C26C60972398BEE10013A1D8 /* PSHeadImageViewController.h */,
 				C26C60992398BEE10013A1D8 /* PSHeadImageViewController.m */,
 				C26C60982398BEE10013A1D8 /* PSHeadImageViewController.xib */,
@@ -2400,6 +2447,8 @@
 				C2090F5823A8761200998955 /* PSPhotoConfirmModel.m */,
 				C2F8775023EFCA7B00B8A65C /* PSStationPhotoModel.h */,
 				C2F8775123EFCA7B00B8A65C /* PSStationPhotoModel.m */,
+				07B95486247A7CF5007BE731 /* PSStationChangeModel.h */,
+				07B95487247A7CF5007BE731 /* PSStationChangeModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2474,6 +2523,7 @@
 				C2BEB5AB239141850090FACB /* PSHomeOilCell.h */,
 				C2BEB5AC239141850090FACB /* PSHomeOilCell.m */,
 				C2BEB5AD239141850090FACB /* PSHomeOilCell.xib */,
+				07D7E619246D830900389AEE /* save.xib */,
 				C284C77B238E27440025FE30 /* PSHomeFooterView.h */,
 				C284C77C238E27440025FE30 /* PSHomeFooterView.m */,
 				C284C77E238E545F0025FE30 /* PSSpecBtn.h */,
@@ -2525,6 +2575,12 @@
 				0756AFD7243EA8CC00D6331B /* PSKeepHomeRequest.m */,
 				07B9DD9B2456F49900D0CE67 /* PSKeeperCreateOrderRequest.h */,
 				07B9DD9C2456F49900D0CE67 /* PSKeeperCreateOrderRequest.m */,
+				073A607224703FFF0059E050 /* PSSenderStationOrderListRequest.h */,
+				073A607324703FFF0059E050 /* PSSenderStationOrderListRequest.m */,
+				073A60752470A70D0059E050 /* PSSenderSendFarpRequest.h */,
+				073A60762470A70D0059E050 /* PSSenderSendFarpRequest.m */,
+				073A60782470B4300059E050 /* PSSenderStoreListRequest.h */,
+				073A60792470B4300059E050 /* PSSenderStoreListRequest.m */,
 			);
 			path = request;
 			sourceTree = "<group>";
@@ -2666,6 +2722,12 @@
 				C2845D3724027BF700FAA2B7 /* PSAccountCell.h */,
 				C2845D3824027BF700FAA2B7 /* PSAccountCell.m */,
 				C2845D3924027BF700FAA2B7 /* PSAccountCell.xib */,
+				073A6065247018CC0059E050 /* PSImageListCell.h */,
+				073A6066247018CC0059E050 /* PSImageListCell.m */,
+				073A6067247018CC0059E050 /* PSImageListCell.xib */,
+				073A606D247024E30059E050 /* PSHeadImageCell.h */,
+				073A606E247024E30059E050 /* PSHeadImageCell.m */,
+				073A606F247024E30059E050 /* PSHeadImageCell.xib */,
 			);
 			path = mineView;
 			sourceTree = "<group>";
@@ -2778,10 +2840,13 @@
 				C2003B4C23B0A7440010BDB9 /* PSSenderOrderCell.xib in Resources */,
 				C29B99A6238BD12E000923B5 /* PSMineMessageCell.xib in Resources */,
 				C27709C923A4A22B0077F45A /* PSCarMessageVC.xib in Resources */,
+				073A60822470BBD80059E050 /* PSSenderStoreCell.xib in Resources */,
 				C228C1BE23D2AEDF00784AF5 /* PSStationOrderCell.xib in Resources */,
 				C2845D362402797800FAA2B7 /* PSAccountHeaderView.xib in Resources */,
 				C29B99EC238CBCB5000923B5 /* PSCanReturnRecordCell.xib in Resources */,
 				C24505E723EBFCB800EC389A /* PSPhotoStationCell.xib in Resources */,
+				073A6069247018CC0059E050 /* PSImageListCell.xib in Resources */,
+				07D7E61A246D830900389AEE /* save.xib in Resources */,
 				C284C74E238CF86C0025FE30 /* PSMessageCell.xib in Resources */,
 				C2C16B0623B31AA300EB8697 /* PSPertrolStationView.xib in Resources */,
 				C2C1AB6D238A539000693FFC /* PSMineCell.xib in Resources */,
@@ -2796,6 +2861,7 @@
 				C2003B6323B0C4660010BDB9 /* PSSenderDeliveryCell.xib in Resources */,
 				C2C16B0E23B45A6500EB8697 /* PSPetrolStationCell.xib in Resources */,
 				C228C1C323D2AF0200784AF5 /* PSStationOrderHistoryCell.xib in Resources */,
+				073A6071247024E30059E050 /* PSHeadImageCell.xib in Resources */,
 				C29B99B9238C02A6000923B5 /* FSAddNewAddressTFCell.xib in Resources */,
 				C2845D292402673200FAA2B7 /* PSReserveStationCell.xib in Resources */,
 				C260CC4B238660A600D51CF4 /* Main.storyboard in Resources */,
@@ -2867,12 +2933,14 @@
 				C21CA57124050542007D4DF9 /* PSSenderPickerOneSelfNumSaveRequest.m in Sources */,
 				077DF3372420AB3500DDD3A2 /* PSSalesmanHomeRequest.m in Sources */,
 				C228C1BD23D2AEDF00784AF5 /* PSStationOrderCell.m in Sources */,
+				073A60642470172F0059E050 /* PSImageListVCViewController.m in Sources */,
 				C25A9108239505EF00CC3293 /* PSOrderModel.m in Sources */,
 				C2845D3A24027BF700FAA2B7 /* PSAccountCell.m in Sources */,
 				C260CC48238660A600D51CF4 /* ViewController.m in Sources */,
 				C2BEB5AE239141850090FACB /* PSHomeOilCell.m in Sources */,
 				C20E976E2387B54B005C07EF /* NSDate+BaseCategory.m in Sources */,
 				0756AFF9243ECA5F00D6331B /* PSKeepOrderListReqeust.m in Sources */,
+				073A60772470A70D0059E050 /* PSSenderSendFarpRequest.m in Sources */,
 				0723E15F243F39C900B709AD /* PSDropMenuView.m in Sources */,
 				C2C16B1423B4626100EB8697 /* PSCarNumVC.m in Sources */,
 				C27709E023A4C13B0077F45A /* UICollectionView+ZYCalculateCollectionHeight.m in Sources */,
@@ -2908,6 +2976,7 @@
 				C20E97522387B54B005C07EF /* BaseRequestHeader.m in Sources */,
 				C26C60A12398C38D0013A1D8 /* PSUploadImageRequest.m in Sources */,
 				C20E97632387B54B005C07EF /* ZJScrollSegmentView.m in Sources */,
+				073A6068247018CC0059E050 /* PSImageListCell.m in Sources */,
 				C20E97712387B54B005C07EF /* PlaceHolderTextView.m in Sources */,
 				C29FB88323964FA8001A891B /* PSOrderConfirmVC.m in Sources */,
 				077DF3492420C1FB00DDD3A2 /* PSSalesmanOrderCell.m in Sources */,
@@ -2930,6 +2999,7 @@
 				C2003B3E23B09EAC0010BDB9 /* PSSenderOrderListVC.m in Sources */,
 				C26DA24623A3855600BF4E8C /* PSDeliveryListVC.m in Sources */,
 				C20E976A2387B54B005C07EF /* UIView+BaseFrame.m in Sources */,
+				073A60812470BBD80059E050 /* PSSenderStoreCell.m in Sources */,
 				C27709C823A4A22B0077F45A /* PSCarMessageVC.m in Sources */,
 				C2845D24240260CB00FAA2B7 /* PSReserveConfirmRequest.m in Sources */,
 				C29B99F2238CD982000923B5 /* PSAddressEditRequest.m in Sources */,
@@ -2977,8 +3047,11 @@
 				C2003B5E23B0C26F0010BDB9 /* PSSenderDeliverViewModel.m in Sources */,
 				C29B99A5238BD12E000923B5 /* PSMineMessageCell.m in Sources */,
 				C20E97682387B54B005C07EF /* UIButton+EnlargeArea.m in Sources */,
+				073A607A2470B4300059E050 /* PSSenderStoreListRequest.m in Sources */,
+				073A607424703FFF0059E050 /* PSSenderStationOrderListRequest.m in Sources */,
 				C20E97472387B54B005C07EF /* BaseWeakScriptDelegate.m in Sources */,
 				C20E97662387B54B005C07EF /* UIImage+BaseImageCategory.m in Sources */,
+				073A606C24701AE50059E050 /* PSImageModel.m in Sources */,
 				0756AFF4243EC82900D6331B /* PSKeepOrderHeaderView.m in Sources */,
 				C214E63F23F4ED5600BEFBC5 /* PSCustomerCarSelecBottomView.m in Sources */,
 				C228C1B923D2ABDB00784AF5 /* PSStationOrderListVC.m in Sources */,
@@ -3045,6 +3118,7 @@
 				0756AFE1243EB9C600D6331B /* PSKeeperCrateOrderVC.m in Sources */,
 				C2692E3C23895E26007123B0 /* RELoginViewController.m in Sources */,
 				C29B99BC238C02A6000923B5 /* FSAddNewAddressTVCell.m in Sources */,
+				07B95488247A7CF5007BE731 /* PSStationChangeModel.m in Sources */,
 				C29B99CB238C0337000923B5 /* FSAddressManager.m in Sources */,
 				0756AFF0243EC74100D6331B /* PSKeepOrderCell.m in Sources */,
 				C27709CF23A4AE9E0077F45A /* PSDriverMessageVC.m in Sources */,
@@ -3057,6 +3131,7 @@
 				C29B99BA238C02A6000923B5 /* FSAddNewAddressTFCell.m in Sources */,
 				C2C1AB6C238A539000693FFC /* PSMineCell.m in Sources */,
 				C20E97562387B54B005C07EF /* BaseViewModel.m in Sources */,
+				073A607D2470B5AC0059E050 /* PSSenderSelectStoreVC.m in Sources */,
 				C2003B9923B1FD670010BDB9 /* PSSenderSendRequest.m in Sources */,
 				C2F8775223EFCA7B00B8A65C /* PSStationPhotoModel.m in Sources */,
 				C2003B5823B0C06C0010BDB9 /* PSSenderDelveryNavView.m in Sources */,
@@ -3090,6 +3165,7 @@
 				C29B99E6238CBC9A000923B5 /* PSDriverConfirmCell.m in Sources */,
 				C29B99A0238BD11B000923B5 /* PSMineImageCell.m in Sources */,
 				C25A911323950A8700CC3293 /* PSShopCartCell.m in Sources */,
+				073A6070247024E30059E050 /* PSHeadImageCell.m in Sources */,
 				C2003B8B23B1E8D80010BDB9 /* PSSenderDriverSelectVC.m in Sources */,
 				C20E975A2387B54B005C07EF /* BasePickerView.m in Sources */,
 				C228C1B623D2A87800784AF5 /* BaseBlueNavView.m in Sources */,

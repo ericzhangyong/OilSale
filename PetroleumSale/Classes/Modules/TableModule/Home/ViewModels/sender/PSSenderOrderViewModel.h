@@ -8,12 +8,16 @@
 
 #import "BaseViewModel.h"
 #import "PSSenderOrderModel.h"
+typedef NS_ENUM(NSInteger,SenderListType){
+    SenderListTypeHome,//首页
+    SenderListTypeStation,//加油点
+};
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PSSenderOrderViewModel : BaseViewModel
 
-
+@property (nonatomic,assign) SenderListType listType;
 
 #pragma mark -数据处理
 
@@ -23,9 +27,10 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSString *)ps_getBucketTypeAtIndex:(NSInteger)index;
 -(NSString *)ps_getPriceAtIndex:(NSInteger)index;
 -(NSString *)ps_getNameAtIndex:(NSInteger)index;
+-(NSString *)ps_getCarNumAtIndex:(NSInteger)index;
 -(CGFloat)ps_getNameWidthAtIndex:(NSInteger)index;
 -(NSString *)ps_getPhoneAtIndex:(NSInteger)index;
--(NSString *)ps_getIsDebtAtIndex:(NSInteger)index;
+-(NSMutableAttributedString *)ps_getIsDebtAtIndex:(NSInteger)index;
 -(NSString *)ps_getAddressAtIndex:(NSInteger)index;
 -(NSString *)ps_getwarHouseStatusAtIndex:(NSInteger)index;
 -(UIColor *)ps_getwarHouseStatusColorAtIndex:(NSInteger)index;
@@ -40,6 +45,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)requestOrderListWithPage:(NSInteger)page Complete:(completeDataArrBlock)complete;
 
+
+-(void)reqeustSendOrderWithOrderIdAtIndex:(NSInteger)index complete:(completeBlock)complete;
 
 @end
 

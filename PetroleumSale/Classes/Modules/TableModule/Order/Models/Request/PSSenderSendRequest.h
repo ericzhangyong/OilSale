@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) NSInteger driver_id;
 /// 运单id
 @property (nonatomic,copy) NSArray *way_bill_id;
+
+/// 仓库管理员id
+@property (nonatomic,assign) NSInteger storekeeper_id;
 @end
 
 NS_ASSUME_NONNULL_END

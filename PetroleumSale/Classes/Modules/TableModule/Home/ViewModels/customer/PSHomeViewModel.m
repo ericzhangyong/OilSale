@@ -194,7 +194,7 @@
 
 -(NSString *)ps_getCarPrice{
     
-    NSString *carPrice = [NSString stringWithFormat:@"按车批发 ¥%.2f",self.homeModel.oil_price_car_whole_sale.oil_price.doubleValue];
+    NSString *carPrice = [NSString stringWithFormat:@"按车批发 ¥%@",self.homeModel.oil_price_car_whole_sale.oil_price];
     return carPrice;
 }
 

@@ -20,7 +20,7 @@
 @property (nonatomic,strong) PSDriverViemModel *driverViewModel;
 @property (nonatomic,assign) NSInteger currentSelectIndex;
 @end
-
+//PSSenderStoreListRequest
 @implementation PSSenderDriverSelectVC
 
 -(instancetype)initWithOrderIdArr:(NSArray *)orderIdArr{
@@ -44,18 +44,18 @@
     
   
 
-    self.view_bottom.title = @"确定";
-    [self.view addSubview:self.view_bottom];
-    [self.view_bottom mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self.view);
-        make.bottom.equalTo(self.view).offset(-SafeBottom);
-        make.height.mas_equalTo(56);
-    }];
+//    self.view_bottom.title = @"确定";
+//    [self.view addSubview:self.view_bottom];
+//    [self.view_bottom mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.right.equalTo(self.view);
+//        make.bottom.equalTo(self.view).offset(-SafeBottom);
+//        make.height.mas_equalTo(56);
+//    }];
     
-    [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.view_bottom.mas_top);
-        make.top.left.right.equalTo(self.view);
-    }];
+//    [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+//        make.bottom.equalTo(self.view_bottom.mas_top);
+//        make.top.left.right.equalTo(self.view);
+//    }];
     
     self.tableView.backgroundColor = color_lightDart_f3f3f3;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSDriverCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSDriverCell.class)];
@@ -69,19 +69,25 @@
         if (isFinished) {
             
             [weakSelf.tableView reloadData];
+            [self endRefreshingWithCount:-1];
         }
     }];
 }
 -(void)goToSendDidClick{
     
-    [self.driverViewModel requestSendDeliveryComplete:^(BOOL isFinished) {
-        if (isFinished) {
-            
-            [MBProgressHUD toastMessageAtMiddle:@"派单成功"];
-            [[NSNotificationCenter defaultCenter] postNotificationName:FSNotificationSendSuccessNotifiKey object:nil];
-            [self.navigationController popViewControllerAnimated:YES];
-        }
-    }];
+    if (self.selectCompleteBlock) {
+        self.selectCompleteBlock(self.driverViewModel.ps_getSelectDriverId);
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
+//    [self.driverViewModel requestSendDeliveryComplete:^(BOOL isFinished) {
+//        if (isFinished) {
+//
+//            [MBProgressHUD toastMessageAtMiddle:@"派单成功"];
+//            [[NSNotificationCenter defaultCenter] postNotificationName:FSNotificationSendSuccessNotifiKey object:nil];
+//            [self.navigationController popViewControllerAnimated:YES];
+//        }
+//    }];
 }
 #pragma mark- UITableViewDelegate dataSOurce
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -106,6 +112,7 @@
     cell.selectDidClick = ^(BOOL isSelected){
         [weakSelf.driverViewModel ps_setDriverIsSelectedAtIndex:indexPath.section isSelected:isSelected];
         [weakSelf.tableView reloadData];
+        [self goToSendDidClick];
     };
     return cell;
 }

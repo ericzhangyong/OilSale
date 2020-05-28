@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PSShopEditRequest : BaseRequest
 
 
-/// 支付方式 1 记账余额支付 2 加油卡支付
+/// 支付方式 1 记账余额支付 2 加油卡支付 4 现金支付
 @property (nonatomic,copy) NSString *pay_type;
 /// 地址信息
 @property (nonatomic,assign) NSInteger receipt_addr_id;

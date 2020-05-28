@@ -6,11 +6,11 @@
 //  Copyright © 2016年 HuuHoo. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "BasePullTableVC.h"
 
 typedef void(^HeadImagePickComplete)(NSString *headImgPath, UIImage *headImage);
 
-@interface PSHeadImageViewController : BaseViewController
+@interface PSHeadImageViewController :BasePullTableVC
 
 
 @property (nonatomic,strong)HeadImagePickComplete headImagePickComplete;

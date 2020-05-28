@@ -12,7 +12,7 @@
 
 @property (nonatomic,strong) UIButton *btn_handle;
 @property (nonatomic,strong) UIButton *btn_new;
-@property (nonatomic,strong) UIButton *btn_collect;
+//@property (nonatomic,strong) UIButton *btn_collect;
 
 @end
 @implementation PSPropertyBottomBarView
@@ -23,13 +23,13 @@
     
     [self addSubview:self.btn_handle];
     [self addSubview:self.btn_new];
-    [self addSubview:self.btn_collect];
+//    [self addSubview:self.btn_collect];
 }
 
 -(void)layoutSubviews{
     [super layoutSubviews];
     
-    CGFloat btnWidth = (kScreenWidth-26*2-20*2)/3.0;
+    CGFloat btnWidth = (kScreenWidth-26*2-20*2)/2.0;
     [self.btn_handle mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(26);
         make.width.mas_equalTo(btnWidth);
@@ -42,12 +42,12 @@
         make.height.mas_equalTo(35);
         make.centerY.equalTo(self);
     }];
-    [self.btn_collect mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.btn_new.mas_right).offset(20);
-        make.width.mas_equalTo(btnWidth);
-        make.height.mas_equalTo(35);
-        make.centerY.equalTo(self);
-    }];
+//    [self.btn_collect mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(self.btn_new.mas_right).offset(20);
+//        make.width.mas_equalTo(btnWidth);
+//        make.height.mas_equalTo(35);
+//        make.centerY.equalTo(self);
+//    }];
 }
 
 -(void)btnHandleClick{
@@ -60,11 +60,11 @@
         self.btnClickCallBack(2);
     }
 }
--(void)btnCollectClick{
-    if (self.btnClickCallBack) {
-        self.btnClickCallBack(3);
-    }
-}
+//-(void)btnCollectClick{
+//    if (self.btnClickCallBack) {
+//        self.btnClickCallBack(3);
+//    }
+//}
 
 
 #pragma mark- lazy
@@ -96,21 +96,21 @@
     }
     return _btn_new;
 }
--(UIButton *)btn_collect{
-    if (!_btn_collect) {
-        _btn_collect = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_btn_collect setTitle:@"回收资产" forState:UIControlStateNormal];
-        _btn_collect.titleLabel.font = [UIFont systemWEPingFangRegularOfSize:14];
-        [_btn_collect setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        _btn_collect.backgroundColor = color_4084FF;
-        _btn_collect.layer.cornerRadius = 17.25;
-        _btn_collect.layer.masksToBounds = YES;
-        _btn_collect.layer.borderColor = color_4084FF.CGColor;
-        _btn_collect.layer.borderWidth = 1;
-        [_btn_collect addTarget:self action:@selector(btnCollectClick) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _btn_collect;
-}
+//-(UIButton *)btn_collect{
+//    if (!_btn_collect) {
+//        _btn_collect = [UIButton buttonWithType:UIButtonTypeCustom];
+//        [_btn_collect setTitle:@"资产回收" forState:UIControlStateNormal];
+//        _btn_collect.titleLabel.font = [UIFont systemWEPingFangRegularOfSize:14];
+//        [_btn_collect setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//        _btn_collect.backgroundColor = color_4084FF;
+//        _btn_collect.layer.cornerRadius = 17.25;
+//        _btn_collect.layer.masksToBounds = YES;
+//        _btn_collect.layer.borderColor = color_4084FF.CGColor;
+//        _btn_collect.layer.borderWidth = 1;
+//        [_btn_collect addTarget:self action:@selector(btnCollectClick) forControlEvents:UIControlEventTouchUpInside];
+//    }
+//    return _btn_collect;
+//}
 
 
 @end

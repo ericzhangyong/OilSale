@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 加油枪订单id 从获取的订单上取值
 @property (nonatomic,assign) NSInteger nozzle_order_id;
 /// 订单id
-@property (nonatomic,assign) NSInteger order_id;
+@property (nonatomic,assign) NSInteger waybill_id;
 
 @property (nonatomic,copy) NSArray<PSBucketModel *> *sub_bucket_info_list;
 

@@ -64,6 +64,12 @@
 }
 /// 操作类型 delete 为处理 add为新增 update为回收
 -(void)showHandleViewWithType:(NSString *)handleType{
+    
+    NSArray *storeNamArr = self.propertyViewModel.getNameArr;
+    if (storeNamArr.count==0) {
+        [MBProgressHUD toastMessageAtMiddle:@"没有可选仓库列表"];
+        return;
+    }
     PSPropertyPopHandleView  *hangdleView = [PSPropertyPopHandleView createHandleView];
     hangdleView.confirmClick = ^(NSString * _Nonnull storage_id, NSString * _Nonnull back_num, NSString * _Nonnull back_type) {
         [self.propertyViewModel requestPropertyHandleType:handleType storage_id:storage_id back_num:back_num back_type:back_type complete:^(BOOL isFinished) {

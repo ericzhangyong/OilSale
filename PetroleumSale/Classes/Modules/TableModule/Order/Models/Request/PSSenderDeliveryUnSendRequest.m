@@ -7,12 +7,15 @@
 //
 
 #import "PSSenderDeliveryUnSendRequest.h"
-
+#import "UserInfoProfile.h"
 @implementation PSSenderDeliveryUnSendRequest
 
 
 -(NSString *)requestMethod{
     
+    if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeKeeper) {
+        return method_storageDeliverUnSenderList;
+    }
     return method_senderDeliverUnSenderList;
 }
 @end

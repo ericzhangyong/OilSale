@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /// 审核图片
-@property (nonatomic,copy) NSString *file_url;
+@property (nonatomic,copy) NSArray *file_url_arr;
 
 -(void)setMineDataSource;
 

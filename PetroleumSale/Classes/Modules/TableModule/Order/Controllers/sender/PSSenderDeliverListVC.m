@@ -10,8 +10,8 @@
 #import "PSSenderDeliveryCell.h"
 #import "UIImageView+BaseWebCache.h"
 #import "UIView+BaseCategory.h"
-#import "PSSenderDriverSelectVC.h"
 #import "PSDriverBottomView.h"
+#import "PSSenderSelectStoreVC.h"
 
 @interface PSSenderDeliverListVC ()
 @property (nonatomic,strong) PSDriverBottomView *view_bottom;
@@ -79,8 +79,9 @@
         [MBProgressHUD toastMessageAtMiddle:@"请先选择订单"];
         return;
     }
-    PSSenderDriverSelectVC *selectDriver = [[PSSenderDriverSelectVC alloc] initWithOrderIdArr:selectOrderIdArr];
+    PSSenderSelectStoreVC *selectDriver = [[PSSenderSelectStoreVC alloc] initWithOrderIdArr:selectOrderIdArr];
     [self.view.navViewController pushViewController:selectDriver animated:YES];
+
     
 //    [self.driverViewModel requestSendDeliveryComplete:^(BOOL isFinished) {
 //        if (isFinished) {
@@ -133,7 +134,7 @@
         cell.view_pickOneself.hidden = YES;
     }
     cell.btn_savePickerOneSelf.hidden =![self.deliveryViewModel ps_getIsEnablePickOneSelfTextFieldAtIndex:index];
-
+    cell.tf_pickerNum.placeholder = self.deliveryViewModel.listType == PSSenderDeliverListTypePickOneSelf?@"请输入自提单号":@"";
     
     WEAK_SELF;
     cell.saveClickBlock = ^(NSString *num){

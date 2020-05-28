@@ -17,6 +17,8 @@
 #import "PSPhotoStationCell.h"
 #import "UserInfoProfile.h"
 #import "PSStationCarSelectVC.h"
+#import "MMAlertView+BaseAlertManger.h"
+#import "PSGetCanVC.h"
 
 @interface PSPhotoConfirmVC ()
 @property (nonatomic,strong) PSPhotoHeaderView *view_header;
@@ -124,7 +126,7 @@
         }else if(clickType == PhotoClickTypeLabelTilte){
             if (IsUSerStationType) {
             //选择车牌号
-                PSStationCarSelectVC *carNum = [[PSStationCarSelectVC alloc] initWithDataArray:weakSelf.photoViewModel.stationPhotoModel.farp_car_info complte:^(NSString *car_info_id) {
+                PSStationCarSelectVC *carNum = [[PSStationCarSelectVC alloc] initWithDataArray:weakSelf.photoViewModel.getCarInfoArr complte:^(NSString *car_info_id) {
                     
                     
                     [weakSelf.photoViewModel ps_setSelectCarWithcarInfoId:car_info_id];
@@ -154,13 +156,36 @@
 
 -(void)confirmClick{
     
-    [self.photoViewModel reqeustSavePhotoComplete:^(BOOL isFinished) {
-        if (isFinished) {
-            //发送成功
-            [MBProgressHUD toastMessageAtMiddle:@"保存成功"];
-            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-        }
-    }];
+    if (IsUSerStationType) {
+        [self.photoViewModel reqeustSavePhotoComplete:^(BOOL isFinished) {
+               if (isFinished) {
+                   //发送成功
+                   [MBProgressHUD toastMessageAtMiddle:@"保存成功"];
+                   [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+               }
+           }];
+    }else{
+        
+        [self.photoViewModel reqeustSavePhotoComplete:^(BOOL isFinished) {
+            if (isFinished) {
+                //发送成功
+//                [MBProgressHUD toastMessageAtMiddle:@"保存成功"];
+                [MMAlertView showWithTitle:@"保存成功，是否立即回收空油桶" detail:@"" cancelBtn:@"不收回" sureBtn:@"收回" sureOrCanceHandler:^(BOOL sureButton) {
+                    if (sureButton) {
+                        PSGetCanVC *getCanVC =[[PSGetCanVC alloc] initWithPhone:self.photoViewModel.photoModel.phone_num BucketType:self.photoViewModel.photoModel.commodity_name Count:self.photoViewModel.photoModel.order_buy_num oidGunCOunt:self.photoViewModel.photoModel.nozzle_num];
+                        [self.navigationController pushViewController:getCanVC animated:YES];
+                    }else{
+                        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                    }
+                }];
+            }
+        }];
+       
+        
+    }
+    
+    
+   
 }
 
 -(void)selectOrderClick{
@@ -171,8 +196,6 @@
     for (PSPhotoConfirmModel *model in self.photoViewModel.dataSource) {
         if (!model.bucket_info_list.firstObject.isOilGunCell) {
             NSMutableDictionary *dict = model.modelToJsonDictionary;
-            PSBucketModel *bucketModel = self.photoViewModel.photoModel.bucket_info_list.firstObject;
-            dict[@"product_info"] = bucketModel.modelToJsonDictionary;
             [data addObject:dict];
         }
     }

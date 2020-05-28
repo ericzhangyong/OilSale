@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark- 数据加工
 -(NSInteger)ps_getSectionCountAtIndex:(NSInteger)index;
 
+
 -(NSString *)ps_getOrderNoAtIndex:(NSInteger)index row:(NSInteger)row;
 -(NSString *)ps_getDriverNameAtIndex:(NSInteger)index;
 -(NSString *)ps_getDriverOrderCountAtIndex:(NSInteger)index;
@@ -29,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSString *)ps_getSendTimeAtIndex:(NSInteger)index row:(NSInteger)row;
 -(NSString *)ps_getImageUrlAtIndex:(NSInteger)index row:(NSInteger)row;
 -(NSMutableAttributedString *)ps_getSendLastTimeAtIndex:(NSInteger)index row:(NSInteger)row;
+-(NSString *)ps_getSelectDriverId;
 
 
 #pragma mark- 接口

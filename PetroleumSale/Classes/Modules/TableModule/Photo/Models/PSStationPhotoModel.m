@@ -11,7 +11,7 @@
 @implementation PSStationPhotoModel
 
 +(NSDictionary<NSString *,id> *)modelContainerPropertyGenericClass{
-    return @{@"farp_car_info":[PSStationCarModel class]};
+    return @{@"farp_file":[PSStationChangeModel class]};
 }
 
 @end

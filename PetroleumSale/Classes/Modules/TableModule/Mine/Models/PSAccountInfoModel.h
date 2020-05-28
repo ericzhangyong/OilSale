@@ -35,6 +35,31 @@ NS_ASSUME_NONNULL_BEGIN
 /// 扣款类型
 @property (nonatomic,copy) NSString *pay_type;
 
+/// 下单时间
+@property (nonatomic,copy) NSString *buy_time;
+/// 送货司机姓名
+@property (nonatomic,copy) NSString *driver_name;
+/// 交货时间
+@property (nonatomic,copy) NSString *operate_time;
+/// 油单价
+@property (nonatomic,copy) NSString *unit_price;
+/// 欠铁桶个数
+@property (nonatomic,copy) NSString *owe_bucket_number;
+/// 欠吨桶个数
+@property (nonatomic,copy) NSString *owe_ibc_number;
+/// 欠加油机个数
+@property (nonatomic,copy) NSString *owe_nozzle_number;
+/// 是否需要加油枪
+@property (nonatomic,copy) NSString *buy_nozzle;
+
+
+/// 实际重量
+@property (nonatomic,copy) NSString *real_Weight;
+/// 实际升
+@property (nonatomic,copy) NSString *real_volume;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END

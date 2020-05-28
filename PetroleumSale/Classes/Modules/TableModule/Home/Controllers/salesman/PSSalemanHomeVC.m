@@ -10,6 +10,7 @@
 #import "BaseBlueNavView.h"
 #import "PSSalesmanHomeViewModel.h"
 #import "PSSalesmanHomeCell.h"
+#import "REMainTabManager.h"
 
 @interface PSSalemanHomeVC ()
 
@@ -94,14 +95,21 @@
     WEAK_SELF;
     cell.clickBlock = ^(BOOL isVisit) {
         
-        [weakSelf.salesmanViewModel requestClientVisitAtIndex:indexPath.row Complete:^(BOOL isFinished) {
-           
-            if (isFinished) {
-                
-                [weakSelf loadWebDataSource];
-//                [weakSelf.tableView reloadData];
-            }
-        }];
+        if (isVisit) {
+            [weakSelf.salesmanViewModel requestClientVisitAtIndex:indexPath.row Complete:^(BOOL isFinished) {
+                       
+                        if (isFinished) {
+                            
+                            [weakSelf loadWebDataSource];
+            //                [weakSelf.tableView reloadData];
+                        }
+                    }];
+        }else{
+            //查看订单
+            REMainTabManager *manager = [REMainTabManager sharedManager];
+            manager.tabBarController.selectedIndex = 1;
+        }
+        
     };
     
     return cell;

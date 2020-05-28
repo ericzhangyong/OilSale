@@ -45,7 +45,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 照片
 @property (nonatomic,copy) NSArray<PSBucketModel *> *bucket_info_list;
 
-
+/// commodity_name
+@property (nonatomic,copy) NSString *commodity_name;
 
 @end
 

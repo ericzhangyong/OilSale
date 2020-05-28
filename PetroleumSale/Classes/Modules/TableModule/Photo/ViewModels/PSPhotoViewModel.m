@@ -68,10 +68,10 @@
 -(NSString *)ps_getBucketImgeUrlAtIndex:(NSInteger)index row:(NSInteger)row{
     
     if (IsUSerStationType) {
-        if (row>=self.stationPhotoModel.oil_photo_do_pic_urls.count) {
+        if (row>=[self ps_getStationSelectCarModel].oil_photo_do_pic_urls.count) {
             return nil;
         }
-        return self.stationPhotoModel.oil_photo_do_pic_urls[row];
+        return [self ps_getStationSelectCarModel].oil_photo_do_pic_urls[row];
     }else{
         PSBucketModel *bucketModel = [self ps_getBucketModelAtIndex:index];
            if (row>bucketModel.bucket_do_img_urls.count) {
@@ -83,10 +83,10 @@
 -(BOOL)ps_getBucketIsShowAddIconAtIndex:(NSInteger)index row:(NSInteger)row{
     
     if (IsUSerStationType) {
-           if (row>=self.stationPhotoModel.oil_photo_do_pic_urls.count) {
+           if (row>=[self ps_getStationSelectCarModel].oil_photo_do_pic_urls.count) {
                return NO;
            }        
-        NSString *imageUrl= self.stationPhotoModel.oil_photo_do_pic_urls[row];
+        NSString *imageUrl= [self ps_getStationSelectCarModel].oil_photo_do_pic_urls[row];
         if ([BaseVerifyUtils isNullOrSpaceStr:imageUrl]) {
             return YES;
         }else{
@@ -113,10 +113,11 @@
 }
 -(NSString *)ps_getBucketUploadImgeUrlAtIndex:(NSInteger)index row:(NSInteger)row{
     if (IsUSerStationType) {
-        if (row>self.stationPhotoModel.oil_photo_up_pic_urls.count) {
+        
+        if (row>[self ps_getStationSelectCarModel].oil_photo_up_pic_urls.count) {
             return nil;
         }
-        return self.stationPhotoModel.oil_photo_up_pic_urls[row];
+        return [self ps_getStationSelectCarModel].oil_photo_up_pic_urls[row];
     }else{
         PSBucketModel *bucketModel = [self ps_getBucketModelAtIndex:index];
         if (row>bucketModel.bucket_up_img_urls.count) {
@@ -144,7 +145,9 @@
 }
 -(NSString *)ps_getVolumeAtIndex:(NSInteger)index{
     if (IsUSerStationType) {
-       return  self.stationPhotoModel.oil_volume_num;
+        PSStationChangeModel *model = [self ps_getStationSelectCarModel];
+
+       return  model.oil_volume_num;
     }else{
 
         PSBucketModel *bucketModel = [self ps_getBucketModelAtIndex:index];
@@ -163,7 +166,8 @@
 /// 设置体积
 -(void)ps_setVolumeWithText:(NSString *)text AtIndex:(NSInteger)index{
     if (IsUSerStationType) {
-        self.stationPhotoModel.oil_volume_num = text;
+        PSStationChangeModel *model = [self ps_getStationSelectCarModel];
+        model.oil_volume_num = text;
     }else{
         PSBucketModel *bucketModel = [self ps_getBucketModelAtIndex:index];
         bucketModel.volume = text;
@@ -236,16 +240,16 @@
 }
 -(NSString *)ps_getHeaderLabeContent{
     if (IsUSerStationType) {
-        PSStationCarModel *selectCarModel = [self ps_getStationSelectCarModel];
-        return selectCarModel.car_number;
+        PSStationChangeModel *selectCarModel = [self ps_getStationSelectCarModel];
+        return selectCarModel.farp_car_info.car_number;
     }else{
         return self.photoModel.way_bill_code;
     }
 }
 
--(PSStationCarModel *)ps_getStationSelectCarModel{
+-(PSStationChangeModel *)ps_getStationSelectCarModel{
     
-    for (PSStationCarModel *model in self.stationPhotoModel.farp_car_info) {
+    for (PSStationChangeModel *model in self.stationPhotoModel.farp_file) {
         if (model.isSelected) {
             return model;
             break;
@@ -257,7 +261,7 @@
 -(NSString *)ps_getHeaderRegion{
     
     if (IsUSerStationType) {
-        return self.stationPhotoModel.req_farp_addr_edit_model.region;
+        return self.stationPhotoModel.farp_info.region;
     }else{
         return self.photoModel.region;
     }
@@ -265,21 +269,21 @@
 }
 -(NSString *)ps_getHeaderCompleteAddress{
     if (IsUSerStationType) {
-        return self.stationPhotoModel.req_farp_addr_edit_model.complete_address;
+        return self.stationPhotoModel.farp_info.complete_address;
     }else{
         return self.photoModel.complete_address;
     }
 }
 -(NSString *)ps_getHeaderName{
     if (IsUSerStationType) {
-        return self.stationPhotoModel.req_farp_addr_edit_model.consignee;
+        return self.stationPhotoModel.farp_info.consignee;
     }else{
         return self.photoModel.consignee;
     }
 }
 -(NSString *)ps_getHeaderPhoneNum{
     if (IsUSerStationType) {
-        return self.stationPhotoModel.req_farp_addr_edit_model.phone_num;
+        return self.stationPhotoModel.farp_info.phone_num;
     }else{
         return self.photoModel.phone_num;
     }
@@ -287,18 +291,29 @@
 -(void)ps_setSelectCarWithcarInfoId:(NSString *)car_info_id{
     
     
-        for (int i = 0; i<self.stationPhotoModel.farp_car_info.count; i++) {
-            PSStationCarModel *carModel = self.stationPhotoModel.farp_car_info[i];
+        for (int i = 0; i<self.stationPhotoModel.farp_file.count; i++) {
+            PSStationChangeModel *carModel = self.stationPhotoModel.farp_file[i];
             carModel.isSelected = NO;
-            if ([carModel.car_info_id isEqualToString:car_info_id]) {
+            if ([carModel.farp_car_info.car_info_id isEqualToString:car_info_id]) {
                 carModel.isSelected = YES;
             }
         }
 }
 
+-(NSArray *)getCarInfoArr{
+    
+    NSMutableArray *carInfoArr = [NSMutableArray array];
+    for (int i = 0; i<self.stationPhotoModel.farp_file.count; i++) {
+        PSStationChangeModel *model = self.stationPhotoModel.farp_file[i];
+        [carInfoArr addObject:model.farp_car_info];
+    }
+    return  carInfoArr;
+}
+
 #pragma mark- 接口请求
 
 -(void)requestPhotoConfirmComplete:(completeBlock)complete{
+    
     
     if (IsUSerStationType) {
         PSStationPhoteRequest *stationPhotoRequest = [PSStationPhoteRequest new];
@@ -309,8 +324,8 @@
                 if (dataDict) {
                     PSStationPhotoModel *model = [PSStationPhotoModel convertModelWithJsonDic:dataDict];
                     self.stationPhotoModel =model;
-                    if (self.stationPhotoModel.farp_car_info.count>0) {
-                        self.stationPhotoModel.farp_car_info.firstObject.isSelected = YES;
+                    if (self.stationPhotoModel.farp_file.count>0) {
+                        self.stationPhotoModel.farp_file.firstObject.isSelected = YES;
                     }
                 }
                 complete(YES);
@@ -352,9 +367,9 @@
     if (IsUSerStationType) {
         PSStationPhotoSaveRequest *stationRequest =[PSStationPhotoSaveRequest new];
         
-        stationRequest.car_info_id = [self ps_getStationSelectCarModel].car_info_id.integerValue;
-        stationRequest.farp_addr_id = self.stationPhotoModel.req_farp_addr_edit_model.rec_addr_id.integerValue;
-        stationRequest.oil_volume_num = self.stationPhotoModel.oil_volume_num;
+        stationRequest.order_file_id = [self ps_getStationSelectCarModel].order_file_id.integerValue;
+        stationRequest.order_id =[self ps_getStationSelectCarModel].order_id.integerValue;
+        stationRequest.oil_volume = [self ps_getStationSelectCarModel].oil_volume_num;
         [stationRequest postRequestCompleted:^(BaseResponse * _Nonnull response) {
             if (response.isFinished) {
                 
@@ -366,7 +381,7 @@
     }else{
         PSSavePhotoRequest *saveRequest =[PSSavePhotoRequest new];
         NSMutableArray *subBucketList = [NSMutableArray array];
-        saveRequest.order_id = self.photoModel.waybill_id.integerValue;
+        saveRequest.waybill_id = self.photoModel.waybill_id.integerValue;
         for (int i = 0; i<self.photoModel.bucket_info_list.count; i++) {
             PSBucketModel *sourceModel = self.photoModel.bucket_info_list[i];
             

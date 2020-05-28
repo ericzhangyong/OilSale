@@ -15,7 +15,9 @@ typedef NS_ENUM(NSInteger,FooterClickType){
     FooterClickTypeAggressment,
     FooterClickTypeConfirm,
     FooterClickTypeAccountBalance,//记账余额
-    FooterClickTypeAccountOilCard
+    FooterClickTypeAccountOilCard,//余额支付
+    FooterClickTypeAccountCash,//现金支付
+
 };
 @interface PSConfirmFooterView : BaseView
 
@@ -25,7 +27,7 @@ typedef NS_ENUM(NSInteger,FooterClickType){
 
 @property (weak, nonatomic) IBOutlet UIControl *conrol_accountBalance;
 @property (weak, nonatomic) IBOutlet UIControl *control_accountOidCardd;
-
+@property (weak, nonatomic) IBOutlet UIControl *control_cash;
 
 
 

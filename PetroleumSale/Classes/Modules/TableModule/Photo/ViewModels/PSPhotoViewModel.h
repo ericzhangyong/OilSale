@@ -70,7 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSString *)ps_getHeaderName;
 -(NSString *)ps_getHeaderPhoneNum;
 -(void)ps_setSelectCarWithcarInfoId:(NSString *)car_info_id;
-
+-(NSArray *)getCarInfoArr;
 
 
 #pragma mark- 数据处理-----委托加油点

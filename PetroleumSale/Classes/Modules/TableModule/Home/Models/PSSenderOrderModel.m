@@ -10,6 +10,13 @@
 
 @implementation PSSenderOrderModel
 
+//+(NSDictionary<NSString *,id> *)modelContainerPropertyGenericClass{
+//    return @{
+//        @"order_info":@[@"order_info",@"result"]
+//    };
+//}
+
+
 @end
 
 

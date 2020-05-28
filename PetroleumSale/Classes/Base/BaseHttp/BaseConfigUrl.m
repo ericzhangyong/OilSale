@@ -64,6 +64,11 @@ NSString *const method_senderDriverList= @"dispatch/qry_dispatch_driver.do";
 NSString *const method_senderSend= @"dispatch/dispatch_to_driver.do";
 NSString *const method_senderPickOneSelf= @"dispatch/qry_mention_dispatch_waybill.do";
 NSString *const method_senderPickOneSelfCode= @"dispatch/sub_mention_code.do";
+NSString *const method_senderStationList= @"dispatch/qry_farp_order.do";
+NSString *const method_senderSendFarp= @"dispatch/dispatch_farp_order.do";
+NSString *const method_senderGetStoreList = @"dispatch/qry_dispatch_storekeeper.do";
+
+
 
 #pragma mark- 加油点接口
 NSString *const method_stationOrderList= @"farp/qry_farp_home.do";
@@ -98,6 +103,9 @@ NSString *const method_keeperCreateOrder= @"storage/sub_stock_info.do";
 
 
 
+NSString *const method_storageDeliverSendedList= @"storage/qry_have_dispatch_waybill.do";
+NSString *const method_storagePickOneSelf= @"storage/qry_mention_dispatch_waybill.do";
+NSString *const method_storageDeliverUnSenderList= @"storage/qry_dispatch_waybill.do";
 
 
 

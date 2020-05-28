@@ -7,12 +7,15 @@
 //
 
 #import "PSSenederPickOneSelfListReqest.h"
+#import "UserInfoProfile.h"
 
 @implementation PSSenederPickOneSelfListReqest
 
 -(NSString *)requestMethod{
     
-    
+    if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeKeeper) {
+        return method_storagePickOneSelf;
+    }
     return method_senderPickOneSelf;
 }
 @end

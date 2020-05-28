@@ -74,38 +74,43 @@
 
 -(void)reloadFooterView{
     WEAK_SELF;
-    UIView *footerView = [UIView new];
-    footerView.frame = CGRectMake(0, 0, kScreenWidth, 240);
-    [footerView addSubview:self.view_footer];
-    self.view_footer.frame = footerView.bounds;
-    self.tableView.tableFooterView = footerView;
-    self.view_footer.label_price.text = [self.homeViewModel ps_getFarpStationPrice];
-    self.view_footer.tf_carNum.text = [self.homeViewModel ps_getFarpStationSelectCar];
-    self.view_footer.tf_petrolStation.text = [self.homeViewModel ps_getSelectFarpAddressName];
-    self.view_footer.stationViewClick = ^(PSStationClickType clickType) {
-        if (clickType == PSStationClickTypeSelectStation) {
-            PSPetrolStationVC *petrolSelect = [[PSPetrolStationVC alloc] initWithStationArr:[weakSelf.homeViewModel ps_getFarpListFarpAddressArr]];
-            petrolSelect.selectStationBlock = ^(PSStationModel * _Nonnull stationModel,NSInteger index) {
-                weakSelf.view_footer.tf_petrolStation.text = stationModel.farp_name;
-                [weakSelf.homeViewModel ps_setFarpStationWithFarp_id:stationModel.farp_id];
-            };
-            [weakSelf.navigationController pushViewController:petrolSelect animated:YES];
-        }else if (clickType == PSStationClickTypeCarNum){
-            PSCarNumVC *carNumVC  = [[PSCarNumVC alloc]initWithDataArray:[weakSelf.homeViewModel ps_getFarpListArr]];
-            carNumVC.selectCarNumBlock = ^(NSArray * _Nonnull dataArr) {
+    if (self.homeViewModel.homeModel.farp_product != nil) {
+        UIView *footerView = [UIView new];
+        footerView.frame = CGRectMake(0, 0, kScreenWidth, 240);
+        [footerView addSubview:self.view_footer];
+        self.view_footer.frame = footerView.bounds;
+        self.tableView.tableFooterView = footerView;
+        self.view_footer.label_price.text = [self.homeViewModel ps_getFarpStationPrice];
+        self.view_footer.tf_carNum.text = [self.homeViewModel ps_getFarpStationSelectCar];
+        self.view_footer.tf_petrolStation.text = [self.homeViewModel ps_getSelectFarpAddressName];
+        self.view_footer.stationViewClick = ^(PSStationClickType clickType) {
+            if (clickType == PSStationClickTypeSelectStation) {
+                PSPetrolStationVC *petrolSelect = [[PSPetrolStationVC alloc] initWithStationArr:[weakSelf.homeViewModel ps_getFarpListFarpAddressArr]];
+                petrolSelect.selectStationBlock = ^(PSStationModel * _Nonnull stationModel,NSInteger index) {
+                    weakSelf.view_footer.tf_petrolStation.text = stationModel.farp_name;
+                    [weakSelf.homeViewModel ps_setFarpStationWithFarp_id:stationModel.farp_id];
+                };
+                [weakSelf.navigationController pushViewController:petrolSelect animated:YES];
+            }else if (clickType == PSStationClickTypeCarNum){
+                PSCarNumVC *carNumVC  = [[PSCarNumVC alloc]initWithDataArray:[weakSelf.homeViewModel ps_getFarpListArr]];
+                carNumVC.selectCarNumBlock = ^(NSArray * _Nonnull dataArr) {
+                    
+                    [weakSelf.homeViewModel ps_setCarListWithArr:dataArr];
+                    weakSelf.view_footer.tf_carNum.text = [weakSelf.homeViewModel ps_getFarpStationSelectCar];
+                };
+                [weakSelf.navigationController pushViewController:carNumVC animated:YES];
+            }else if (clickType == PSStationClickTypeReserve){
                 
-                [weakSelf.homeViewModel ps_setCarListWithArr:dataArr];
-                weakSelf.view_footer.tf_carNum.text = [weakSelf.homeViewModel ps_getFarpStationSelectCar];
-            };
-            [weakSelf.navigationController pushViewController:carNumVC animated:YES];
-        }else if (clickType == PSStationClickTypeReserve){
-            
 
-            NSArray *selectCarArr = [weakSelf.homeViewModel ps_getFarpStationSelectCarArr];
-            PSReserveStationConfirmVC *reservewConfirmVC  =[[PSReserveStationConfirmVC alloc] initWithCarNumArr:selectCarArr stationModel:[weakSelf.homeViewModel ps_getSelectFarpModel]];
-            [weakSelf.navigationController pushViewController:reservewConfirmVC animated:YES];
-        }
-    };
+                NSArray *selectCarArr = [weakSelf.homeViewModel ps_getFarpStationSelectCarArr];
+                PSReserveStationConfirmVC *reservewConfirmVC  =[[PSReserveStationConfirmVC alloc] initWithCarNumArr:selectCarArr stationModel:[weakSelf.homeViewModel ps_getSelectFarpModel]];
+                [weakSelf.navigationController pushViewController:reservewConfirmVC animated:YES];
+            }
+        };
+    }else{
+        self.tableView.tableFooterView = [UIView new];
+    }
+    
 }
 
 -(UITableViewStyle)re_tableViewStryle{
@@ -127,10 +132,13 @@
     view.frame  = CGRectMake(15, 0, 200, 24);
     view.backgroundColor= color_lightDart_white;
     UILabel *label = [UILabel new];
-    label.text = @"桶装油";
-    if (self.homeViewModel.dataSource.count==2 && section == 1) {
+    label.text = [NSString stringWithFormat:@"桶装油¥%@",self.homeViewModel.homeModel.oil_price_today.oil_price];//oil_price
+    if (self.homeViewModel.dataSource.count>0 && self.homeViewModel.homeModel.product_list.count>0 && section == 0) {
+        label.text = [NSString stringWithFormat:@"桶装油¥%@",self.homeViewModel.homeModel.oil_price_today.oil_price];;
+    }else{
         label.text = self.homeViewModel.ps_getCarPrice;
     }
+    
     label.frame  = CGRectMake(15, 0, 200, 24);
     label.font = [UIFont systemWEPingFangBoldFontOfSize:17];
     label.textColor = color_lightDart_333333;
@@ -141,7 +149,12 @@
     return 0.001;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 150;//115;
+    if (self.homeViewModel.dataSource.count>0 && self.homeViewModel.homeModel.product_list.count>0 && indexPath.section == 0) {
+        return 115;
+    }else{
+        return 150;
+    }
+    
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     PSHomeOilCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(PSHomeOilCell.class)];
@@ -170,6 +183,11 @@
     UIColor *color = rightEnable?color_666666:fsColor_CCCCCC;
     [cell.btn_notContainTax setTitleColor:color forState:UIControlStateNormal];
     
+    if (self.homeViewModel.dataSource.count>0 && self.homeViewModel.homeModel.product_list.count>0 && indexPath.section == 0) {
+        cell.view_tax.hidden = YES;
+    }else{
+        cell.view_tax.hidden = NO;
+    }
     WEAK_SELF;
 
     cell.bottomBtnClick = ^(BOOL isLeftBtn, BOOL isSelected) {

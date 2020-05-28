@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -49,7 +49,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZH-tW-OnL">
-                                <rect key="frame" x="28" y="115" width="289" height="40"/>
+                                <rect key="frame" x="30" y="115" width="130" height="40"/>
                                 <color key="backgroundColor" red="0.30196078430000001" green="0.52941176469999995" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="MOS-O3-1DU"/>
@@ -74,17 +74,40 @@
                                 <color key="textColor" red="1" green="0.42745098039215684" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmg-BG-ta3">
+                                <rect key="frame" x="185" y="115" width="130" height="40"/>
+                                <color key="backgroundColor" red="0.30196078430000001" green="0.52941176469999995" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dRe-1M-oiI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="16"/>
+                                <state key="normal" title="查看订单">
+                                    <color key="titleColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="self.layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="self.layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="actionCheckOrder:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="oqQ-RP-Wec"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="dlj-FJ-FS8" firstAttribute="top" secondItem="z3M-i7-PKI" secondAttribute="top" constant="15" id="409-R8-hLj"/>
                             <constraint firstAttribute="trailing" secondItem="dlj-FJ-FS8" secondAttribute="trailing" constant="15" id="CJg-7X-OQ2"/>
-                            <constraint firstItem="aZH-tW-OnL" firstAttribute="leading" secondItem="z3M-i7-PKI" secondAttribute="leading" constant="28" id="N9X-PX-DhY"/>
+                            <constraint firstItem="aZH-tW-OnL" firstAttribute="leading" secondItem="z3M-i7-PKI" secondAttribute="leading" constant="30" id="N9X-PX-DhY"/>
+                            <constraint firstAttribute="trailing" secondItem="pmg-BG-ta3" secondAttribute="trailing" constant="30" id="RT4-hg-IVt"/>
+                            <constraint firstItem="pmg-BG-ta3" firstAttribute="width" secondItem="aZH-tW-OnL" secondAttribute="width" id="TkU-1j-lA7"/>
                             <constraint firstItem="HXq-bc-Zdw" firstAttribute="top" secondItem="z3M-i7-PKI" secondAttribute="top" constant="15" id="VIi-vk-7S8"/>
                             <constraint firstItem="dlj-FJ-FS8" firstAttribute="leading" secondItem="z3M-i7-PKI" secondAttribute="leading" constant="15" id="XKc-lP-VZO"/>
-                            <constraint firstAttribute="trailing" secondItem="aZH-tW-OnL" secondAttribute="trailing" constant="28" id="eN7-me-cF7"/>
+                            <constraint firstItem="pmg-BG-ta3" firstAttribute="leading" secondItem="aZH-tW-OnL" secondAttribute="trailing" constant="25" id="efK-cP-mqD"/>
                             <constraint firstAttribute="trailing" secondItem="HXq-bc-Zdw" secondAttribute="trailing" constant="15" id="iCK-vm-pqo"/>
                             <constraint firstAttribute="bottom" secondItem="aZH-tW-OnL" secondAttribute="bottom" constant="20" id="t0l-nE-Za6"/>
+                            <constraint firstItem="pmg-BG-ta3" firstAttribute="centerY" secondItem="aZH-tW-OnL" secondAttribute="centerY" id="waM-Zb-1x7"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="self.layer.cornerRadius">

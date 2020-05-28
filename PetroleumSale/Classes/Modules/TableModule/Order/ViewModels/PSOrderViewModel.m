@@ -314,7 +314,7 @@
 -(void)requestOrderOperateWithOperateType:(NSInteger)operateType
                                  order_id:(NSString *)order_id
                                order_code:(NSString *)order_code
-                                 complete:(completeBlock)complete{
+                                 complete:(completeDataBlock)complete{
     
     PSOrderOperateRequest *operateRequest = [PSOrderOperateRequest new];
     if (operateType == 1) {
@@ -327,10 +327,10 @@
     [operateRequest postRequestCompleted:^(BaseResponse * _Nonnull response) {
         if (response.isFinished) {
             
-            
-            complete(YES);
+            NSString *contract_url = response.result[@"contract_url"];
+            complete(YES,contract_url);
         }else{
-            complete(NO);
+            complete(NO,@"");
         }
     }];
     

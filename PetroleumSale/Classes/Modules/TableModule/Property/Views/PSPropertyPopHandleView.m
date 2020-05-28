@@ -72,9 +72,10 @@
 
     if (sender.selected) {
         sender.selected = NO;
-        self.imageVIew_name.image = [UIImage imageNamed:@"news_icon_up"];
-    }else{
         self.imageVIew_name.image = [UIImage imageNamed:@"news_icon_down"];
+
+    }else{
+        self.imageVIew_name.image = [UIImage imageNamed:@"news_icon_up"];
         sender.selected = YES;
         [self showNameDropMenu];
     }
@@ -118,6 +119,12 @@
 }
 -(void)showDropMenu{
     
+    NSArray *storeNamArr = self.propertyViewModel.getNameArr;
+    if (storeNamArr.count==0) {
+        [MBProgressHUD toastMessageAtMiddle:@"没有可选仓库列表"];
+        return;
+    }
+    
     PSDropMenuView *menu = [[PSDropMenuView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     
     PSDropBucketListVCViewController *listVC = [[PSDropBucketListVCViewController alloc] init];
@@ -126,8 +133,17 @@
     menu.contentVC = listVC;
     [listVC setData:self.propertyViewModel.getVarityArr];;
     [menu showDropUpViewFromParentView:self.imageView_varity SuperView:self];
+    menu.hiddenBlock = ^(BOOL isHidden) {
+        if (isHidden) {
+            self.control_varity.selected = NO;
+            self.imageView_varity.image = [UIImage imageNamed:@"news_icon_up"];
+        }
+    };
     listVC.didSelectedIndex = ^(NSInteger index) {
         
+        self.control_varity.selected = NO;
+        self.imageView_varity.image = [UIImage imageNamed:@"news_icon_up"];
+
         [self actionNameSelected:self.control_varity];
         NSString *str = self.propertyViewModel.getVarityArr[index];
         self.label_varity.text = str;
@@ -136,6 +152,13 @@
 }
 
 -(void)showNameDropMenu{
+    
+    NSArray *storeNamArr = self.propertyViewModel.getNameArr;
+    if (storeNamArr.count==0) {
+        [MBProgressHUD toastMessageAtMiddle:@"没有可选仓库列表"];
+        return;
+    }
+    
     PSDropMenuView *menu = [[PSDropMenuView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     
     PSDropBucketListVCViewController *listVC = [[PSDropBucketListVCViewController alloc] init];
@@ -144,12 +167,24 @@
     CGFloat heigth = 30*self.propertyViewModel.getNameArr.count;
     if (heigth >300) {
         heigth= 300;
+    }else if (heigth<50){
+        heigth = 50;
     }
     listVC.view.height = heigth;
     menu.contentVC = listVC;
-    [listVC setData:self.propertyViewModel.getNameArr];;
+    
+    [listVC setData:storeNamArr];;
     [menu showDropUpViewFromParentView:self.imageVIew_name SuperView:self];
+    menu.hiddenBlock = ^(BOOL isHidden) {
+        if (isHidden) {
+            self.control_name.selected = NO;
+            self.imageVIew_name.image = [UIImage imageNamed:@"news_icon_down"];
+        }
+    };
     listVC.didSelectedIndex = ^(NSInteger index) {
+        self.control_name.selected = NO;
+        self.imageVIew_name.image = [UIImage imageNamed:@"news_icon_down"];
+
         
         [self actionNameSelected:self.control_name];
         self.back_type = [self.propertyViewModel getVarityArrTypeAtIndex:index];

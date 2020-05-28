@@ -68,6 +68,20 @@
         }
     }
 }
+
+-(NSString *)ps_getSelectDriverId{
+    
+    NSString *selecDriverID = @"";
+    for (int i = 0; i<self.dataSource.count; i++) {
+        PSDriverModel *model = self.dataSource[i];
+        if (model.isSelcted) {
+            selecDriverID = model.driver_id;
+        }
+    }
+    return selecDriverID;
+}
+
+
 -(NSString *)ps_getSendTimeAtIndex:(NSInteger)index row:(NSInteger)row{
     
     PSBillInfoModel *billModel  = [self ps_getBillInfoModelAtIndex:index row:row];

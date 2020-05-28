@@ -127,9 +127,9 @@
         uploadImageModel.title = @"上传审核图片";
         uploadImageModel.content = @"未上传";
 //        uploadImageModel.iconImageUrl = @"";//@"userpg_list_pic";
-        if (![BaseVerifyUtils isNullOrSpaceStr:self.file_url]) {
+        if (self.file_url_arr.count>0) {
 //            uploadImageModel.imageUrl = self.file_url;
-            uploadImageModel.content = @"已上传";
+            uploadImageModel.content = [NSString stringWithFormat:@"已上传%zd张",self.file_url_arr.count];
         }
         [self.dataSource addObject:uploadImageModel];
         
@@ -268,19 +268,23 @@
 
 -(void)requestUPloadImageComplete:(completeBlock)complete{
     
+    if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeCustomer) {
+        PSGetCheckImageRequest *getImage = [PSGetCheckImageRequest new];
+            [getImage postRequestCompleted:^(BaseResponse * _Nonnull response) {
+                if (response.isFinished) {
+                    
+                    NSArray *data = response.result[@"verify_pic_urls"];
+        //            NSDictionary *dict = data.lastObject;
+                    self.file_url_arr = data;//dict[@"file_url"];
+                    
+                    complete(YES);
+                    
+                }else{
+                    complete(NO);
+                }
+            }];
+    }
     
-    PSGetCheckImageRequest *getImage = [PSGetCheckImageRequest new];
-    [getImage postRequestCompleted:^(BaseResponse * _Nonnull response) {
-        if (response.isFinished) {
-            
-            NSArray *data = response.result[@"verify_pic_urls"];
-            NSDictionary *dict = data.lastObject;
-            self.file_url = dict[@"file_url"];
-            complete(YES);
-        }else{
-            complete(NO);
-        }
-    }];
 }
 
 @end

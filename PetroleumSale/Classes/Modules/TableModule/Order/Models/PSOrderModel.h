@@ -59,6 +59,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 加油点加油车辆信息 当订单类型 product_type='farp' 时，取当前字段
 @property (nonatomic,copy) NSArray *car_info;
 
+/// <#des#>
+@property (nonatomic,copy) NSString *farp_manager_name;
+/// <#des#>
+@property (nonatomic,copy) NSString *farp_phone;
 @end
 
 @interface PSOrderImageModel : BaseModel

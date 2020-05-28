@@ -20,5 +20,11 @@
 
     // Configure the view for the selected state
 }
+- (IBAction)actionConfrimSend:(UIButton *)sender {
+    
+    if (self.confirmClick) {
+        self.confirmClick();
+    }
+}
 
 @end

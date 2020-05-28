@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 -(instancetype)initWithOrderIdArr:(NSArray *)orderIdArr;
+
+
+/// <#des#>
+@property (nonatomic,copy) void(^selectCompleteBlock)(NSString *dirverId);
 @end
 
 NS_ASSUME_NONNULL_END

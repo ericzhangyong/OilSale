@@ -36,6 +36,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) PSHomeVC *homeVC; // 首页
 @property (nonatomic, strong, readonly) PSDriverHomeVC *driverHomeVC; // 司机首页
 @property (nonatomic,strong,readonly) PSSenderOrderListVC *senderVC;//派单首页
+@property (nonatomic,strong,readonly) PSSenderOrderListVC *senderStationVC;//派单加油点
+
 @property (nonatomic,strong,readonly) PSPetrolStationHomeVC *petrolStationVC;//委托加油点首页
 @property (nonatomic,strong,readonly) PSSalemanHomeVC *salesmanVC;//销售员首页
 @property (nonatomic,strong,readonly) PSKeeperHomeVC *keepVC;//仓库管理员首页

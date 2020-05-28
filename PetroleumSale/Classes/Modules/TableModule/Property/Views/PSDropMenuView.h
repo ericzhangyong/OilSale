@@ -23,6 +23,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)hideDropUpView;
 
+
+///
+@property (nonatomic,copy) void(^hiddenBlock)(BOOL isHidden);
+
 @end
 
 NS_ASSUME_NONNULL_END

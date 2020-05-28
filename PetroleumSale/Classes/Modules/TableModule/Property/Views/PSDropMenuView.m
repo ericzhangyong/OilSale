@@ -35,6 +35,7 @@ typedef void(^DropUpViewClick)(NSInteger clickType);
     self.containerView.height=CGRectGetMaxY(contentView.frame)+10;
     self.containerView.width=CGRectGetMaxX(contentView.frame)+10;
     [self.containerView addSubview:_contentView];
+    self.contentView.backgroundColor = color_lightDart_f3f3f3;
     
 }
 
@@ -50,13 +51,15 @@ typedef void(^DropUpViewClick)(NSInteger clickType);
     //调整灰色图片的位置
     //转换坐标
     CGRect newFrame=[fromView convertRect:fromView.bounds toView:superView];
-    self.containerView.y=CGRectGetMaxY(newFrame);
-    self.containerView.centerX=CGRectGetMidX(newFrame);
+    self.containerView.y=CGRectGetMaxY(newFrame)+10;
+    self.containerView.centerX=CGRectGetMidX(newFrame)-50;
 
 }
 
 - (void)hideDropUpView{
-    
+    if (self.hiddenBlock) {
+        self.hiddenBlock(YES);
+    }
     [self removeFromSuperview];
 }
 
@@ -75,8 +78,6 @@ typedef void(^DropUpViewClick)(NSInteger clickType);
 //            }
 //
     [self hideDropUpView];
-   
-
 }
 
 @end

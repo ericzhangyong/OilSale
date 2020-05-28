@@ -35,7 +35,7 @@
 -(void)initBaseViews{
     
 
-    self.tableView.backgroundColor = color_lightDart_f3f3f3;
+    self.tableView.backgroundColor = color_lightDart_white;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSAccountCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSAccountCell.class)];
 
     
@@ -82,7 +82,7 @@
     return self.accountInfoModel.bill_list.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 72;
+    return 211;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 50;
@@ -91,10 +91,10 @@
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *view =[UIView new];
     view.frame = CGRectMake(0, 0, kScreenWidth, 50);
-    view.backgroundColor = color_lightDart_333333;
+    view.backgroundColor = color_lightDart_f3f3f3;
     UILabel *label = [UILabel new];
     label.text = @"对账单";
-    label.textColor = color_333333;
+    label.textColor = color_lightDart_333333;
     label.font  = [UIFont systemWEPingFangRegularOfSize:15];
     [view addSubview:label];
     label.frame = CGRectMake(15, 15, kScreenWidth-30, 20);
@@ -110,9 +110,20 @@
         
         
         cell.label_title.text  = [NSString stringWithFormat:@"%@ x %@",billModel.bucket_type,billModel.buy_num];
-        cell.label_accoutBalance.text = [NSString stringWithFormat:@"%@元",billModel.amount];
+        cell.label_accoutBalance.text = [NSString stringWithFormat:@"%@",billModel.amount];
         cell.label_time.text = [NSString stringWithFormat:@"扣款时间:%@",billModel.pay_time];
         cell.label_payType.text = billModel.pay_type;
+        cell.label_oilCount.text = [NSString stringWithFormat:@"买油的升数：%@",billModel.real_volume];
+        
+        cell.label_bucketCount.text = [NSString stringWithFormat:@"价格：%@",billModel.unit_price];
+        cell.label_tieCount.text = [NSString stringWithFormat:@"欠铁桶数量：%@",billModel.owe_bucket_number];
+        cell.label_isNeddGun.text = [NSString stringWithFormat:@"是否需要加油枪：%@",billModel.buy_nozzle];
+        cell.label_gunCount.text = [NSString stringWithFormat:@"欠加油机数：%@",billModel.owe_nozzle_number];
+        cell.label_dirverName.text = [NSString stringWithFormat:@"送货司机姓名：%@",billModel.driver_name];
+        cell.label_orderTime.text = [NSString stringWithFormat:@"下单时间：%@",billModel.buy_time];
+        cell.label_price.text = [NSString stringWithFormat:@"欠吨桶数量：%@",billModel.owe_ibc_number];
+        cell.label_sendTime.text = [NSString stringWithFormat:@"送货时间：%@",billModel.operate_time];
+        
     }
     return cell;
 }

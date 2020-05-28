@@ -116,6 +116,13 @@ extern NSString *const method_senderSend;
 extern NSString *const method_senderPickOneSelf;
 /** 查询自提单号*/
 extern NSString *const method_senderPickOneSelfCode;
+/** 加油点订单列表*/
+extern NSString *const method_senderStationList;
+/** 加油点派单*/
+extern NSString *const method_senderSendFarp;
+/** 派单获取仓库列表*/
+extern NSString *const method_senderGetStoreList;
+
 
 
 #pragma mark- 加油点接口
@@ -174,6 +181,13 @@ extern NSString *const method_keeperWareHourseList;
 extern NSString *const method_keeperWareHourseEdit;
 /** 创建进货订单*/
 extern NSString *const method_keeperCreateOrder;
+
+/** 未派单*/
+extern NSString *const method_storageDeliverSendedList;
+/** */
+extern NSString *const method_storagePickOneSelf;
+/** */
+extern NSString *const method_storageDeliverUnSenderList;
 
 
 

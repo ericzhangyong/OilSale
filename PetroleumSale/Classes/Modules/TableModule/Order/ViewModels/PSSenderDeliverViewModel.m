@@ -27,7 +27,11 @@
 -(NSString *)ps_getDeliverNoAtIndex:(NSInteger)index{
     
     PSSenderDeliveryModel *senderOrderModel = [self ps_getSenderOrderModelAtIndex:index];
-    return [NSString stringWithFormat:@"送货单号：%@",senderOrderModel.order_info.order_code];
+    if(self.listType == PSSenderDeliverListTypeSended){
+        return [NSString stringWithFormat:@"送货单号：%@",senderOrderModel.waybill_info.WbCode];
+    }else{
+        return [NSString stringWithFormat:@"订单号：%@",senderOrderModel.order_info.order_code];
+    }
 }
 
 -(NSString *)ps_getDeliverWay_bill_idAtIndex:(NSInteger)index{
@@ -73,6 +77,8 @@
 
     return [NSString stringWithFormat:@"收货联系人：%@",senderOrderModel.order_info.consignee];
 }
+
+
 -(NSString *)ps_getSiglePriceAtIndex:(NSInteger)index{
 
     PSSenderDeliveryModel *senderOrderModel = [self ps_getSenderOrderModelAtIndex:index];

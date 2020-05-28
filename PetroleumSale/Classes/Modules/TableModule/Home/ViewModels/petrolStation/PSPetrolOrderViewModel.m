@@ -78,7 +78,7 @@
     
     
     PSStationOrderListRequest *stationORderLIst  = [PSStationOrderListRequest new];
-    if (page == 1) {
+    if (page != 1) {
         PSStationOrderModel *lastModel = self.dataSource.lastObject;
         stationORderLIst.order_time = lastModel.farp_order_info.order_time;
     }

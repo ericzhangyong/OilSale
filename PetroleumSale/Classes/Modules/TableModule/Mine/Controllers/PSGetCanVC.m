@@ -32,10 +32,26 @@
 
 @property (nonatomic,copy) void (^blcok)(void);
 
+/// <#des#>
+@property (nonatomic,copy) NSString *phone;
+@property (nonatomic,copy) NSString *bucketType;
+@property (nonatomic,copy) NSString *count;
+@property (nonatomic,copy) NSString *oilGun;
+
+
 @end
 
 @implementation PSGetCanVC
 
+-(instancetype)initWithPhone:(NSString *)phone BucketType:(NSString *)bucketType Count:(NSString *)count oidGunCOunt:(nonnull NSString *)oilGun{
+    if (self = [super init]) {
+        self.phone = phone;
+        self.bucketType = bucketType;
+        self.count = count;
+        self.oilGun = oilGun;
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
   
@@ -70,6 +86,17 @@
     [self.collection_historyName registerNib:[UINib nibWithNibName:NSStringFromClass(PSHistoryNameCell.class) bundle:nil] forCellWithReuseIdentifier:NSStringFromClass(PSHistoryNameCell.class)];
     
     [self.collection_historyName reloadData];
+    
+    if ([self.bucketType isEqualToString:@"铁桶装"]) {
+        self.tf_tieCan.text = self.count;
+    }else if([self.bucketType isEqualToString:@"加油枪"]){
+        self.tf_oilGun.text = self.count;
+    }
+    else{
+        self.tf_dunCan.text = self.count;
+    }
+    self.tf_phoneNum.text = self.phone;
+    self.tf_oilGun.text = self.oilGun;
 }
 
 

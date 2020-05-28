@@ -7,12 +7,18 @@
 //
 
 #import "PSSenderDeliverySendedRequest.h"
+#import "UserInfoProfile.h"
+
 
 @implementation PSSenderDeliverySendedRequest
 
-
 -(NSString *)requestMethod{
     
+    if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeKeeper) {
+        return method_storageDeliverSendedList;
+    }
     return method_senderDeliverSendedList;
 }
+
+
 @end

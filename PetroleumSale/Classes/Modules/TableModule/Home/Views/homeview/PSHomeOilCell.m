@@ -12,7 +12,6 @@
 @interface PSHomeOilCell ()
 
 @property (weak, nonatomic) IBOutlet UIView *view_contain;
-@property (weak, nonatomic) IBOutlet UIView *view_tax;
 
 @end
 @implementation PSHomeOilCell

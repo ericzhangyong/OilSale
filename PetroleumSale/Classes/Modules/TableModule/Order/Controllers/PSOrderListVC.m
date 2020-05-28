@@ -112,7 +112,7 @@
     WEAK_SELF;
     if (type == PSOrderBottomBtnTypeCancelOrder) {
         [MMAlertView showWithTitle:@"是否确定取消订单！" detail:@"" cancelBtn:@"取消" sureBtn:@"确定" handler:^{
-            [weakSelf.orderViewModel requestOrderOperateWithOperateType:2 order_id:[weakSelf.orderViewModel ps_getOrderIdAtIndex:indexPath.row]  order_code:[weakSelf.orderViewModel ps_getOrderCodeAtIndex:indexPath.row] complete:^(BOOL isFinished) {
+            [weakSelf.orderViewModel requestOrderOperateWithOperateType:2 order_id:[weakSelf.orderViewModel ps_getOrderIdAtIndex:indexPath.row]  order_code:[weakSelf.orderViewModel ps_getOrderCodeAtIndex:indexPath.row] complete:^(BOOL isFinished,NSString *str) {
                 [weakSelf.orderViewModel ps_deleteOrderIndex:indexPath.row];
                 [weakSelf.tableView reloadData];
             }];
@@ -132,20 +132,32 @@
     PSOrderBottomBtnType type = [self.orderViewModel ps_getBottomBtnTypeWithIsLeft:NO AtIndex:indexPath.row];
     WEAK_SELF;
     if (type == PSOrderBottomBtnTypeConfirmReceive) {
-        [self.orderViewModel requestOrderOperateWithOperateType:1 order_id:[self.orderViewModel ps_getOrderIdAtIndex:indexPath.row]  order_code:[self.orderViewModel ps_getOrderCodeAtIndex:indexPath.row] complete:^(BOOL isFinished) {
-            
-            [[NSNotificationCenter defaultCenter] postNotificationName:FSNotificationConfirmOrderSuccesKey object:nil];
-            [MBProgressHUD toastMessageAtMiddle:@"确认收货完成"];
-            [weakSelf.orderViewModel ps_deleteOrderIndex:indexPath.row];
-            [weakSelf.tableView reloadData];
+        [MMAlertView showWithTitle:@"是否确认收货" detail:@"" cancelBtn:@"取消" sureBtn:@"确定" handler:^{
+            [self.orderViewModel requestOrderOperateWithOperateType:1 order_id:[self.orderViewModel ps_getOrderIdAtIndex:indexPath.row]  order_code:[self.orderViewModel ps_getOrderCodeAtIndex:indexPath.row] complete:^(BOOL isFinished,NSString *contract_url) {
+                
+                if (isFinished) {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:FSNotificationConfirmOrderSuccesKey object:nil];
+                    [MBProgressHUD toastMessageAtMiddle:@"确认收货完成"];
+                    [weakSelf.orderViewModel ps_deleteOrderIndex:indexPath.row];
+                    [weakSelf.tableView reloadData];
+                    PSAgreementVC *aggreeMent = [[PSAgreementVC alloc] init];
+                    aggreeMent.webUrl = contract_url;
+                    [self.navigationController pushViewController:aggreeMent animated:YES];
+                }
+            }];
         }];
+        
     }else if(type == PSOrderBottomBtnTypeArrivePic){
         PSOrderPicVC *picVC  = [[PSOrderPicVC alloc] initWithOrderViewModel:self.orderViewModel orderIndex:indexPath.row];
         [self.view.navViewController pushViewController:picVC animated:YES];
     }else if (type == PSOrderBottomBtnTypeCancerReserve){
-        [self.orderViewModel requestOrderOperateWithOperateType:2 order_id:[self.orderViewModel ps_getOrderIdAtIndex:indexPath.row]  order_code:[self.orderViewModel ps_getOrderCodeAtIndex:indexPath.row] complete:^(BOOL isFinished) {
-            [weakSelf.orderViewModel ps_deleteOrderIndex:indexPath.row];
-            [weakSelf.tableView reloadData];
+        [MMAlertView showWithTitle:@"是否取消预定" detail:@"" cancelBtn:@"取消" sureBtn:@"确定" sureOrCanceHandler:^(BOOL sureButton) {
+            if (sureButton) {
+                [self.orderViewModel requestOrderOperateWithOperateType:2 order_id:[self.orderViewModel ps_getOrderIdAtIndex:indexPath.row]  order_code:[self.orderViewModel ps_getOrderCodeAtIndex:indexPath.row] complete:^(BOOL isFinished,NSString *str) {
+                    [weakSelf.orderViewModel ps_deleteOrderIndex:indexPath.row];
+                    [weakSelf.tableView reloadData];
+                }];
+            }
         }];
     }
 }

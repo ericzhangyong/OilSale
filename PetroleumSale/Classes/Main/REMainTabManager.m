@@ -22,6 +22,8 @@
 @property (nonatomic, strong, readwrite) PSHomeVC *homeVC; // 首页
 @property (nonatomic, strong, readwrite) PSDriverHomeVC *driverHomeVC; // 司机首页
 @property (nonatomic, strong, readwrite) PSSenderOrderListVC *senderVC; // 派单首页
+@property (nonatomic, strong, readwrite) PSSenderOrderListVC *senderStationVC; // 派单加油点
+
 @property (nonatomic,strong,readwrite) PSPetrolStationHomeVC *petrolStationVC;//委托加油点首页
 @property (nonatomic,strong,readwrite) PSSalemanHomeVC *salesmanVC;//销售员首页
 @property (nonatomic,strong,readwrite) PSKeeperHomeVC *keepVC;//仓库管理员首页
@@ -158,12 +160,15 @@
 }
 -(PSMainTabBarVC *)getSenderTabbarVC{
     BaseNavViewController *nav1 = [[BaseNavViewController alloc] initWithRootViewController:self.senderVC];
-    BaseNavViewController *nav2 = [[BaseNavViewController alloc] initWithRootViewController:self.sendDeliverVC];
-    BaseNavViewController *nav3 = [[BaseNavViewController alloc] initWithRootViewController:self.mineVC];
-    
+    BaseNavViewController *nav2 = [[BaseNavViewController alloc] initWithRootViewController:self.senderStationVC];
+    BaseNavViewController *nav3 = [[BaseNavViewController alloc] initWithRootViewController:self.sendDeliverVC];
+    BaseNavViewController *nav4 = [[BaseNavViewController alloc] initWithRootViewController:self.mineVC];
     
     UIImage *image_home_u = [[UIImage imageNamed:@"hp_home_icon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *image_home_s = [[UIImage imageNamed:@"hp_home_icon_a"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    UIImage *image_home_refuel_u = [[UIImage imageNamed:@"hp_home_refuel_a"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *image_home_refuel_s = [[UIImage imageNamed:@"hp_home_refuel_u"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     UIImage *image_delivery_u = [[UIImage imageNamed:@"hp_icon_waybill"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *image_delivery_s = [[UIImage imageNamed:@"hp_icon_waybill_a"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -174,14 +179,17 @@
     NSDictionary *dict1 = @{CYLTabBarItemTitle:@"首页",
                             CYLTabBarItemImage:image_home_u,
                             CYLTabBarItemSelectedImage:image_home_s};
-    NSDictionary *dict2 = @{CYLTabBarItemTitle:@"运单",
+    NSDictionary *dict2 = @{CYLTabBarItemTitle:@"加油点",
+                            CYLTabBarItemImage:image_home_refuel_u,
+                            CYLTabBarItemSelectedImage:image_home_refuel_s};
+    NSDictionary *dict3 = @{CYLTabBarItemTitle:@"运单",
                             CYLTabBarItemImage:image_delivery_u,
                             CYLTabBarItemSelectedImage:image_delivery_s};
-    NSDictionary *dict3 = @{CYLTabBarItemTitle:@"我的",
+    NSDictionary *dict4 = @{CYLTabBarItemTitle:@"我的",
                             CYLTabBarItemImage:image_mine_u,
                             CYLTabBarItemSelectedImage:image_mine_s};
-    NSArray *tabBarItemsAttributes = @[dict1, dict2,dict3];
-    NSArray *tabBarViewControllers = @[nav1, nav2,nav3];
+    NSArray *tabBarItemsAttributes = @[dict1, dict2,dict3,dict4];
+    NSArray *tabBarViewControllers = @[nav1, nav2,nav3,nav4];
     
     PSMainTabBarVC *tabBarController = [[PSMainTabBarVC alloc] init];
     tabBarController.tabBarItemsAttributes = tabBarItemsAttributes;
@@ -261,7 +269,7 @@
 -(PSMainTabBarVC *)getKeeperTabbarVC{
     
     BaseNavViewController *nav1 = [[BaseNavViewController alloc] initWithRootViewController:self.keepVC];
-    BaseNavViewController *nav2 = [[BaseNavViewController alloc] initWithRootViewController:self.keepOrderVC];
+//    BaseNavViewController *nav2 = [[BaseNavViewController alloc] initWithRootViewController:self.keepOrderVC];
     BaseNavViewController *nav3 = [[BaseNavViewController alloc] initWithRootViewController:self.sendDeliverVC];
     BaseNavViewController *nav4 = [[BaseNavViewController alloc] initWithRootViewController:self.propertyVC];
     BaseNavViewController *nav5 = [[BaseNavViewController alloc] initWithRootViewController:self.mineVC];
@@ -270,8 +278,8 @@
     UIImage *image_home_u = [[UIImage imageNamed:@"hp_icon_stock"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *image_home_s = [[UIImage imageNamed:@"hp_icon_stock_a"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    UIImage *image_warehouse_u = [[UIImage imageNamed:@"hp_icon_warehouse"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *image_warehouse_s = [[UIImage imageNamed:@"hp_icon_warehouse_a"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//    UIImage *image_warehouse_u = [[UIImage imageNamed:@"hp_icon_warehouse"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//    UIImage *image_warehouse_s = [[UIImage imageNamed:@"hp_icon_warehouse_a"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     UIImage *image_shopCart_u = [[UIImage imageNamed:@"hp_icon_waybill"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *image_shopCart_s = [[UIImage imageNamed:@"hp_icon_waybill_a"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -287,9 +295,9 @@
     NSDictionary *dict1 = @{CYLTabBarItemTitle:@"进货",
                             CYLTabBarItemImage:image_home_u,
                             CYLTabBarItemSelectedImage:image_home_s};
-    NSDictionary *dict2 = @{CYLTabBarItemTitle:@"仓库",
-                            CYLTabBarItemImage:image_warehouse_u,
-                            CYLTabBarItemSelectedImage:image_warehouse_s};
+//    NSDictionary *dict2 = @{CYLTabBarItemTitle:@"仓库",
+//                            CYLTabBarItemImage:image_warehouse_u,
+//                            CYLTabBarItemSelectedImage:image_warehouse_s};
     NSDictionary *dict3 = @{CYLTabBarItemTitle:@"运单",
                             CYLTabBarItemImage:image_shopCart_u,
                             CYLTabBarItemSelectedImage:image_shopCart_s};
@@ -300,9 +308,9 @@
                             CYLTabBarItemImage:image_mine_u,
                             CYLTabBarItemSelectedImage:image_mine_s};
     
-    NSArray *tabBarItemsAttributes = @[dict1, dict2,dict3,dict4,dict5];
+    NSArray *tabBarItemsAttributes = @[dict1,dict3,dict4,dict5];
     tabBarController.tabBarItemsAttributes = tabBarItemsAttributes;
-    [tabBarController setViewControllers:@[nav1, nav2,nav3,nav4,nav5]];
+    [tabBarController setViewControllers:@[nav1,nav3,nav4,nav5]];
     [tabBarController.tabBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]];
     
     tabBarController.delegate = self;
@@ -400,10 +408,17 @@
 
 - (PSSenderOrderListVC *)senderVC{
     if (!_senderVC) {
-        _senderVC = [[PSSenderOrderListVC alloc] init];
+        _senderVC = [[PSSenderOrderListVC alloc] initWithType:SenderListTypeHome];
     }
     return _senderVC;
 }
+- (PSSenderOrderListVC *)senderStationVC{
+    if (!_senderStationVC) {
+        _senderStationVC = [[PSSenderOrderListVC alloc] initWithType:SenderListTypeStation];
+    }
+    return _senderStationVC;
+}
+
 -(PSOrderVC *)orderVC{
     if (!_orderVC) {
         _orderVC = [PSOrderVC new];

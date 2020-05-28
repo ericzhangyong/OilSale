@@ -23,6 +23,8 @@
 #import <Photos/Photos.h>
 #import "PSGetCheckImageRequest.h"
 #import "UserInfoProfile.h"
+#import "PSImageModel.h"
+#import "PSHeadImageCell.h"
 
 static CGFloat const SubmitCoverWidth               =       53;
 static CGFloat const SubmitCoverUploadWidth         =       300;
@@ -37,6 +39,8 @@ static CGFloat const SubmitCoverUploadWidth         =       300;
 @property (nonatomic,strong)UIImage *uploadHeadImage;
 
 @property (nonatomic,assign)BOOL isHiddenUploadBtn;
+
+@property (nonatomic,assign) NSInteger currentIndex;
 
 
 /// 是否可以编辑
@@ -69,6 +73,9 @@ static CGFloat const SubmitCoverUploadWidth         =       300;
     
     [self setUpUI];
     [self getImageUrl];
+    
+    
+    [self initTableView];
 }
 - (void)viewWillAppear:(BOOL)animated {
 
@@ -83,48 +90,67 @@ static CGFloat const SubmitCoverUploadWidth         =       300;
 
 - (void)setUpUI {
     
+    self.currentIndex = 0;
     self.navigationItem.title = @"审核图片";
-    self.navigationItem.rightBarButtonItem = [self barButtonWithText:@"更改" textColor:color_333333 textFont:[UIFont systemWEPingFangRegularOfSize:16] target:self selector:@selector(updateBtnClick:)];
+//    self.navigationItem.rightBarButtonItem = [self barButtonWithText:@"添加" textColor:color_333333 textFont:[UIFont systemWEPingFangRegularOfSize:16] target:self selector:@selector(updateBtnClick:)];
     //btn
-    self.updateHeadImageBtn.layer.masksToBounds = YES;
-    self.updateHeadImageBtn.layer.cornerRadius = 5.0f;
-    self.updateHeadImageBtn.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.updateHeadImageBtn.layer.borderWidth = 1.0;
-    [self.updateHeadImageBtn setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
-    [self.updateHeadImageBtn setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forState:UIControlStateHighlighted];
-    [self.updateHeadImageBtn addTarget:self action:@selector(updateBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-    //headImageView
-    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageGestuer:)];
-    self.headImageView.userInteractionEnabled = YES;
-    [self.headImageView addGestureRecognizer:gesture];
-    self.headImageView.contentMode = UIViewContentModeScaleAspectFit;
-    self.headImageView.clipsToBounds = NO   ;
-    
-    self.aboveLineView.hidden= YES;
-    self.downLineView.hidden = YES;
-    self.view.backgroundColor = color_lightDart_f3f3f3;
-    if ([self.headImgPath hasPrefix:@"http"]) {
-        [self.headImageView setImageWithUrl:self.headImgPath placeholder:defaultHolder160_160];
-    }else{
-        NSData *imageData = [NSData dataWithContentsOfFile:self.headImgPath];
-        UIImage *image = [UIImage imageWithData:imageData];
-        if (image) {
-            self.headImageView.image = image;
-        }else{
-            self.headImageView.image = defaultHolder160_160;
-        }
-    }
-    
-    if (self.isHiddenUploadBtn == YES) {
-        self.updateHeadImageBtn.hidden = YES;
-    }else{
-        self.updateHeadImageBtn.hidden = YES;
-    }
-    
-    
-    [self requestAuth];
+//    self.updateHeadImageBtn.layer.masksToBounds = YES;
+//    self.updateHeadImageBtn.layer.cornerRadius = 5.0f;
+//    self.updateHeadImageBtn.layer.borderColor = [UIColor whiteColor].CGColor;
+//    self.updateHeadImageBtn.layer.borderWidth = 1.0;
+//    [self.updateHeadImageBtn setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+//    [self.updateHeadImageBtn setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forState:UIControlStateHighlighted];
+//    [self.updateHeadImageBtn addTarget:self action:@selector(updateBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+//    //headImageView
+//    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageGestuer:)];
+//    self.headImageView.userInteractionEnabled = YES;
+//    [self.headImageView addGestureRecognizer:gesture];
+//    self.headImageView.contentMode = UIViewContentModeScaleAspectFit;
+//    self.headImageView.clipsToBounds = NO   ;
+//
+//    self.aboveLineView.hidden= YES;
+//    self.downLineView.hidden = YES;
+//    self.view.backgroundColor = color_lightDart_f3f3f3;
+//    if ([self.headImgPath hasPrefix:@"http"]) {
+//        [self.headImageView setImageWithUrl:self.headImgPath placeholder:defaultHolder160_160];
+//    }else{
+//        NSData *imageData = [NSData dataWithContentsOfFile:self.headImgPath];
+//        UIImage *image = [UIImage imageWithData:imageData];
+//        if (image) {
+//            self.headImageView.image = image;
+//        }else{
+//            self.headImageView.image = defaultHolder160_160;
+//        }
+//    }
+//
+//    if (self.isHiddenUploadBtn == YES) {
+//        self.updateHeadImageBtn.hidden = YES;
+//    }else{
+//        self.updateHeadImageBtn.hidden = YES;
+//    }
+//
+//
+//    [self requestAuth];
     
 }
+
+-(void)initTableView{
+    
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSHeadImageCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSHeadImageCell.class)];
+}
+
+
+-(void)loadWebDataSource{
+    [super loadWebDataSource];
+    
+    [self getImageUrl];
+}
+
+-(UITableViewStyle)re_tableViewStryle{
+    return UITableViewStyleGrouped;
+}
+
+
 
 -(void)getImageUrl{
     
@@ -133,17 +159,89 @@ static CGFloat const SubmitCoverUploadWidth         =       300;
         if (response.isFinished) {
             
             NSArray *data = response.result[@"verify_pic_urls"];
-            NSDictionary *dict = data.lastObject;
+//            NSDictionary *dict = data.lastObject;
+            NSArray *imageArr = [PSImageModel  convertModelWithJsonArr:data];
+//            if (imageArr.count<=1) {
+                [self.dataSource setArray:imageArr];
+            [self endRefreshingWithCount:-1];
+            [self.tableView reloadData];
             
-            self.headImgPath = dict[@"file_url"];
-            [self.headImageView setImageWithUrl:self.headImgPath placeholder:defaultHolder160_160];
+            if (self.dataSource.count>=2) {
+                self.navigationItem.rightBarButtonItem = nil;
+            }
+//            }else{
+//                [self.dataSource addObjectsFromArray:[imageArr subarrayWithRange:NSMakeRange(imageArr.count-2, 2)]];
+//            }
             
-            NSNumber *if_can_edit = response.result[@"if_can_edit"];
-            self.if_can_edit = if_can_edit.boolValue;
-            self.navigationItem.rightBarButtonItem.enabled = self.if_can_edit;
+            
+//            self.headImgPath = dict[@"file_url"];
+//            [self.headImageView setImageWithUrl:self.headImgPath placeholder:defaultHolder160_160];
+//
+//            NSNumber *if_can_edit = response.result[@"if_can_edit"];
+//            self.if_can_edit = if_can_edit.boolValue;
+//            self.navigationItem.rightBarButtonItem.enabled = self.if_can_edit;
         }
     }];
 }
+
+#pragma mark- UITableViewDelegate
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;//self.dataSource.count;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.section<self.dataSource.count) {
+        PSImageModel *model  = self.dataSource[indexPath.section];
+        if (!CGSizeEqualToSize(model.imageSize, CGSizeZero)) {
+            return kScreenWidth*model.imageSize.height*1.0/model.imageSize.width;
+        }
+    }
+    return 295;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 10;
+}
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *view = [UIView new];
+    view.backgroundColor = color_F3F3F3;
+    return view;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    PSHeadImageCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(PSHeadImageCell.class) forIndexPath:indexPath];
+    
+    if (indexPath.section<self.dataSource.count) {
+        cell.imageView_icon.hidden = YES;
+        cell.btn_update.hidden = NO;
+        PSImageModel *model  = self.dataSource[indexPath.section];
+        [cell.imageView_header setImageWithUrl:model.file_url placeholder:defaultHolder750_400 completeBlock:^(UIImage * _Nonnull image, BOOL isFinish) {
+            if (CGSizeEqualToSize(model.imageSize, CGSizeZero) && image !=nil) {
+                model.imageSize = image.size;
+                [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+            }
+        }];
+    }else{
+        cell.imageView_icon.hidden = NO;
+        cell.btn_update.hidden = YES;
+        cell.imageView_icon.image = [UIImage imageNamed:@"hp_icon_add"];
+    }
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    
+    self.currentIndex  = indexPath.section;
+    [self updateBtnClick:nil];
+}
+
+
+
+
 
 -(void)requestAuth{
     [self requestCamera];
@@ -260,31 +358,35 @@ static CGFloat const SubmitCoverUploadWidth         =       300;
     
     
     PSGetUploadPath *getUploadPath = [PSGetUploadPath new];
-    getUploadPath.req_url_num = 1;
+    getUploadPath.req_url_num = 2;
     [getUploadPath postRequestCompleted:^(BaseResponse * _Nonnull response) {
         if (response.isFinished) {
             NSArray *data =response.result;
+            
             if (data.count>0) {
-                NSDictionary *dict = data.firstObject;
-                NSNumber *upload_id = dict[@"upload_id"];
-                NSString *upload_url = dict[@"upload_url"];
                 
-                
-                
-                PSUploadImageRequest *uploadRequest =[PSUploadImageRequest new  ];
-                uploadRequest.url = upload_url;
-                [uploadRequest uploadWithPUTImage:self.uploadHeadImage fileName:@"123" Completed:^(BaseResponse * _Nonnull response) {
-                    if (response.isFinished) {
-                        PSSaveUploadImageUrl *save = [PSSaveUploadImageUrl new];
-                        save.upload_id = upload_id.integerValue;
-                        
-                        [save postRequestCompleted:^(BaseResponse * _Nonnull response) {
-                            if (response.isFinished) {
-                                self.headImageView.image =self.uploadHeadImage;
+                if(self.currentIndex<data.count){
+                    NSDictionary *dict = data[self.currentIndex];
+                   
+                    NSNumber *upload_id = dict[@"upload_id"];
+                    NSString *upload_url = dict[@"upload_url"];
+                    PSUploadImageRequest *uploadRequest =[PSUploadImageRequest new  ];
+                    uploadRequest.url = upload_url;
+                    [uploadRequest uploadWithPUTImage:self.uploadHeadImage fileName:@"123" Completed:^(BaseResponse * _Nonnull response) {
+                        if (response.isFinished) {
+                            PSSaveUploadImageUrl *save = [PSSaveUploadImageUrl new];
+                            if (upload_id) {
+                                save.upload_id = upload_id.integerValue;
                             }
-                        }];
-                    }
-                }];
+                            
+                            [save postRequestCompleted:^(BaseResponse * _Nonnull response) {
+                                if (response.isFinished) {
+                                    [self loadWebDataSource];
+                                }
+                            }];
+                        }
+                    }];
+                }
             }
         }
     }];

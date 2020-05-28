@@ -29,6 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) void(^addShopCartClick)(BOOL isClick,NSString *buyNum);
 
 @property (nonatomic,copy) void(^bottomBtnClick)(BOOL isLeftBtn,BOOL isSelected);
+@property (weak, nonatomic) IBOutlet UIView *view_tax;
 
 
 
