@@ -22,7 +22,7 @@ target 'PetroleumSale' do
 
   
   
-pod "AFNetworking",     "~> 3.1.0"
+pod 'AFNetworking', '~> 4.0.1'
 pod 'CYLTabBarController'
 pod 'MBProgressHUD', '~> 1.1.0'
 pod 'SDWebImage', '~> 5.3.2'

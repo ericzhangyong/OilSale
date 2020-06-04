@@ -114,7 +114,7 @@
     [edit postRequestCompleted:^(BaseResponse * _Nonnull response) {
         if (response.isFinished) {
             [MBProgressHUD toastMessageAtMiddle:@"保存成功"];
-            [[NSNotificationCenter defaultCenter]  postNotification:@"wareHourseChange"];
+            [[NSNotificationCenter defaultCenter]  postNotificationName:@"wareHourseChange" object:nil];
             [self.navigationController popViewControllerAnimated:YES];
         }
     }];

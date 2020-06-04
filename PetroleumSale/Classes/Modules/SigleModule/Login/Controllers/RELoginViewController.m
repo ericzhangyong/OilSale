@@ -17,6 +17,7 @@
 #import "REAggreementVC.h"
 #import "ZJScrollPageView.h"
 #import <AuthenticationServices/AuthenticationServices.h>
+#import "BaseWebViewController.h"
 
 
 API_AVAILABLE(ios(13.0))
@@ -420,9 +421,9 @@ static NSInteger tf_phoneNumIndex = 0;
 
 - (IBAction)actionGoWEAgreement:(UIButton *)sender {
     
-    REAggreementVC *agreementVC  = [REAggreementVC new];
-    agreementVC.webUrl = @"http://sandbox.sxfq.com/huolika/#/registmanage2";
-    [self.navigationController  pushViewController:agreementVC animated:YES];
+//    REAggreementVC *agreementVC  = [REAggreementVC new];
+//    agreementVC.webUrl = @"http://sandbox.sxfq.com/huolika/#/registmanage2";
+//    [self.navigationController  pushViewController:agreementVC animated:YES];
 }
 - (IBAction)actionBtnAggree:(UIButton *)sender {
     
@@ -547,6 +548,24 @@ static NSInteger tf_phoneNumIndex = 0;
         [self.btn_getVerifyCode setTitle:@"获取验证码" forState:UIControlStateNormal];
         [self.btn_getVerifyCode setTitleColor:color_FE7E10 forState:UIControlStateNormal];
     }
+}
+
+- (IBAction)actionSecretClick:(UIButton *)sender {
+
+    NSString *file = [[NSBundle mainBundle] pathForResource:@"上海升到石化隐私权政策.docx" ofType:nil];
+    REAggreementVC *web = [[REAggreementVC alloc] initWithTitile:@"老板加油隐私政策"];
+    web.webUrl = file;
+    [self.navigationController pushViewController:web animated:YES];
+   
+}
+
+- (IBAction)actionService:(UIButton *)sender {
+    NSString *file = [[NSBundle mainBundle] pathForResource:@"老板加油APP用户注册和服务协议0529.docx" ofType:nil];
+       REAggreementVC *web = [[REAggreementVC alloc] initWithTitile:@"老板加油APP用户注册和服务协议"];
+       web.webUrl = file;
+       
+       [self.navigationController pushViewController:web animated:YES];
+    
 }
 
 #pragma mark- lazy

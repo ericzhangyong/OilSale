@@ -126,9 +126,8 @@
         uploadImageModel.mineCellType = PSMineCellTypeUploadImage;
         uploadImageModel.title = @"上传审核图片";
         uploadImageModel.content = @"未上传";
-//        uploadImageModel.iconImageUrl = @"";//@"userpg_list_pic";
+        uploadImageModel.iconImageUrl = @"userpg_list_pic";
         if (self.file_url_arr.count>0) {
-//            uploadImageModel.imageUrl = self.file_url;
             uploadImageModel.content = [NSString stringWithFormat:@"已上传%zd张",self.file_url_arr.count];
         }
         [self.dataSource addObject:uploadImageModel];
@@ -180,7 +179,7 @@
 -(NSMutableAttributedString *)ps_getShouHouString{
 
     NSString *dianhua = UserInfoProfile.shareUserInfo.userInfo.sales_service_hotline;
-    NSString *phone = [NSString stringWithFormat:@"售后服务：%@",dianhua];
+    NSString *phone = [NSString stringWithFormat:@"客户服务电话：%@",dianhua];
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     NSString *build = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
     NSMutableString *contentStr = [NSMutableString string];

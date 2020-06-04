@@ -82,6 +82,9 @@
 		07ABDDCC24547BFB002093A4 /* PSWareHourseEditReqeust.m in Sources */ = {isa = PBXBuildFile; fileRef = 07ABDDCB24547BFB002093A4 /* PSWareHourseEditReqeust.m */; };
 		07B95488247A7CF5007BE731 /* PSStationChangeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B95487247A7CF5007BE731 /* PSStationChangeModel.m */; };
 		07B9DD9D2456F49900D0CE67 /* PSKeeperCreateOrderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B9DD9C2456F49900D0CE67 /* PSKeeperCreateOrderRequest.m */; };
+		07BC312A248279910098763A /* 老板加油APP用户注册和服务协议0529.docx in Resources */ = {isa = PBXBuildFile; fileRef = 07BC3128248279900098763A /* 老板加油APP用户注册和服务协议0529.docx */; };
+		07BC312D24827DA70098763A /* 384.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BC312C24827DA70098763A /* 384.png */; };
+		07BC313124829E430098763A /* 上海升到石化隐私权政策.docx in Resources */ = {isa = PBXBuildFile; fileRef = 07BC313024829E430098763A /* 上海升到石化隐私权政策.docx */; };
 		07D7E61A246D830900389AEE /* save.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D7E619246D830900389AEE /* save.xib */; };
 		C2003B3E23B09EAC0010BDB9 /* PSSenderOrderListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2003B3D23B09EAC0010BDB9 /* PSSenderOrderListVC.m */; };
 		C2003B4223B0A0560010BDB9 /* PSSenderDeleryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2003B4123B0A0560010BDB9 /* PSSenderDeleryVC.m */; };
@@ -177,8 +180,6 @@
 		C214E64223F4ED7400BEFBC5 /* PSCustomerCarNumEditBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C214E64123F4ED7400BEFBC5 /* PSCustomerCarNumEditBottomView.m */; };
 		C214E64523F4FF3100BEFBC5 /* PSNewCarNumVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C214E64423F4FF3100BEFBC5 /* PSNewCarNumVC.m */; };
 		C216E7F3239E718500A6E699 /* PSGetCheckImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C216E7F2239E718500A6E699 /* PSGetCheckImageRequest.m */; };
-		C216E7F8239F773500A6E699 /* iPhonegggg.png in Resources */ = {isa = PBXBuildFile; fileRef = C216E7F6239F773400A6E699 /* iPhonegggg.png */; };
-		C216E7F9239F773500A6E699 /* iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C216E7F7239F773500A6E699 /* iPhone@2x.png */; };
 		C216E7FE239F959B00A6E699 /* PSDriverHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C216E7FD239F959B00A6E699 /* PSDriverHomeVC.m */; };
 		C216E801239FAF1600A6E699 /* PSPhotoButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C216E800239FAF1600A6E699 /* PSPhotoButton.m */; };
 		C21CA56E24050490007D4DF9 /* PSSenederPickOneSelfListReqest.m in Sources */ = {isa = PBXBuildFile; fileRef = C21CA56D24050490007D4DF9 /* PSSenederPickOneSelfListReqest.m */; };
@@ -510,6 +511,9 @@
 		07B95487247A7CF5007BE731 /* PSStationChangeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSStationChangeModel.m; sourceTree = "<group>"; };
 		07B9DD9B2456F49900D0CE67 /* PSKeeperCreateOrderRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSKeeperCreateOrderRequest.h; sourceTree = "<group>"; };
 		07B9DD9C2456F49900D0CE67 /* PSKeeperCreateOrderRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSKeeperCreateOrderRequest.m; sourceTree = "<group>"; };
+		07BC3128248279900098763A /* 老板加油APP用户注册和服务协议0529.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "老板加油APP用户注册和服务协议0529.docx"; sourceTree = "<group>"; };
+		07BC312C24827DA70098763A /* 384.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 384.png; sourceTree = "<group>"; };
+		07BC313024829E430098763A /* 上海升到石化隐私权政策.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "上海升到石化隐私权政策.docx"; sourceTree = "<group>"; };
 		07D7E619246D830900389AEE /* save.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = save.xib; sourceTree = "<group>"; };
 		5E0DA287668D7F803D260F93 /* Pods-PetroleumSale.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetroleumSale.release.xcconfig"; path = "Target Support Files/Pods-PetroleumSale/Pods-PetroleumSale.release.xcconfig"; sourceTree = "<group>"; };
 		82F32C0E600E707E9041F40E /* Pods_PetroleumSale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetroleumSale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -699,8 +703,6 @@
 		C214E64423F4FF3100BEFBC5 /* PSNewCarNumVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSNewCarNumVC.m; sourceTree = "<group>"; };
 		C216E7F1239E718500A6E699 /* PSGetCheckImageRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSGetCheckImageRequest.h; sourceTree = "<group>"; };
 		C216E7F2239E718500A6E699 /* PSGetCheckImageRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSGetCheckImageRequest.m; sourceTree = "<group>"; };
-		C216E7F6239F773400A6E699 /* iPhonegggg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhonegggg.png; sourceTree = "<group>"; };
-		C216E7F7239F773500A6E699 /* iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone@2x.png"; sourceTree = "<group>"; };
 		C216E7FC239F959B00A6E699 /* PSDriverHomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSDriverHomeVC.h; sourceTree = "<group>"; };
 		C216E7FD239F959B00A6E699 /* PSDriverHomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSDriverHomeVC.m; sourceTree = "<group>"; };
 		C216E7FF239FAF1600A6E699 /* PSPhotoButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSPhotoButton.h; sourceTree = "<group>"; };
@@ -1459,8 +1461,7 @@
 				C260CC4C238660AC00D51CF4 /* Assets.xcassets */,
 				C260CC4E238660AC00D51CF4 /* LaunchScreen.storyboard */,
 				C260CC51238660AC00D51CF4 /* Info.plist */,
-				C216E7F7239F773500A6E699 /* iPhone@2x.png */,
-				C216E7F6239F773400A6E699 /* iPhonegggg.png */,
+				07BC312C24827DA70098763A /* 384.png */,
 				C260CC52238660AC00D51CF4 /* main.m */,
 			);
 			path = Recourse;
@@ -2386,8 +2387,10 @@
 				C2692E2523895E26007123B0 /* RELoginViewController.h */,
 				C2692E2723895E26007123B0 /* RELoginViewController.m */,
 				C2692E2823895E26007123B0 /* RELoginViewController.xib */,
-				C2692E2623895E26007123B0 /* REAggreementVC.m */,
 				C2692E2423895E26007123B0 /* REAggreementVC.h */,
+				C2692E2623895E26007123B0 /* REAggreementVC.m */,
+				07BC3128248279900098763A /* 老板加油APP用户注册和服务协议0529.docx */,
+				07BC313024829E430098763A /* 上海升到石化隐私权政策.docx */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -2824,7 +2827,6 @@
 				C2090F4523A860BF00998955 /* PSPhotoHeaderView.xib in Resources */,
 				C29FB89923969F0B001A891B /* PSConfirmFooterView.xib in Resources */,
 				C26C609A2398BEE20013A1D8 /* PSHeadImageViewController.xib in Resources */,
-				C216E7F8239F773500A6E699 /* iPhonegggg.png in Resources */,
 				C2003B9623B1ED1B0010BDB9 /* PSDriverCell.xib in Resources */,
 				C29FB89423965C5C001A891B /* PSConfirmCell.xib in Resources */,
 				0756AFF6243EC83200D6331B /* PSKeepOrderHeaderView.xib in Resources */,
@@ -2844,6 +2846,7 @@
 				C228C1BE23D2AEDF00784AF5 /* PSStationOrderCell.xib in Resources */,
 				C2845D362402797800FAA2B7 /* PSAccountHeaderView.xib in Resources */,
 				C29B99EC238CBCB5000923B5 /* PSCanReturnRecordCell.xib in Resources */,
+				07BC312D24827DA70098763A /* 384.png in Resources */,
 				C24505E723EBFCB800EC389A /* PSPhotoStationCell.xib in Resources */,
 				073A6069247018CC0059E050 /* PSImageListCell.xib in Resources */,
 				07D7E61A246D830900389AEE /* save.xib in Resources */,
@@ -2851,7 +2854,6 @@
 				C2C16B0623B31AA300EB8697 /* PSPertrolStationView.xib in Resources */,
 				C2C1AB6D238A539000693FFC /* PSMineCell.xib in Resources */,
 				C29B99CA238C0337000923B5 /* address.json in Resources */,
-				C216E7F9239F773500A6E699 /* iPhone@2x.png in Resources */,
 				C2566B0F239BE74100D7AE9E /* PSCollectionPicCell.xib in Resources */,
 				0756AFE2243EB9C600D6331B /* PSKeeperCrateOrderVC.xib in Resources */,
 				077DF34A2420C1FB00DDD3A2 /* PSSalesmanOrderCell.xib in Resources */,
@@ -2859,10 +2861,12 @@
 				0756AFF1243EC74100D6331B /* PSKeepOrderCell.xib in Resources */,
 				C29B9996238B834D000923B5 /* PSMineHeaderView.xib in Resources */,
 				C2003B6323B0C4660010BDB9 /* PSSenderDeliveryCell.xib in Resources */,
+				07BC313124829E430098763A /* 上海升到石化隐私权政策.docx in Resources */,
 				C2C16B0E23B45A6500EB8697 /* PSPetrolStationCell.xib in Resources */,
 				C228C1C323D2AF0200784AF5 /* PSStationOrderHistoryCell.xib in Resources */,
 				073A6071247024E30059E050 /* PSHeadImageCell.xib in Resources */,
 				C29B99B9238C02A6000923B5 /* FSAddNewAddressTFCell.xib in Resources */,
+				07BC312A248279910098763A /* 老板加油APP用户注册和服务协议0529.docx in Resources */,
 				C2845D292402673200FAA2B7 /* PSReserveStationCell.xib in Resources */,
 				C260CC4B238660A600D51CF4 /* Main.storyboard in Resources */,
 			);
@@ -3360,7 +3364,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = CS7ZPKG5FL;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3375,7 +3379,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.2.1;
+				MARKETING_VERSION = 0.1.1;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-isystem",
@@ -3406,7 +3410,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = CS7ZPKG5FL;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3421,7 +3425,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.2.1;
+				MARKETING_VERSION = 0.1.1;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-isystem",

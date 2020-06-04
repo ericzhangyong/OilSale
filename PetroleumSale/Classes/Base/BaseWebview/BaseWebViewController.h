@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BaseWebViewController : UIViewController<WKUIDelegate, WKNavigationDelegate,WKScriptMessageHandler>
 
 
+/// is
+@property (nonatomic,assign) BOOL isDefaultShowTitle;
+
 @property (nonatomic, strong) WKWebView *wkwebView;
 
 @property (nonatomic,strong) NSString *webUrl;

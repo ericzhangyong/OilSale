@@ -329,10 +329,10 @@
         addShopCart.buy_num = 1;
     }
     if (section == 1) {//车下单
-        addShopCart.product_type = @"car";
+        addShopCart.product_type = model.product_type_name;
         addShopCart.distribution_state = !model.notContainTaxOrDeliver;
     }else{//桶下单
-        addShopCart.product_type = @"bucket";
+        addShopCart.product_type = model.product_type_name;
         addShopCart.tax_include_state = !model.notContainTaxOrDeliver;
     }
     [addShopCart postRequestCompleted:^(BaseResponse * _Nonnull response) {

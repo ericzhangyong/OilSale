@@ -151,6 +151,7 @@
 #pragma mark - ViewController Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.isDefaultShowTitle = YES;
     self.edgesForExtendedLayout = UIRectEdgeNone;
     [self addContentView];
     
@@ -242,10 +243,13 @@
         self.progressView.progress = webView.estimatedProgress;
     }
     else if ([keyPath isEqualToString:NSStringFromSelector(@selector(title))]) {
-        if (!self.navigationItem.title) {
+        if (self.isDefaultShowTitle) {
+            if (!self.navigationItem.title) {
+                self.navigationItem.title = webView.title;
+            }
             self.navigationItem.title = webView.title;
         }
-        self.navigationItem.title = webView.title;
+        
     }
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"

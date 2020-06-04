@@ -150,7 +150,7 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (self.homeViewModel.dataSource.count>0 && self.homeViewModel.homeModel.product_list.count>0 && indexPath.section == 0) {
-        return 115;
+        return 115+7;
     }else{
         return 150;
     }

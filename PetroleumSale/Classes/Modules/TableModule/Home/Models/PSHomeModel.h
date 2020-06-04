@@ -83,6 +83,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// Yes:不含税或者配送  NO：含税 或者自提-------按车批发对应自提和配送
 @property (nonatomic,assign) BOOL notContainTaxOrDeliver;
 
+/// 桶类型
+@property (nonatomic,copy) NSString *product_type_name;
 
 @end
 

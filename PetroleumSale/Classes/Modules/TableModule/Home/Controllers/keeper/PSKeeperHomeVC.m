@@ -39,11 +39,11 @@
     }];
     [self.view insertSubview:self.view_nav atIndex:0];
     WEAK_SELF;
-    [self.view_nav showRightBtnWithTitle:@"创建进货订单" callBack:^(BOOL isClick) {
-        
-        PSKeeperCrateOrderVC *createOrderVC = [PSKeeperCrateOrderVC new];
-        [weakSelf.navigationController pushViewController:createOrderVC animated:YES];
-    }];
+//    [self.view_nav showRightBtnWithTitle:@"创建进货订单" callBack:^(BOOL isClick) {
+//        
+//        PSKeeperCrateOrderVC *createOrderVC = [PSKeeperCrateOrderVC new];
+//        [weakSelf.navigationController pushViewController:createOrderVC animated:YES];
+//    }];
     
     self.tableView.backgroundColor = [UIColor clearColor];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSKeeperHomeCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSKeeperHomeCell.class)];

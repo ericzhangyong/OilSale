@@ -7,6 +7,7 @@
 //
 
 #import "PSAgreementVC.h"
+#import "BaseRequestHeader.h"
 
 @interface PSAgreementVC ()
 
@@ -24,9 +25,9 @@
 
 -(void)loadWebDataSource {
     
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"buyAgreement" ofType:@"html"];
-//    NSURL *url = [NSURL fileURLWithPath:path];
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//    [self.wkwebView loadRequest:request];
+    NSURL *url = [NSURL URLWithString:self.webUrl];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+//    [request addValue:[BaseRequestHeader.shareRequestHeader getLoginToken] forHTTPHeaderField:REUserTokenKey];
+    [self.wkwebView loadRequest:request];
 }
 @end

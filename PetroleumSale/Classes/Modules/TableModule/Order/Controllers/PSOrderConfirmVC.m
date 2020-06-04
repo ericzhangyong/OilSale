@@ -104,7 +104,7 @@
     
     
     UIView *footerView  = [UIView new   ];
-    footerView.frame = CGRectMake(0, 0, kScreenWidth, 389);
+    footerView.frame = CGRectMake(0, 0, kScreenWidth, 305);
     self.view_footer.frame = footerView.bounds;
     [footerView addSubview:self.view_footer];
     self.tableView.tableFooterView = footerView;

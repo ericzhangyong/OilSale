@@ -135,7 +135,9 @@
     
     double totalMoney = 0;
     for (PSShopCartModel *model in self.dataSource) {
-        totalMoney += model.expect_amount.doubleValue;
+        if (model.isSelcted) {
+            totalMoney += model.expect_amount.doubleValue;
+        }
     }
     NSString *totalMoneyStr  = [NSString stringWithFormat:@"合计：¥%.2lf",totalMoney];
     NSMutableAttributedString *attr = [[NSMutableAttributedString alloc] initWithString:totalMoneyStr attributes:@{NSForegroundColorAttributeName:color_333333,NSFontAttributeName:[UIFont systemWEPingFangBoldFontOfSize:20]}];
@@ -147,12 +149,13 @@
     if (symbolRange.location != NSNotFound) {
         [attr addAttributes:@{NSFontAttributeName:[UIFont systemWEPingFangBoldFontOfSize:15]} range:symbolRange];
     }
-    NSString *money = [NSString stringWithFormat:@"%.2lf",totalMoney];
-    NSArray *dotArr = [money componentsSeparatedByString:@"."];
-    if (dotArr.count>1) {
-        NSRange dotRange = [totalMoneyStr rangeOfString:dotArr[1]];
-        [attr addAttributes:@{NSFontAttributeName:[UIFont systemWEPingFangBoldFontOfSize:15]} range:dotRange];
-    }
+//    NSString *money = [NSString stringWithFormat:@"%.2lf",totalMoney];
+////    NSArray *dotArr = [money componentsSeparatedByString:@"."];
+//    NSRange dotRange = [money rangeOfString:@"."];
+//    if (dotRange.location != NSNotFound) {
+//        NSRange ddd = NSMakeRange(dotRange.location, money.length-1);
+//        [attr addAttributes:@{NSFontAttributeName:[UIFont systemWEPingFangBoldFontOfSize:15]} range:ddd];
+//    }
     
     return  attr;
 }
@@ -172,12 +175,12 @@
        if (symbolRange.location != NSNotFound) {
            [attr addAttributes:@{NSFontAttributeName:[UIFont systemWEPingFangBoldFontOfSize:15]} range:symbolRange];
        }
-       NSString *money = [NSString stringWithFormat:@"%.2lf",totalMoney];
-       NSArray *dotArr = [money componentsSeparatedByString:@"."];
-       if (dotArr.count>1) {
-           NSRange dotRange = [totalMoneyStr rangeOfString:dotArr[1]];
-           [attr addAttributes:@{NSFontAttributeName:[UIFont systemWEPingFangBoldFontOfSize:15]} range:dotRange];
-       }
+//       NSString *money = [NSString stringWithFormat:@"%.2lf",totalMoney];
+//       NSArray *dotArr = [money componentsSeparatedByString:@"."];
+//       if (dotArr.count>1) {
+//           NSRange dotRange = [totalMoneyStr rangeOfString:dotArr[1]];
+//           [attr addAttributes:@{NSFontAttributeName:[UIFont systemWEPingFangBoldFontOfSize:15]} range:dotRange];
+//       }
        
        return  attr;
     

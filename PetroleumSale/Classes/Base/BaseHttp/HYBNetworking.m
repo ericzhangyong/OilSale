@@ -379,56 +379,55 @@ static inline NSString *cachePath() {
               }
           }
       }
-    
-    session = [manager GET:url parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
-      if (progress) {
-        progress(downloadProgress.completedUnitCount, downloadProgress.totalUnitCount);
-      }
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-      [self successResponse:responseObject callback:success];
-      
-      if (sg_cacheGet) {
-        [self cacheResponseObject:responseObject request:task.currentRequest parameters:params];
-      }
-      
-      [[self allTasks] removeObject:task];
-      
-      if ([self isDebug]) {
-        [self logWithSuccessResponse:responseObject
-                                 url:absolute
-                              params:params];
-      }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-      [[self allTasks] removeObject:task];
-      
-      if ([error code] < 0 && sg_cacheGet) {// 获取缓存
-        id response = [HYBNetworking cahceResponseWithURL:absolute
-                                               parameters:params];
-        if (response) {
-          if (success) {
-            [self successResponse:response callback:success];
-            
-            if ([self isDebug]) {
-              [self logWithSuccessResponse:response
-                                       url:absolute
-                                    params:params];
-            }
+      session = [manager GET:url parameters:params headers:sg_httpHeaders progress:^(NSProgress * _Nonnull downloadProgress) {
+          if (progress) {
+                 progress(downloadProgress.completedUnitCount, downloadProgress.totalUnitCount);
+               }
+      } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+          [self successResponse:responseObject callback:success];
+          
+          if (sg_cacheGet) {
+            [self cacheResponseObject:responseObject request:task.currentRequest parameters:params];
           }
-        } else {
-          [self handleCallbackWithError:error fail:fail];
+          
+          [[self allTasks] removeObject:task];
           
           if ([self isDebug]) {
-            [self logWithFailError:error url:absolute params:params];
+            [self logWithSuccessResponse:responseObject
+                                     url:absolute
+                                  params:params];
           }
-        }
-      } else {
-        [self handleCallbackWithError:error fail:fail];
-        
-        if ([self isDebug]) {
-          [self logWithFailError:error url:absolute params:params];
-        }
-      }
-    }];
+      } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+          [[self allTasks] removeObject:task];
+          
+          if ([error code] < 0 && sg_cacheGet) {// 获取缓存
+            id response = [HYBNetworking cahceResponseWithURL:absolute
+                                                   parameters:params];
+            if (response) {
+              if (success) {
+                [self successResponse:response callback:success];
+                
+                if ([self isDebug]) {
+                  [self logWithSuccessResponse:response
+                                           url:absolute
+                                        params:params];
+                }
+              }
+            } else {
+              [self handleCallbackWithError:error fail:fail];
+              
+              if ([self isDebug]) {
+                [self logWithFailError:error url:absolute params:params];
+              }
+            }
+          } else {
+            [self handleCallbackWithError:error fail:fail];
+            
+            if ([self isDebug]) {
+              [self logWithFailError:error url:absolute params:params];
+            }
+          }
+      }];
   }
   else if (httpMethod == 2) {
       if (sg_cachePost ) {// 获取缓存
@@ -467,57 +466,56 @@ static inline NSString *cachePath() {
               }
           }
       }
-    
-    session = [manager POST:url parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
-      if (progress) {
-        progress(downloadProgress.completedUnitCount, downloadProgress.totalUnitCount);
-      }
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-      [self successResponse:responseObject callback:success];
-      
-      if (sg_cachePost) {
-        [self cacheResponseObject:responseObject request:task.currentRequest  parameters:params];
-      }
-      
-      [[self allTasks] removeObject:task];
-      
-      if ([self isDebug]) {
-        [self logWithSuccessResponse:responseObject
-                                 url:absolute
-                              params:params];
-      }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-      [[self allTasks] removeObject:task];
-      
-      if ([error code] < 0 && sg_cachePost) {// 获取缓存
-        id response = [HYBNetworking cahceResponseWithURL:absolute
-                                               parameters:params];
-        
-        if (response) {
-          if (success) {
-            [self successResponse:response callback:success];
-            
-            if ([self isDebug]) {
-              [self logWithSuccessResponse:response
-                                       url:absolute
-                                    params:params];
-            }
+      session = [manager POST:url parameters:params headers:sg_httpHeaders progress:^(NSProgress * _Nonnull uploadProgress) {
+          if (progress) {
+            progress(uploadProgress.completedUnitCount, uploadProgress.totalUnitCount);
           }
-        } else {
-          [self handleCallbackWithError:error fail:fail];
+      } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+          [self successResponse:responseObject callback:success];
+          
+          if (sg_cachePost) {
+            [self cacheResponseObject:responseObject request:task.currentRequest  parameters:params];
+          }
+          
+          [[self allTasks] removeObject:task];
           
           if ([self isDebug]) {
-            [self logWithFailError:error url:absolute params:params];
+            [self logWithSuccessResponse:responseObject
+                                     url:absolute
+                                  params:params];
           }
-        }
-      } else {
-        [self handleCallbackWithError:error fail:fail];
-        
-        if ([self isDebug]) {
-          [self logWithFailError:error url:absolute params:params];
-        }
-      }
-    }];
+      } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+          [[self allTasks] removeObject:task];
+                        
+                        if ([error code] < 0 && sg_cachePost) {// 获取缓存
+                          id response = [HYBNetworking cahceResponseWithURL:absolute
+                                                                 parameters:params];
+                          
+                          if (response) {
+                            if (success) {
+                              [self successResponse:response callback:success];
+                              
+                              if ([self isDebug]) {
+                                [self logWithSuccessResponse:response
+                                                         url:absolute
+                                                      params:params];
+                              }
+                            }
+                          } else {
+                            [self handleCallbackWithError:error fail:fail];
+                            
+                            if ([self isDebug]) {
+                              [self logWithFailError:error url:absolute params:params];
+                            }
+                          }
+                        } else {
+                          [self handleCallbackWithError:error fail:fail];
+                          
+                          if ([self isDebug]) {
+                            [self logWithFailError:error url:absolute params:params];
+                          }
+                        }
+      }];
   }else if(httpMethod == 3){
       if (sg_cacheGet) {
           if (sg_shoulObtainLocalWhenUnconnected) {
@@ -555,8 +553,7 @@ static inline NSString *cachePath() {
               }
           }
       }
-      
-      session = [manager PUT:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+      session = [manager PUT:url parameters:params headers:sg_httpHeaders success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
           [self successResponse:responseObject callback:success];
           
           if (sg_cacheGet) {
@@ -572,34 +569,34 @@ static inline NSString *cachePath() {
           }
       } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
           [[self allTasks] removeObject:task];
-          
-          if ([error code] < 0 && sg_cacheGet) {// 获取缓存
-              id response = [HYBNetworking cahceResponseWithURL:absolute
-                                                     parameters:params];
-              if (response) {
-                  if (success) {
-                      [self successResponse:response callback:success];
-                      
-                      if ([self isDebug]) {
-                          [self logWithSuccessResponse:response
-                                                   url:absolute
-                                                params:params];
-                      }
-                  }
-              } else {
-                  [self handleCallbackWithError:error fail:fail];
-                  
-                  if ([self isDebug]) {
-                      [self logWithFailError:error url:absolute params:params];
-                  }
-              }
-          } else {
-              [self handleCallbackWithError:error fail:fail];
-              
-              if ([self isDebug]) {
-                  [self logWithFailError:error url:absolute params:params];
-              }
-          }
+                   
+                   if ([error code] < 0 && sg_cacheGet) {// 获取缓存
+                       id response = [HYBNetworking cahceResponseWithURL:absolute
+                                                              parameters:params];
+                       if (response) {
+                           if (success) {
+                               [self successResponse:response callback:success];
+                               
+                               if ([self isDebug]) {
+                                   [self logWithSuccessResponse:response
+                                                            url:absolute
+                                                         params:params];
+                               }
+                           }
+                       } else {
+                           [self handleCallbackWithError:error fail:fail];
+                           
+                           if ([self isDebug]) {
+                               [self logWithFailError:error url:absolute params:params];
+                           }
+                       }
+                   } else {
+                       [self handleCallbackWithError:error fail:fail];
+                       
+                       if ([self isDebug]) {
+                           [self logWithFailError:error url:absolute params:params];
+                       }
+                   }
       }];
   }else if (httpMethod == 4){
       if (sg_cacheGet) {
@@ -638,7 +635,7 @@ static inline NSString *cachePath() {
               }
           }
       }
-      session = [manager DELETE:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+      session = [manager DELETE:url parameters:params headers:sg_httpHeaders success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
           [self successResponse:responseObject callback:success];
           
           if (sg_cacheGet) {
@@ -781,47 +778,47 @@ static inline NSString *cachePath() {
   NSString *absolute = [self absoluteUrlWithPath:url];
   
   AFHTTPSessionManager *manager = [self manager];
-  HYBURLSessionTask *session = [manager POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-      NSData *upData;
-      if ([imageData isKindOfClass:[UIImage class]]) {
-          upData = UIImageJPEGRepresentation((UIImage *)imageData, 1);
-      }else{
-          upData = imageData;
-      }
-    
-    
-    NSString *imageFileName = filename;
-    if (filename == nil || ![filename isKindOfClass:[NSString class]] || filename.length == 0) {
-      NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-      formatter.dateFormat = @"yyyyMMddHHmmss";
-      NSString *str = [formatter stringFromDate:[NSDate date]];
-      imageFileName = [NSString stringWithFormat:@"%@.jpg", str];
-    }
-    
-    // 上传图片，以文件流的格式
-    [formData appendPartWithFileData:upData name:name fileName:imageFileName mimeType:mimeType];
-  } progress:^(NSProgress * _Nonnull uploadProgress) {
-    if (progress) {
-      progress(uploadProgress.completedUnitCount, uploadProgress.totalUnitCount);
-    }
-  } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-    [[self allTasks] removeObject:task];
-    [self successResponse:responseObject callback:success];
-    
-    if ([self isDebug]) {
-      [self logWithSuccessResponse:responseObject
-                               url:absolute
-                            params:parameters];
-    }
-  } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-    [[self allTasks] removeObject:task];
-    
-    [self handleCallbackWithError:error fail:fail];
-    
-    if ([self isDebug]) {
-      [self logWithFailError:error url:absolute params:nil];
-    }
-  }];
+    HYBURLSessionTask *session = [manager POST:url parameters:parameters headers:sg_httpHeaders constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        NSData *upData;
+          if ([imageData isKindOfClass:[UIImage class]]) {
+              upData = UIImageJPEGRepresentation((UIImage *)imageData, 1);
+          }else{
+              upData = imageData;
+          }
+        
+        
+        NSString *imageFileName = filename;
+        if (filename == nil || ![filename isKindOfClass:[NSString class]] || filename.length == 0) {
+          NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+          formatter.dateFormat = @"yyyyMMddHHmmss";
+          NSString *str = [formatter stringFromDate:[NSDate date]];
+          imageFileName = [NSString stringWithFormat:@"%@.jpg", str];
+        }
+        
+        // 上传图片，以文件流的格式
+        [formData appendPartWithFileData:upData name:name fileName:imageFileName mimeType:mimeType];
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        if (progress) {
+          progress(uploadProgress.completedUnitCount, uploadProgress.totalUnitCount);
+        }
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [[self allTasks] removeObject:task];
+        [self successResponse:responseObject callback:success];
+        
+        if ([self isDebug]) {
+          [self logWithSuccessResponse:responseObject
+                                   url:absolute
+                                params:parameters];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            [[self allTasks] removeObject:task];
+            
+            [self handleCallbackWithError:error fail:fail];
+            
+            if ([self isDebug]) {
+              [self logWithFailError:error url:absolute params:nil];
+            }
+    }];
   
   [session resume];
   if (session) {
@@ -863,34 +860,17 @@ static inline NSString *cachePath() {
     
     AFHTTPSessionManager *manager = [self manager];
 
-    HYBURLSessionTask *session = [manager POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        //        NSData *upData;
-        //        if ([imageData isKindOfClass:[UIImage class]]) {
-        //            upData = UIImageJPEGRepresentation((UIImage *)imageData, 1);
-        //        }else{
-        //            upData = imageData;
-        //        }
-        
+    HYBURLSessionTask *session = [manager POST:url parameters:parameters headers:sg_httpHeaders constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         for (int i = 0;i<images.count ;i++)
-        {
-            UIImage * image = images[i];
-            NSData *imageData = UIImageJPEGRepresentation(image, 0.1);//image为要上传的图片(UIImage)
-            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-            formatter.dateFormat = @"yyyyMMddHHmmss";
-            NSString *fileName = [NSString stringWithFormat:@"%@%d.png",[formatter stringFromDate:[NSDate date]],i];
-            [formData appendPartWithFileData:imageData name:name fileName:fileName mimeType:mimeType];
-        }
-        
-        //        NSString *imageFileName = filename;
-        //        if (filename == nil || ![filename isKindOfClass:[NSString class]] || filename.length == 0) {
-        //            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        //            formatter.dateFormat = @"yyyyMMddHHmmss";
-        //            NSString *str = [formatter stringFromDate:[NSDate date]];
-        //            imageFileName = [NSString stringWithFormat:@"%@.jpg", str];
-        //        }
-        //
-        //        // 上传图片，以文件流的格式
-        //        [formData appendPartWithFileData:upData name:name fileName:imageFileName mimeType:mimeType];
+               {
+                   UIImage * image = images[i];
+                   NSData *imageData = UIImageJPEGRepresentation(image, 0.1);//image为要上传的图片(UIImage)
+                   NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                   formatter.dateFormat = @"yyyyMMddHHmmss";
+                   NSString *fileName = [NSString stringWithFormat:@"%@%d.png",[formatter stringFromDate:[NSDate date]],i];
+                   [formData appendPartWithFileData:imageData name:name fileName:fileName mimeType:mimeType];
+               }
+               
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         if (progress) {
             progress(uploadProgress.completedUnitCount, uploadProgress.totalUnitCount);

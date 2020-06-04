@@ -28,7 +28,7 @@
     
     self.navigationItem.title = @"仓库地址";
     
- [self rightBarButtonWithText:@"编辑仓库" textColor:color_666666 textFont:[UIFont systemWEPingFangRegularOfSize:15] target:self selector:@selector(editClick)];
+// [self rightBarButtonWithText:@"编辑仓库" textColor:color_666666 textFont:[UIFont systemWEPingFangRegularOfSize:15] target:self selector:@selector(editClick)];
 }
 
 
