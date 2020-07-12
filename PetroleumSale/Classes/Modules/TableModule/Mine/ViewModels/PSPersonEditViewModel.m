@@ -43,7 +43,7 @@
     
     PSPersonEditSetModel *sub2Model = [PSPersonEditSetModel new];
     sub2Model.editType = PSPersonEditTypeSub2;
-    sub2Model.title = @"主账号";
+    sub2Model.title = @"子账号2";
     sub2Model.content = self.accountModel.sub_account_2;
     sub2Model.placeHolder = @"添加子账号";
     [data addObject:sub2Model];

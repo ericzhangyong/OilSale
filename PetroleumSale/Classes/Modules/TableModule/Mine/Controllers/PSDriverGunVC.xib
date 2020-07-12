@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PSDriverGunVC">
+            <connections>
+                <outlet property="tf_gunCount" destination="Puh-Ga-blK" id="9mG-Lj-yz7"/>
+                <outlet property="tf_phone" destination="JJL-Nf-GtG" id="XfF-C3-1YL"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJA-PR-Q2O">
+                    <rect key="frame" x="0.0" y="44" width="414" height="112"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ub-v6-BJs">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNN-lC-gjh">
+                                    <rect key="frame" x="15" y="18" width="70" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="70" id="Iy6-uk-cg6"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
+                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JJL-Nf-GtG">
+                                    <rect key="frame" x="110" y="19" width="289" height="18.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="NNN-lC-gjh" firstAttribute="centerY" secondItem="8Ub-v6-BJs" secondAttribute="centerY" id="atD-z3-BkK"/>
+                                <constraint firstItem="NNN-lC-gjh" firstAttribute="leading" secondItem="8Ub-v6-BJs" secondAttribute="leading" constant="15" id="hLP-Ch-8J6"/>
+                                <constraint firstAttribute="height" constant="56" id="m4n-qG-RgV"/>
+                                <constraint firstItem="JJL-Nf-GtG" firstAttribute="centerY" secondItem="8Ub-v6-BJs" secondAttribute="centerY" id="qMK-UI-nEC"/>
+                                <constraint firstItem="JJL-Nf-GtG" firstAttribute="leading" secondItem="NNN-lC-gjh" secondAttribute="trailing" constant="25" id="rie-Tb-LAe"/>
+                                <constraint firstAttribute="trailing" secondItem="JJL-Nf-GtG" secondAttribute="trailing" constant="15" id="vl6-SF-NIY"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X5b-t5-ols">
+                            <rect key="frame" x="0.0" y="56" width="414" height="56"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="加油枪数量" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3w-MH-tdi">
+                                    <rect key="frame" x="15" y="18" width="70" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="70" id="m68-Bi-rOF"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
+                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入加油枪数量" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Puh-Ga-blK">
+                                    <rect key="frame" x="110" y="19" width="219" height="18.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                </textField>
+                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="个" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNh-f6-EVd">
+                                    <rect key="frame" x="339" y="18" width="60" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="7sa-V9-lI7"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
+                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="mNh-f6-EVd" firstAttribute="centerY" secondItem="X5b-t5-ols" secondAttribute="centerY" id="6ZW-qH-PAL"/>
+                                <constraint firstAttribute="height" constant="56" id="NuR-1x-SGW"/>
+                                <constraint firstItem="q3w-MH-tdi" firstAttribute="leading" secondItem="X5b-t5-ols" secondAttribute="leading" constant="15" id="bLq-BH-Tnf"/>
+                                <constraint firstItem="mNh-f6-EVd" firstAttribute="leading" secondItem="Puh-Ga-blK" secondAttribute="trailing" constant="10" id="caF-34-iWG"/>
+                                <constraint firstItem="q3w-MH-tdi" firstAttribute="centerY" secondItem="X5b-t5-ols" secondAttribute="centerY" id="ghf-ad-bXH"/>
+                                <constraint firstItem="Puh-Ga-blK" firstAttribute="centerY" secondItem="X5b-t5-ols" secondAttribute="centerY" id="lnl-lF-uDC"/>
+                                <constraint firstAttribute="trailing" secondItem="mNh-f6-EVd" secondAttribute="trailing" constant="15" id="nRo-PF-nwj"/>
+                                <constraint firstItem="Puh-Ga-blK" firstAttribute="leading" secondItem="q3w-MH-tdi" secondAttribute="trailing" constant="25" id="oH0-xt-R7p"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="8Ub-v6-BJs" firstAttribute="trailing" secondItem="Xf2-lg-nCH" secondAttribute="trailing" id="02X-fe-Xvw"/>
+                        <constraint firstAttribute="bottom" secondItem="X5b-t5-ols" secondAttribute="bottom" id="40B-to-eUn"/>
+                        <constraint firstAttribute="trailing" secondItem="X5b-t5-ols" secondAttribute="trailing" id="4YM-Y3-JKM"/>
+                        <constraint firstAttribute="height" constant="112" id="7G3-Km-7i2"/>
+                        <constraint firstItem="8Ub-v6-BJs" firstAttribute="top" secondItem="Xf2-lg-nCH" secondAttribute="top" id="9s2-4g-4H4"/>
+                        <constraint firstItem="8Ub-v6-BJs" firstAttribute="leading" secondItem="sJA-PR-Q2O" secondAttribute="leading" id="KKI-Pa-zAN"/>
+                        <constraint firstItem="X5b-t5-ols" firstAttribute="leading" secondItem="sJA-PR-Q2O" secondAttribute="leading" id="Wfk-61-AfG"/>
+                        <constraint firstAttribute="trailing" secondItem="8Ub-v6-BJs" secondAttribute="trailing" id="Xad-bS-eIR"/>
+                        <constraint firstItem="X5b-t5-ols" firstAttribute="top" secondItem="8Ub-v6-BJs" secondAttribute="bottom" id="f1p-jl-KrK"/>
+                        <constraint firstItem="8Ub-v6-BJs" firstAttribute="leading" secondItem="Xf2-lg-nCH" secondAttribute="leading" id="z05-c7-gQA"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="Xf2-lg-nCH"/>
+                </view>
+                <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czB-5a-DMc">
+                    <rect key="frame" x="30" y="236" width="354" height="45"/>
+                    <color key="backgroundColor" red="0.25098039220000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="IIj-YJ-4Wb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="16"/>
+                    <state key="normal" title="确定">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <state key="disabled" title="登录"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="self.layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="self.layer.cornerRadius">
+                            <real key="value" value="22.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="actionConfirm:" destination="-1" eventType="touchUpInside" id="fE0-fy-qoH"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="sJA-PR-Q2O" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="67a-bG-dSa"/>
+                <constraint firstItem="czB-5a-DMc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9Mi-Lg-Eyk"/>
+                <constraint firstItem="sJA-PR-Q2O" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="Hn0-RO-Hdd"/>
+                <constraint firstItem="czB-5a-DMc" firstAttribute="top" secondItem="sJA-PR-Q2O" secondAttribute="bottom" constant="80" id="NWs-dj-qhp"/>
+                <constraint firstItem="czB-5a-DMc" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="30" id="Ovh-wv-oD0"/>
+                <constraint firstItem="sJA-PR-Q2O" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="mbU-ku-WNE"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="czB-5a-DMc" secondAttribute="trailing" constant="30" id="zEo-S1-rjT"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="137.68115942028987" y="102.45535714285714"/>
+        </view>
+    </objects>
+</document>

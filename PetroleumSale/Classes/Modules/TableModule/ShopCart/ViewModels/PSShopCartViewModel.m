@@ -241,11 +241,11 @@
     }
     editRequest.receipt_addr_id = address.rec_addr_id.integerValue;
     
-    PSWareHouseModel *wareModel = [PSWareHouseModel new];
-    if (self.warehouse_list.count>0) {
-        wareModel = self.warehouse_list[self.currentWareHouseSelectIndex];
-    }
-    editRequest.warehouse_id = wareModel.Id.integerValue;
+//    PSWareHouseModel *wareModel = [PSWareHouseModel new];
+//    if (self.warehouse_list.count>0) {
+//        wareModel = self.warehouse_list[self.currentWareHouseSelectIndex];
+//    }
+//    editRequest.warehouse_id = wareModel.Id.integerValue;
     
     NSMutableArray *data = [NSMutableArray array];
     for (PSShopCartModel *model in self.dataSource) {

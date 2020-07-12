@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PSAccountHisHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZh-Fv-1Hl">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fej-5t-jGA">
+                            <rect key="frame" x="0.0" y="12" width="414" height="28"/>
+                            <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="20"/>
+                            <color key="textColor" red="0.25098039220000001" green="0.51764705879999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="记账余额(元)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEa-z5-KyB">
+                            <rect key="frame" x="0.0" y="42" width="414" height="17"/>
+                            <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="12"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="fej-5t-jGA" firstAttribute="top" secondItem="uZh-Fv-1Hl" secondAttribute="top" constant="12" id="2XQ-Kc-FUR"/>
+                        <constraint firstItem="qEa-z5-KyB" firstAttribute="top" secondItem="fej-5t-jGA" secondAttribute="bottom" constant="2" id="9SX-Q7-aB9"/>
+                        <constraint firstAttribute="trailing" secondItem="qEa-z5-KyB" secondAttribute="trailing" id="IXn-j5-hUh"/>
+                        <constraint firstAttribute="trailing" secondItem="fej-5t-jGA" secondAttribute="trailing" id="LpS-Bj-d8M"/>
+                        <constraint firstItem="fej-5t-jGA" firstAttribute="leading" secondItem="uZh-Fv-1Hl" secondAttribute="leading" id="iGL-Gm-pnM"/>
+                        <constraint firstItem="qEa-z5-KyB" firstAttribute="leading" secondItem="uZh-Fv-1Hl" secondAttribute="leading" id="o6z-Bt-QPA"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="uZh-Fv-1Hl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="B6V-AG-eYi"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="uZh-Fv-1Hl" secondAttribute="trailing" id="hNF-Kc-fuV"/>
+                <constraint firstAttribute="bottom" secondItem="uZh-Fv-1Hl" secondAttribute="bottom" id="hXm-7I-Rv6"/>
+                <constraint firstItem="uZh-Fv-1Hl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="vEs-1v-Ova"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="label_account" destination="fej-5t-jGA" id="h8r-p8-ml3"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="103"/>
+        </view>
+    </objects>
+</document>

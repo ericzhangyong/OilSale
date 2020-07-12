@@ -43,12 +43,18 @@
         collectCanModel.iconImageUrl = @"userpg_list_adre";
         [self.dataSource addObject:collectCanModel];
         
+        PSMineSetModel *gunModel = [PSMineSetModel new];
+        gunModel.mineCellType = PSMineCellTypeDriverGun;
+        gunModel.title = @"借加油枪";
+        gunModel.content = userInfo.balance;
+        gunModel.iconImageUrl = @"userpg_list_jyq";
+        [self.dataSource addObject:gunModel];
     }else if (userInfo.userType == UserTypeSender){
         
     }else if (userInfo.userType == UserTypePetrolStation){
         PSMineSetModel *addresStationModel = [PSMineSetModel new];
         addresStationModel.mineCellType = PSMineCellTypeAddress;
-        addresStationModel.title = @"加油点地址";
+        addresStationModel.title = @"加油站地址";
         NSString *address = [NSString stringWithFormat:@"%@%@",userInfo.receipt_addr.region,userInfo.receipt_addr.complete_address];
         addresStationModel.content = address;
         addresStationModel.iconImageUrl = @"userpg_list_adress";
@@ -56,7 +62,7 @@
         
         PSMineSetModel *stationReservesModel = [PSMineSetModel new];
         stationReservesModel.mineCellType = PSMineCellTypeStationReserves;
-        stationReservesModel.title = @"加油点储量";
+        stationReservesModel.title = @"加油站储量";
         stationReservesModel.content = [NSString stringWithFormat:@"%@%@",userInfo.reserves,userInfo.reserves_unit];
         stationReservesModel.iconImageUrl = @"userpg_list_record";
         [self.dataSource addObject:stationReservesModel];

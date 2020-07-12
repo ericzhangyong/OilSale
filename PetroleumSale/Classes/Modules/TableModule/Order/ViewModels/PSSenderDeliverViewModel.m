@@ -75,7 +75,11 @@
     
     PSSenderDeliveryModel *senderOrderModel = [self ps_getSenderOrderModelAtIndex:index];
 
-    return [NSString stringWithFormat:@"收货联系人：%@",senderOrderModel.order_info.consignee];
+    if (self.listType == PSSenderDeliverListTypeSended) {
+        return [NSString stringWithFormat:@"联系人：%@   电话：%@",senderOrderModel.order_info.consignee,senderOrderModel.order_info.phone_num];
+    }else{
+        return [NSString stringWithFormat:@"收货联系人：%@",senderOrderModel.order_info.consignee];
+    }
 }
 
 
@@ -107,15 +111,18 @@
 -(NSString *)ps_getPhoneAtIndex:(NSInteger)index{
     
     PSSenderDeliveryModel *senderOrderModel = [self ps_getSenderOrderModelAtIndex:index];
-
-    return [NSString stringWithFormat:@"电话：%@",senderOrderModel.order_info.phone_num];
+    if (self.listType == PSSenderDeliverListTypeSended) {
+       return [NSString stringWithFormat:@"地址：%@%@",senderOrderModel.order_info.rec_region,senderOrderModel.order_info.rec_complete_address];
+    }else{
+        return [NSString stringWithFormat:@"电话：%@",senderOrderModel.order_info.phone_num];
+    }
 }
 -(NSString *)ps_getLabelPickOneSelfTitleAtIndex:(NSInteger)index{
 
     if (self.listType == PSSenderDeliverListTypePickOneSelf) {
         return @"自提单号：";
     }else{
-        return @"送货司机：";
+        return @"仓库：";
     }
 }
 -(NSString *)ps_getLabelPickOneSelfContentAtIndex:(NSInteger)index{
@@ -124,7 +131,7 @@
     if (self.listType == PSSenderDeliverListTypePickOneSelf) {
         return @"";
     }else{
-        return senderOrderModel.driver_info.UiName;
+        return senderOrderModel.order_info.warehouse_name;
     }
 }
 -(BOOL)ps_getIsEnablePickOneSelfTextFieldAtIndex:(NSInteger)index{
@@ -139,8 +146,13 @@
 -(NSString *)ps_getAddressAtIndex:(NSInteger)index{
     PSSenderDeliveryModel *senderOrderModel = [self ps_getSenderOrderModelAtIndex:index];
 
-    return [NSString stringWithFormat:@"地址：%@%@",senderOrderModel.order_info.rec_region,senderOrderModel.order_info.rec_complete_address];
+    if (self.listType == PSSenderDeliverListTypeSended) {
+       return  [NSString stringWithFormat:@"司机：%@%@",senderOrderModel.order_info.rec_region,senderOrderModel.order_info.rec_complete_address];
+    }else{
+        return [NSString stringWithFormat:@"地址：%@%@",senderOrderModel.order_info.rec_region,senderOrderModel.order_info.rec_complete_address];
+    }
 }
+
 -(NSString *)ps_getDriverNameStatusAtIndex:(NSInteger)index{
     
     PSSenderDeliveryModel *senderOrderModel = [self ps_getSenderOrderModelAtIndex:index];
@@ -208,6 +220,7 @@
                 }
                 complete(YES,data);
             }else{
+                [self.dataSource setArray:@[]];
                 complete(NO,@[]);
             }
         }];
@@ -231,6 +244,7 @@
                 }
                 complete(YES,data);
             }else{
+                [self.dataSource setArray:@[]];
                 complete(NO,@[]);
             }
         }];
@@ -249,6 +263,7 @@
                 }
                 complete(YES,data);
             }else{
+                [self.dataSource setArray:@[]];
                 complete(NO,@[]);
             }
         }];

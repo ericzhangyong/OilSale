@@ -7,13 +7,19 @@
 //
 
 #import "PSSenderDriverListRequest.h"
+#import "UserInfoProfile.h"
 
 @implementation PSSenderDriverListRequest
 
 
 
 -(NSString *)requestMethod{
-    return method_senderDriverList;
+    
+    if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeSender) {
+        return method_senderDriverList;
+    }else{
+        return @"storage/qry_dispatch_driver.do";
+    }
 }
 
 @end

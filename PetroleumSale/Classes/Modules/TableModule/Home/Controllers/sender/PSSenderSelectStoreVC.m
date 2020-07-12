@@ -116,6 +116,7 @@
         if (response.isFinished) {
             [MMAlertView showWithTitle:@"派单成功！" sureBtn:@"知道了"];
             [self.navigationController popViewControllerAnimated:YES];
+            [[NSNotificationCenter defaultCenter] postNotificationName:FSNotificationSendSuccessNotifiKey object:nil];
         }
     }];
     
@@ -172,7 +173,7 @@
     if (!model.isSelcted) {
         for (int i = 0; i<self.dataSource.count; i++) {
             PSDriverModel *model = self.dataSource[i];
-            if (indexPath.row == i) {
+            if (indexPath.section == i) {
                 model.isSelcted = YES;
             }else{
                 model.isSelcted = NO;
@@ -180,6 +181,7 @@
         }
         [self.tableView reloadData];
     }
+    self.currentSelectIndex = indexPath.section;
     self.isHaveSelected = YES;
 //    PSSenderDriverOrderListVC *orderList = [[PSSenderDriverOrderListVC alloc] init];
 //    orderList.driverViewModel = [self.driverViewModel copy];

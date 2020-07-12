@@ -81,6 +81,14 @@
         return color_FF6D32;
     }
 }
+
+-(NSString *)ps_getOrderContractUrlAtIndex:(NSInteger)index{
+    PSOrderModel *orderModel = [self ps_getOrderModelAtIndex:index];
+    return orderModel.contract_url;
+}
+
+
+
 /// 是否含税
 /// @param index index
 -(NSString *)ps_getOrderTaxStatusAtIndex:(NSInteger)index{

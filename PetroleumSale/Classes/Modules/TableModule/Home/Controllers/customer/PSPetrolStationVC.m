@@ -33,7 +33,7 @@
 
 -(void)initNavView{
     
-    self.navigationItem.title = @"选择加油点";
+    self.navigationItem.title = @"选择加油站";
 }
 
 -(void)initBaseViews{

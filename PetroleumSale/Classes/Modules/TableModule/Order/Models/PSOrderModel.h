@@ -63,6 +63,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *farp_manager_name;
 /// <#des#>
 @property (nonatomic,copy) NSString *farp_phone;
+
+/// 合同地址
+@property (nonatomic,copy) NSString *contract_url;
 @end
 
 @interface PSOrderImageModel : BaseModel

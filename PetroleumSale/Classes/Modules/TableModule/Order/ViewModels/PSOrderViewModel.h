@@ -51,7 +51,7 @@ typedef NS_ENUM(NSInteger,PSOrderBottomBtnType){
 /// @param index index
 -(NSString *)ps_getOrderStatusAtIndex:(NSInteger)index;
 -(UIColor *)ps_getOrderStatusTextColorAtIndex:(NSInteger)index;
-
+-(NSString *)ps_getOrderContractUrlAtIndex:(NSInteger)index;
 /// 是否含税
 /// @param index index
 -(NSString *)ps_getOrderTaxStatusAtIndex:(NSInteger)index;

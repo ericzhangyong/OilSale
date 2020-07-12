@@ -28,7 +28,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self loadWebDataSource];
 }
 
 -(void)initBaseViews{
@@ -36,6 +35,12 @@
     self.tableView.backgroundColor = color_lightDart_f3f3f3;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSStationOrderCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSStationOrderCell.class)];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(PSStationOrderHistoryCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(PSStationOrderHistoryCell.class)];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self loadWebDataSource];
 }
 
 

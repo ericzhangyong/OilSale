@@ -47,7 +47,7 @@
 
 -(void)initNavView{
     
-    NSString *title = UserInfoProfile.shareUserInfo.userInfo.userType == UserTypePetrolStation?@"加油点地址":@"收货地址";
+    NSString *title = UserInfoProfile.shareUserInfo.userInfo.userType == UserTypePetrolStation?@"加油站地址":@"收货地址";
     self.navigationItem.title  = title;
 }
 

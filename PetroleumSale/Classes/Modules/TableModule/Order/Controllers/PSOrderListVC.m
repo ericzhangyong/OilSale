@@ -31,7 +31,6 @@
     [super viewDidLoad];
     
     
-    [self loadWebDataSource];
 }
 
 -(void)initBaseDatas{
@@ -40,6 +39,11 @@
     if (self.orderViewModel.listType == PSOrderListTypeHistory) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadWebDataSource) name:FSNotificationConfirmReceiveSuccesKey object:nil];
     }
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self loadWebDataSource];
 }
 
 -(void)initBaseViews{
@@ -113,14 +117,18 @@
     if (type == PSOrderBottomBtnTypeCancelOrder) {
         [MMAlertView showWithTitle:@"是否确定取消订单！" detail:@"" cancelBtn:@"取消" sureBtn:@"确定" handler:^{
             [weakSelf.orderViewModel requestOrderOperateWithOperateType:2 order_id:[weakSelf.orderViewModel ps_getOrderIdAtIndex:indexPath.row]  order_code:[weakSelf.orderViewModel ps_getOrderCodeAtIndex:indexPath.row] complete:^(BOOL isFinished,NSString *str) {
-                [weakSelf.orderViewModel ps_deleteOrderIndex:indexPath.row];
-                [weakSelf.tableView reloadData];
+                if (isFinished) {
+                    [weakSelf.orderViewModel ps_deleteOrderIndex:indexPath.row];
+                    [weakSelf.tableView reloadData];
+                }
             }];
         }];
       
     }else if(type == PSOrderBottomBtnTypeCheckContract){
         
+        NSString *url = [self.orderViewModel ps_getOrderContractUrlAtIndex:indexPath.row];
         PSAgreementVC *aggreeMent = [[PSAgreementVC alloc] init];
+        aggreeMent.webUrl = url;
         [self.navigationController pushViewController:aggreeMent animated:YES];
     }
 }
@@ -154,8 +162,10 @@
         [MMAlertView showWithTitle:@"是否取消预定" detail:@"" cancelBtn:@"取消" sureBtn:@"确定" sureOrCanceHandler:^(BOOL sureButton) {
             if (sureButton) {
                 [self.orderViewModel requestOrderOperateWithOperateType:2 order_id:[self.orderViewModel ps_getOrderIdAtIndex:indexPath.row]  order_code:[self.orderViewModel ps_getOrderCodeAtIndex:indexPath.row] complete:^(BOOL isFinished,NSString *str) {
-                    [weakSelf.orderViewModel ps_deleteOrderIndex:indexPath.row];
-                    [weakSelf.tableView reloadData];
+                    if (isFinished) {
+                        [weakSelf.orderViewModel ps_deleteOrderIndex:indexPath.row];
+                        [weakSelf.tableView reloadData];
+                    }
                 }];
             }
         }];

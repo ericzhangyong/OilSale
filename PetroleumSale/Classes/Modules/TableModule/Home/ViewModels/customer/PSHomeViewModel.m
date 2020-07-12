@@ -307,6 +307,9 @@
             }
             
             if (self.homeModel.car_product_list.count>0) {
+                for (PSProductModel *carModel in self.homeModel.car_product_list) {
+                    carModel.notContainTaxOrDeliver = YES;
+                }
                 [self.dataSource addObject:self.homeModel.car_product_list];
             }
             

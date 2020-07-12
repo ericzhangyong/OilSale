@@ -16,6 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *label_accountBalance;
 @property (weak, nonatomic) IBOutlet UILabel *label_accountFarpBalance;
 
+
+
+/// 点击更多
+@property (nonatomic,copy) void(^restMoreClik)(BOOL isClick);
 @end
 
 NS_ASSUME_NONNULL_END

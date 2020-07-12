@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger,PSStationClickType){
 
 @property (weak, nonatomic) IBOutlet UILabel *label_price;
 
-@property (weak, nonatomic) IBOutlet UITextField *tf_petrolStation;
+@property (weak, nonatomic) IBOutlet UILabel *label_perolStation;
 @property (weak, nonatomic) IBOutlet UITextField *tf_carNum;
 
 @property (weak, nonatomic) IBOutlet UIButton *btn_staionDate;

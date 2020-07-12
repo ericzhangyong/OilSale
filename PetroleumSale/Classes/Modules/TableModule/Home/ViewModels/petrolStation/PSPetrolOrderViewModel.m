@@ -43,7 +43,7 @@
 -(NSString *)ps_getStationOrderAddressAtIndex:(NSInteger)index{
 
     PSStationOrderModel *stationModel = [self ps_getStationModelAtIndex:index];
-    return [NSString stringWithFormat:@"加油点地址：%@%@",stationModel.req_farp_addr_edit_model.region,stationModel.req_farp_addr_edit_model.complete_address];
+    return [NSString stringWithFormat:@"加油站地址：%@%@",stationModel.req_farp_addr_edit_model.region,stationModel.req_farp_addr_edit_model.complete_address];
 }
 -(NSString *)ps_getStationOrderVolumeAtIndex:(NSInteger)index{
     

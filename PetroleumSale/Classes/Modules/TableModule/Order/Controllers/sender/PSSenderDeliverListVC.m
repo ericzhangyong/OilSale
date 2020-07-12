@@ -12,6 +12,8 @@
 #import "UIView+BaseCategory.h"
 #import "PSDriverBottomView.h"
 #import "PSSenderSelectStoreVC.h"
+#import "PSSenderDriverSelectVC.h"
+#import "UserInfoProfile.h"
 
 @interface PSSenderDeliverListVC ()
 @property (nonatomic,strong) PSDriverBottomView *view_bottom;
@@ -29,8 +31,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    [self loadWebDataSource];
+    
 }
 
 -(void)initBaseViews{
@@ -55,6 +56,12 @@
 -(void)initBaseDatas{
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadWebDataSource) name:FSNotificationSendSuccessNotifiKey object:nil];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self loadWebDataSource];
 }
 
 -(void)loadWebDataSource{
@@ -79,8 +86,22 @@
         [MBProgressHUD toastMessageAtMiddle:@"请先选择订单"];
         return;
     }
-    PSSenderSelectStoreVC *selectDriver = [[PSSenderSelectStoreVC alloc] initWithOrderIdArr:selectOrderIdArr];
-    [self.view.navViewController pushViewController:selectDriver animated:YES];
+    if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeSender) {
+        PSSenderSelectStoreVC *selectDriver = [[PSSenderSelectStoreVC alloc] initWithOrderIdArr:selectOrderIdArr];
+        [self.view.navViewController pushViewController:selectDriver animated:YES];
+    }else{
+        PSSenderDriverSelectVC *driverList = [[PSSenderDriverSelectVC alloc] initWithOrderIdArr:selectOrderIdArr];
+//        driverList.selectCompleteBlock = ^(NSString * _Nonnull dirverId) {
+//            if (![BaseVerifyUtils isNullOrSpaceStr:dirverId]) {
+//                //            self.selectDriverId = dirverId;
+//            }
+//        };
+        [self.navigationController pushViewController:driverList animated:YES];
+    }
+   
+    
+    
+
 
     
 //    [self.driverViewModel requestSendDeliveryComplete:^(BOOL isFinished) {

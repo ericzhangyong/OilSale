@@ -11,7 +11,9 @@
 #import "PSDriverViemModel.h"
 #import "PSDriverBottomView.h"
 #import "PSSenderDriverOrderListVC.h"
-
+#import "PSSenderSendRequest.h"
+#import "MMAlertView+BaseAlertManger.h"
+#import "UserInfoProfile.h"
 
 @interface PSSenderDriverSelectVC ()
 @property (nonatomic,strong) PSDriverBottomView *view_bottom;
@@ -75,11 +77,28 @@
 }
 -(void)goToSendDidClick{
     
-    if (self.selectCompleteBlock) {
-        self.selectCompleteBlock(self.driverViewModel.ps_getSelectDriverId);
-        [self.navigationController popViewControllerAnimated:YES];
+    if (UserInfoProfile.shareUserInfo.userInfo.userType ==UserTypeSender) {
+        if (self.selectCompleteBlock) {
+            self.selectCompleteBlock(self.driverViewModel.ps_getSelectDriverId);
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }else{
+        PSSenderSendRequest *sendRequest =[ PSSenderSendRequest new];
+        sendRequest.driver_id = self.driverViewModel.ps_getSelectDriverId.intValue;
+        sendRequest.way_bill_id = self.driverViewModel.orderIdArr;
+           if (self.currentSelectIndex<self.dataSource.count) {
+               PSDriverModel *model = self.dataSource[self.currentSelectIndex];
+               sendRequest.storekeeper_id = model.storekeeper_id.integerValue;
+           }
+           [sendRequest postRequestCompleted:^(BaseResponse * _Nonnull response) {
+               if (response.isFinished) {
+                   [MMAlertView showWithTitle:@"派单成功！" sureBtn:@"知道了"];
+                   [self.navigationController popViewControllerAnimated:YES];
+                   [[NSNotificationCenter defaultCenter] postNotificationName:FSNotificationSendSuccessNotifiKey object:nil];
+               }
+           }];
     }
-    
+
 //    [self.driverViewModel requestSendDeliveryComplete:^(BOOL isFinished) {
 //        if (isFinished) {
 //

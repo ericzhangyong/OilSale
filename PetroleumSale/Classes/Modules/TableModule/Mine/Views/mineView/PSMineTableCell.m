@@ -26,6 +26,7 @@
 #import "PSAccountVC.h"
 #import "PSModulePageRouter.h"
 #import "PSKeeperWareHourseVC.h"
+#import "PSDriverGunVC.h"
 
 @interface PSMineTableCell ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
@@ -180,13 +181,13 @@
        
         PSKeeperWareHourseVC *wareHourse= [PSKeeperWareHourseVC new];
         [self.contentView.navViewController pushViewController:wareHourse animated:YES];
+    }else if(cellType == PSMineCellTypeDriverGun){
         
-//        [PSModulePageRouter openWareHoursePageWithParam:@{} PageFinish:^(NSDictionary * _Nonnull result) {
-//            
-//        } complete:^(BOOL isFinish) {
-//            
-//        }];
+        PSDriverGunVC *gunVC =[PSDriverGunVC new];
+        [self.contentView.navViewController  pushViewController:gunVC animated:YES];
+        
     }
+    
 
 }
 

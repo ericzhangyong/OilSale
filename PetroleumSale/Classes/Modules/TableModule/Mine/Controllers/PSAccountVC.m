@@ -12,6 +12,7 @@
 #import "PSAccountInfoRequest.h"
 #import "PSAccountInfoModel.h"
 #import "BaseVerifyUtils.h"
+#import "PSAccountHisVC.h"
 
 @interface PSAccountVC ()
 
@@ -43,7 +44,7 @@
     view.frame = CGRectMake(0, 0, kScreenWidth, 70);
     [view addSubview:self.view_header];
     self.tableView.tableHeaderView = view;
-        
+    
 }
 
 -(void)loadWebDataSource{
@@ -65,18 +66,24 @@
 -(void)reloadHeaderView{
     
     NSString *account_balance = self.accountInfoModel.account_balance;
-    NSString *fuel_card_balance = self.accountInfoModel.fuel_card_balance;
+//    NSString *fuel_card_balance = self.accountInfoModel.fuel_card_balance;
     if (![BaseVerifyUtils isNullOrSpaceStr:account_balance]) {
         self.view_header.label_accountBalance.text = account_balance;
     }
-    if (![BaseVerifyUtils isNullOrSpaceStr:fuel_card_balance]) {
-        self.view_header.label_accountFarpBalance.text = fuel_card_balance;
-    }
+    
+    WEAK_SELF;
+    self.view_header.restMoreClik = ^(BOOL isClick) {
+        PSAccountHisVC *his = [PSAccountHisVC new];
+        [weakSelf.navigationController pushViewController:his animated:YES];
+    };
+//    if (![BaseVerifyUtils isNullOrSpaceStr:fuel_card_balance]) {
+//        self.view_header.label_accountFarpBalance.text = fuel_card_balance;
+//    }
 }
 
 #pragma mark- UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    return self.accountInfoModel.bill_list.count>0?1:0;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.accountInfoModel.bill_list.count;

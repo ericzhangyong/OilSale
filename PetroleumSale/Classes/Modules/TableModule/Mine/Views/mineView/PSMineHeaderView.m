@@ -8,6 +8,7 @@
 
 #import "PSMineHeaderView.h"
 #import "UIView+BaseCategory.h"
+#import "UserInfoProfile.h"
 
 @implementation PSMineHeaderView
 
@@ -33,7 +34,7 @@
 
 #pragma mark- click
 -(void)tapClick{
-    if (self.userClick) {
+    if (self.userClick && UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeCustomer) {
         self.userClick(YES);
     }
 }

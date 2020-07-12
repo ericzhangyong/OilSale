@@ -89,6 +89,7 @@
                 
                 complete(YES);
             }else{
+                [self.dataSource setArray:@[]];
                 complete(NO);
             }
         }];
@@ -100,6 +101,7 @@
                 [self.dataSource setArray:data];
                 complete(YES);
             }else{
+                [self.dataSource setArray:@[]];
                 complete(NO);
             }
         }];

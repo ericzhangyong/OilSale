@@ -179,7 +179,7 @@
     NSDictionary *dict1 = @{CYLTabBarItemTitle:@"首页",
                             CYLTabBarItemImage:image_home_u,
                             CYLTabBarItemSelectedImage:image_home_s};
-    NSDictionary *dict2 = @{CYLTabBarItemTitle:@"加油点",
+    NSDictionary *dict2 = @{CYLTabBarItemTitle:@"加油站",
                             CYLTabBarItemImage:image_home_refuel_u,
                             CYLTabBarItemSelectedImage:image_home_refuel_s};
     NSDictionary *dict3 = @{CYLTabBarItemTitle:@"运单",

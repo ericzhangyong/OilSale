@@ -17,7 +17,7 @@
     if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeDriver) {
         return @"driver/qry_driver_mine.do";
     }else if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypePetrolStation){
-        return @"qry_farp_mine.do";
+        return @"farp/qry_client_mine.do";
     }else if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeSalesman){
         return method_salesmanMine;
     }else if(UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeKeeper){

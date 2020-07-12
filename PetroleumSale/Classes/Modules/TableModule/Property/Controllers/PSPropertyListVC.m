@@ -31,7 +31,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self loadWebDataSource];
 }
 
 -(void)initBaseViews{
@@ -83,6 +82,12 @@
 
 -(UITableViewStyle)re_tableViewStryle{
     return UITableViewStyleGrouped;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self loadWebDataSource];
 }
 -(void)loadWebDataSource{
     [super loadWebDataSource];

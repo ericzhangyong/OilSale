@@ -86,6 +86,13 @@
 		07BC312D24827DA70098763A /* 384.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BC312C24827DA70098763A /* 384.png */; };
 		07BC313124829E430098763A /* 上海升到石化隐私权政策.docx in Resources */ = {isa = PBXBuildFile; fileRef = 07BC313024829E430098763A /* 上海升到石化隐私权政策.docx */; };
 		07D7E61A246D830900389AEE /* save.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D7E619246D830900389AEE /* save.xib */; };
+		07D98EF824BAFA6E00A162B3 /* PSAccountHisCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D98EF624BAFA6E00A162B3 /* PSAccountHisCell.m */; };
+		07D98EF924BAFA6E00A162B3 /* PSAccountHisCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D98EF724BAFA6E00A162B3 /* PSAccountHisCell.xib */; };
+		07D98EFC24BAFCBA00A162B3 /* PSAccountHisVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D98EFB24BAFCBA00A162B3 /* PSAccountHisVC.m */; };
+		07D98EFF24BB029D00A162B3 /* PSAccountHisHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D98EFE24BB029D00A162B3 /* PSAccountHisHeaderView.m */; };
+		07D98F0324BB02B800A162B3 /* PSAccountHisHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D98F0224BB02B800A162B3 /* PSAccountHisHeaderView.xib */; };
+		07D98F0724BB07CD00A162B3 /* PSDriverGunVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D98F0524BB07CD00A162B3 /* PSDriverGunVC.m */; };
+		07D98F0824BB07CD00A162B3 /* PSDriverGunVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D98F0624BB07CD00A162B3 /* PSDriverGunVC.xib */; };
 		C2003B3E23B09EAC0010BDB9 /* PSSenderOrderListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2003B3D23B09EAC0010BDB9 /* PSSenderOrderListVC.m */; };
 		C2003B4223B0A0560010BDB9 /* PSSenderDeleryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2003B4123B0A0560010BDB9 /* PSSenderDeleryVC.m */; };
 		C2003B4723B0A5720010BDB9 /* PSSendListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2003B4623B0A5720010BDB9 /* PSSendListHeaderView.m */; };
@@ -515,6 +522,17 @@
 		07BC312C24827DA70098763A /* 384.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 384.png; sourceTree = "<group>"; };
 		07BC313024829E430098763A /* 上海升到石化隐私权政策.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "上海升到石化隐私权政策.docx"; sourceTree = "<group>"; };
 		07D7E619246D830900389AEE /* save.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = save.xib; sourceTree = "<group>"; };
+		07D98EF524BAFA6E00A162B3 /* PSAccountHisCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAccountHisCell.h; sourceTree = "<group>"; };
+		07D98EF624BAFA6E00A162B3 /* PSAccountHisCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAccountHisCell.m; sourceTree = "<group>"; };
+		07D98EF724BAFA6E00A162B3 /* PSAccountHisCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PSAccountHisCell.xib; sourceTree = "<group>"; };
+		07D98EFA24BAFCBA00A162B3 /* PSAccountHisVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAccountHisVC.h; sourceTree = "<group>"; };
+		07D98EFB24BAFCBA00A162B3 /* PSAccountHisVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAccountHisVC.m; sourceTree = "<group>"; };
+		07D98EFD24BB029D00A162B3 /* PSAccountHisHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAccountHisHeaderView.h; sourceTree = "<group>"; };
+		07D98EFE24BB029D00A162B3 /* PSAccountHisHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAccountHisHeaderView.m; sourceTree = "<group>"; };
+		07D98F0224BB02B800A162B3 /* PSAccountHisHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PSAccountHisHeaderView.xib; sourceTree = "<group>"; };
+		07D98F0424BB07CD00A162B3 /* PSDriverGunVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSDriverGunVC.h; sourceTree = "<group>"; };
+		07D98F0524BB07CD00A162B3 /* PSDriverGunVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSDriverGunVC.m; sourceTree = "<group>"; };
+		07D98F0624BB07CD00A162B3 /* PSDriverGunVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PSDriverGunVC.xib; sourceTree = "<group>"; };
 		5E0DA287668D7F803D260F93 /* Pods-PetroleumSale.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetroleumSale.release.xcconfig"; path = "Target Support Files/Pods-PetroleumSale/Pods-PetroleumSale.release.xcconfig"; sourceTree = "<group>"; };
 		82F32C0E600E707E9041F40E /* Pods_PetroleumSale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetroleumSale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8E5ED2B00D7D724F1DC7FB5 /* Pods-PetroleumSale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetroleumSale.debug.xcconfig"; path = "Target Support Files/Pods-PetroleumSale/Pods-PetroleumSale.debug.xcconfig"; sourceTree = "<group>"; };
@@ -2123,6 +2141,11 @@
 				07ABDDC52454773D002093A4 /* PSWarehourseEditVC.h */,
 				07ABDDC62454773D002093A4 /* PSWarehourseEditVC.m */,
 				07ABDDC72454773D002093A4 /* PSWarehourseEditVC.xib */,
+				07D98EFA24BAFCBA00A162B3 /* PSAccountHisVC.h */,
+				07D98EFB24BAFCBA00A162B3 /* PSAccountHisVC.m */,
+				07D98F0424BB07CD00A162B3 /* PSDriverGunVC.h */,
+				07D98F0524BB07CD00A162B3 /* PSDriverGunVC.m */,
+				07D98F0624BB07CD00A162B3 /* PSDriverGunVC.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -2725,6 +2748,12 @@
 				C2845D3724027BF700FAA2B7 /* PSAccountCell.h */,
 				C2845D3824027BF700FAA2B7 /* PSAccountCell.m */,
 				C2845D3924027BF700FAA2B7 /* PSAccountCell.xib */,
+				07D98EF524BAFA6E00A162B3 /* PSAccountHisCell.h */,
+				07D98EF624BAFA6E00A162B3 /* PSAccountHisCell.m */,
+				07D98EF724BAFA6E00A162B3 /* PSAccountHisCell.xib */,
+				07D98EFD24BB029D00A162B3 /* PSAccountHisHeaderView.h */,
+				07D98EFE24BB029D00A162B3 /* PSAccountHisHeaderView.m */,
+				07D98F0224BB02B800A162B3 /* PSAccountHisHeaderView.xib */,
 				073A6065247018CC0059E050 /* PSImageListCell.h */,
 				073A6066247018CC0059E050 /* PSImageListCell.m */,
 				073A6067247018CC0059E050 /* PSImageListCell.xib */,
@@ -2804,6 +2833,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2BEB5AF239141850090FACB /* PSHomeOilCell.xib in Resources */,
+				07D98F0824BB07CD00A162B3 /* PSDriverGunVC.xib in Resources */,
 				0756AFD1243E9C9700D6331B /* PSKeeperHomeCell.xib in Resources */,
 				C260CC50238660AC00D51CF4 /* LaunchScreen.storyboard in Resources */,
 				C2692E3D23895E26007123B0 /* RELoginViewController.xib in Resources */,
@@ -2814,6 +2844,7 @@
 				C2090F4A23A860F200998955 /* PSPhotoCanCell.xib in Resources */,
 				0756AFDD243EAE5E00D6331B /* PSKeeperHomeHeaderView.xib in Resources */,
 				C29B99BB238C02A6000923B5 /* FSAddNewAddressTVCell.xib in Resources */,
+				07D98EF924BAFA6E00A162B3 /* PSAccountHisCell.xib in Resources */,
 				07ABDDC92454773D002093A4 /* PSWarehourseEditVC.xib in Resources */,
 				07ABDDBE24546C3C002093A4 /* PSKeeperWareHourseCell.xib in Resources */,
 				C2090F4F23A8618700998955 /* PSPhotoOilGunCell.xib in Resources */,
@@ -2841,6 +2872,7 @@
 				C26DA24F23A3897400BF4E8C /* PSDeliveryCell.xib in Resources */,
 				C2003B4C23B0A7440010BDB9 /* PSSenderOrderCell.xib in Resources */,
 				C29B99A6238BD12E000923B5 /* PSMineMessageCell.xib in Resources */,
+				07D98F0324BB02B800A162B3 /* PSAccountHisHeaderView.xib in Resources */,
 				C27709C923A4A22B0077F45A /* PSCarMessageVC.xib in Resources */,
 				073A60822470BBD80059E050 /* PSSenderStoreCell.xib in Resources */,
 				C228C1BE23D2AEDF00784AF5 /* PSStationOrderCell.xib in Resources */,
@@ -2967,6 +2999,7 @@
 				C20E97612387B54B005C07EF /* ZJCollectionView.m in Sources */,
 				0723E14E243F1C8C00B709AD /* PSPropertyClientRequest.m in Sources */,
 				C20E974F2387B54B005C07EF /* BaseKeyChain.m in Sources */,
+				07D98EF824BAFA6E00A162B3 /* PSAccountHisCell.m in Sources */,
 				07ABDDBD24546C3C002093A4 /* PSKeeperWareHourseCell.m in Sources */,
 				C2845D342402794B00FAA2B7 /* PSAccountHeaderView.m in Sources */,
 				0723E157243F215600B709AD /* PSPropertyBottomBarView.m in Sources */,
@@ -2996,6 +3029,7 @@
 				C29B99E1238C0B4F000923B5 /* PSCanRetureRequest.m in Sources */,
 				C2692E2C23895E26007123B0 /* UserInfoModel.m in Sources */,
 				C29B99F8238CF6AC000923B5 /* PSMessageVC.m in Sources */,
+				07D98F0724BB07CD00A162B3 /* PSDriverGunVC.m in Sources */,
 				C26DA24923A3883200BF4E8C /* PSDeliveryViewModel.m in Sources */,
 				C2692DF623895CE4007123B0 /* PSShopCartVC.m in Sources */,
 				C2845D182402558F00FAA2B7 /* PSNewStationCarNumRequest.m in Sources */,
@@ -3024,12 +3058,14 @@
 				0723E151243F1CD900B709AD /* PSPropertyMineRequest.m in Sources */,
 				C284C754238D06610025FE30 /* PSPersonEditVC.m in Sources */,
 				C2692E2F23895E26007123B0 /* RELoginOutRequest.m in Sources */,
+				07D98EFF24BB029D00A162B3 /* PSAccountHisHeaderView.m in Sources */,
 				0723E138243F15E600B709AD /* PSPropertyListVC.m in Sources */,
 				C229BC1023974D5600A3C223 /* PSWareHousePickerView.m in Sources */,
 				C284C767238D1D400025FE30 /* PSHomeHeaderView.m in Sources */,
 				0756AFD8243EA8CC00D6331B /* PSKeepHomeRequest.m in Sources */,
 				C23774B223C6D95700C77BD5 /* PSPetrolStationHomeVC.m in Sources */,
 				C2692E2E23895E26007123B0 /* REThirdRegistRequest.m in Sources */,
+				07D98EFC24BAFCBA00A162B3 /* PSAccountHisVC.m in Sources */,
 				C2692DF323895CC0007123B0 /* PSOrderVC.m in Sources */,
 				C2003B5223B0B05A0010BDB9 /* PSSenderOrderListRequest.m in Sources */,
 				C2C7753323ACE18B004B5CE6 /* PSCollectionPhotoImageCell.m in Sources */,
@@ -3379,7 +3415,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-isystem",
@@ -3425,7 +3461,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-isystem",

@@ -38,6 +38,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// 购买数量
 @property (nonatomic,copy) NSString *order_buy_num;
 
+/// "farp" 加油站加油
+//"ibc" 铁桶
+//"bucket" 桶
+//"car"  //车批发
+//"gun" 加油枪
+@property (nonatomic,copy) NSString *product_type;
 
 
 @property (nonatomic,copy) NSString *bucket_pic_url;

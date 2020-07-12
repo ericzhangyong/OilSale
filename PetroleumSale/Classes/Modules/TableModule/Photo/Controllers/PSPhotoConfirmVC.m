@@ -170,14 +170,19 @@
             if (isFinished) {
                 //发送成功
 //                [MBProgressHUD toastMessageAtMiddle:@"保存成功"];
-                [MMAlertView showWithTitle:@"保存成功，是否立即回收空油桶" detail:@"" cancelBtn:@"不收回" sureBtn:@"收回" sureOrCanceHandler:^(BOOL sureButton) {
-                    if (sureButton) {
-                        PSGetCanVC *getCanVC =[[PSGetCanVC alloc] initWithPhone:self.photoViewModel.photoModel.phone_num BucketType:self.photoViewModel.photoModel.commodity_name Count:self.photoViewModel.photoModel.order_buy_num oidGunCOunt:self.photoViewModel.photoModel.nozzle_num];
-                        [self.navigationController pushViewController:getCanVC animated:YES];
-                    }else{
-                        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-                    }
-                }];
+                if ([self.photoViewModel.photoModel.product_type isEqualToString:@"ibc"] ||[self.photoViewModel.photoModel.product_type isEqualToString:@"bucket"]) {
+                    [MMAlertView showWithTitle:@"保存成功，是否立即回收空油桶" detail:@"" cancelBtn:@"不收回" sureBtn:@"收回" sureOrCanceHandler:^(BOOL sureButton) {
+                        if (sureButton) {
+                            PSGetCanVC *getCanVC =[[PSGetCanVC alloc] initWithPhone:self.photoViewModel.photoModel.phone_num BucketType:self.photoViewModel.photoModel.commodity_name Count:self.photoViewModel.photoModel.order_buy_num oidGunCOunt:self.photoViewModel.photoModel.nozzle_num];
+                            [self.navigationController pushViewController:getCanVC animated:YES];
+                        }else{
+                            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                        }
+                    }];
+                }else{
+                    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                }
+                
             }
         }];
        

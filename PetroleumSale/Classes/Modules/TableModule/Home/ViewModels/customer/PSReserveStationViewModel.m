@@ -29,7 +29,7 @@
 
 -(NSString *)ps_getAddress{
     
-    return [NSString stringWithFormat:@"加油点地址：%@",self.stationModel.farp_address];
+    return [NSString stringWithFormat:@"加油站地址：%@",self.stationModel.farp_address];
 }
 -(NSString *)ps_getStationPic{
     return self.stationModel.farp_pic;

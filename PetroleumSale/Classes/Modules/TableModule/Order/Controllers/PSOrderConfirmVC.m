@@ -104,7 +104,7 @@
     
     
     UIView *footerView  = [UIView new   ];
-    footerView.frame = CGRectMake(0, 0, kScreenWidth, 305);
+    footerView.frame = CGRectMake(0, 0, kScreenWidth, 250);
     self.view_footer.frame = footerView.bounds;
     [footerView addSubview:self.view_footer];
     self.tableView.tableFooterView = footerView;
@@ -113,7 +113,7 @@
     
     self.view_footer.didClick = ^(FooterClickType clickType) {
         if (clickType == FooterClickTypeSelectWareHouse) {
-            [weakSelf showPickerView];
+//            [weakSelf showPickerView];
         }else if (clickType == FooterClickTypeAggreeBtn){
             weakSelf.cartViewModel.isAggree = !weakSelf.cartViewModel.isAggree;
         }else if (clickType == FooterClickTypeAggressment){

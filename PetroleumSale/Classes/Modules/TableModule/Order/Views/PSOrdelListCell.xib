@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -48,7 +48,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ChQ-x7-1Pc">
-                                <rect key="frame" x="95" y="70" width="175" height="20"/>
+                                <rect key="frame" x="95" y="70" width="235" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="FzC-3p-FV3"/>
                                 </constraints>
@@ -172,7 +172,6 @@
                             <constraint firstItem="SQY-5u-rWf" firstAttribute="trailing" secondItem="Nht-I1-ZxA" secondAttribute="trailing" id="CLA-0w-Id5"/>
                             <constraint firstItem="ChQ-x7-1Pc" firstAttribute="top" secondItem="Nht-I1-ZxA" secondAttribute="top" constant="2" id="HJP-ya-pPH"/>
                             <constraint firstItem="1Uf-Do-SAo" firstAttribute="leading" secondItem="mYB-8f-kXs" secondAttribute="leading" constant="15" id="JjS-d3-vro"/>
-                            <constraint firstItem="4DN-EM-YdC" firstAttribute="leading" secondItem="ChQ-x7-1Pc" secondAttribute="trailing" constant="10" id="Nhf-aK-EG0"/>
                             <constraint firstItem="s5C-JF-HfL" firstAttribute="leading" secondItem="Nht-I1-ZxA" secondAttribute="trailing" constant="10" id="Sr7-r3-vZp"/>
                             <constraint firstItem="s5C-JF-HfL" firstAttribute="top" secondItem="ChQ-x7-1Pc" secondAttribute="bottom" constant="10" id="agW-6b-E0d"/>
                             <constraint firstItem="XMr-2W-taS" firstAttribute="top" secondItem="mYB-8f-kXs" secondAttribute="top" constant="15" id="bHd-bk-4Pw"/>
@@ -186,6 +185,7 @@
                             <constraint firstItem="XMr-2W-taS" firstAttribute="leading" secondItem="mYB-8f-kXs" secondAttribute="leading" constant="15" id="n7i-Ag-4fq"/>
                             <constraint firstItem="jJD-ah-T19" firstAttribute="leading" secondItem="mYB-8f-kXs" secondAttribute="leading" constant="15" id="om3-Zk-CWM"/>
                             <constraint firstItem="4DN-EM-YdC" firstAttribute="leading" secondItem="XMr-2W-taS" secondAttribute="trailing" constant="10" id="osh-Wb-Kfd"/>
+                            <constraint firstAttribute="trailing" secondItem="ChQ-x7-1Pc" secondAttribute="trailing" constant="15" id="pPz-Eb-I2Z"/>
                             <constraint firstAttribute="trailing" secondItem="1Uf-Do-SAo" secondAttribute="trailing" constant="15" id="qHj-cv-jxe"/>
                             <constraint firstItem="Nht-I1-ZxA" firstAttribute="leading" secondItem="mYB-8f-kXs" secondAttribute="leading" constant="15" id="qWL-aI-dbO"/>
                             <constraint firstAttribute="trailing" secondItem="s5C-JF-HfL" secondAttribute="trailing" constant="30" id="rWQ-l8-58X"/>

@@ -11,4 +11,15 @@
 @implementation PSAccountHeaderView
 
 
+
+
+- (IBAction)aciotnClickMore:(UIControl *)sender {
+    
+    
+    if (self.restMoreClik) {
+        self.restMoreClik(YES);
+    }
+}
+
+
 @end
