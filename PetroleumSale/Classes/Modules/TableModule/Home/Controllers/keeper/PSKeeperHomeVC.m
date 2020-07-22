@@ -62,7 +62,7 @@
     [header addSubview:self.view_header];
     self.view_header.frame = header.bounds;
     self.tableView.tableHeaderView = header;
-    self.view_header.label_todayPrice.text = self.keepViewModel.oil_price;
+    self.view_header.label_todayPrice.text = self.keepViewModel.stock_weight_total;
     self.view_header.label_oilCount.text = self.keepViewModel.oil_total;
      
 }

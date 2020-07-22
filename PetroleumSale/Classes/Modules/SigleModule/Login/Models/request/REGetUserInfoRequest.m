@@ -22,6 +22,8 @@
         return method_salesmanMine;
     }else if(UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeKeeper){
         return method_keeperMine;
+    }else if (UserInfoProfile.shareUserInfo.userInfo.userType == UserTypeSender){
+        return @"dispatch/qry_dispatch_mine.do";
     }
     else{
         return method_userInfo;

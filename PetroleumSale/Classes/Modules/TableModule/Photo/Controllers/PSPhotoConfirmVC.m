@@ -66,6 +66,7 @@
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     
+    [self confirmSuccess];
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
 }
 -(void)initBaseViews{
@@ -158,6 +159,7 @@
     
     if (IsUSerStationType) {
         [self.photoViewModel reqeustSavePhotoComplete:^(BOOL isFinished) {
+            [self confirmSuccess];
                if (isFinished) {
                    //发送成功
                    [MBProgressHUD toastMessageAtMiddle:@"保存成功"];
@@ -167,6 +169,7 @@
     }else{
         
         [self.photoViewModel reqeustSavePhotoComplete:^(BOOL isFinished) {
+            [self confirmSuccess];
             if (isFinished) {
                 //发送成功
 //                [MBProgressHUD toastMessageAtMiddle:@"保存成功"];
@@ -188,9 +191,10 @@
        
         
     }
-    
-    
-   
+}
+
+-(void)confirmSuccess{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"driveConfirmSuccess" object:nil];
 }
 
 -(void)selectOrderClick{

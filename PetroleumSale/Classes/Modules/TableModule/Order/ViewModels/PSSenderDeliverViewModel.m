@@ -112,7 +112,7 @@
     
     PSSenderDeliveryModel *senderOrderModel = [self ps_getSenderOrderModelAtIndex:index];
     if (self.listType == PSSenderDeliverListTypeSended) {
-       return [NSString stringWithFormat:@"地址：%@%@",senderOrderModel.order_info.rec_region,senderOrderModel.order_info.rec_complete_address];
+       return [self getHandleAddressAtIndex:index];
     }else{
         return [NSString stringWithFormat:@"电话：%@",senderOrderModel.order_info.phone_num];
     }
@@ -147,9 +147,25 @@
     PSSenderDeliveryModel *senderOrderModel = [self ps_getSenderOrderModelAtIndex:index];
 
     if (self.listType == PSSenderDeliverListTypeSended) {
-       return  [NSString stringWithFormat:@"司机：%@%@",senderOrderModel.order_info.rec_region,senderOrderModel.order_info.rec_complete_address];
+        NSString *name = @"";
+        if (![BaseVerifyUtils isNullOrSpaceStr:senderOrderModel.driver_info.UiName]) {
+            name = senderOrderModel.driver_info.UiName;
+        }
+        return  [NSString stringWithFormat:@"司机：%@",name];
+    }
+    else{
+        return [self getHandleAddressAtIndex:index];
+    }
+}
+
+
+-(NSString *)getHandleAddressAtIndex:(NSInteger)index{
+    
+    PSSenderDeliveryModel *senderOrderModel = [self ps_getSenderOrderModelAtIndex:index];
+    if (![BaseVerifyUtils isNumber:senderOrderModel.order_info.farp_address]) {
+        return [NSString stringWithFormat:@"收货地址：%@",senderOrderModel.order_info.farp_address];
     }else{
-        return [NSString stringWithFormat:@"地址：%@%@",senderOrderModel.order_info.rec_region,senderOrderModel.order_info.rec_complete_address];
+       return [NSString stringWithFormat:@"收货地址：%@%@",senderOrderModel.order_info.rec_region,senderOrderModel.order_info.rec_complete_address];
     }
 }
 

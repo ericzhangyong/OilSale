@@ -65,7 +65,7 @@
             }
             [weakSelf.reserveViewModel requestStationReseveConfirmComplete:^(BOOL isFinished) {
                 if (isFinished) {
-                
+                    [[NSNotificationCenter defaultCenter]postNotificationName:@"reserveSuccessed" object:nil];
                     [MBProgressHUD toastMessageAtMiddle:@"预订成功"];
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 }

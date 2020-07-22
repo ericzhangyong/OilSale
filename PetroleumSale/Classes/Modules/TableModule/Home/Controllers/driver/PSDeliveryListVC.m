@@ -30,7 +30,19 @@
     [super viewDidLoad];
     
     [self loadWebDataSource];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(driveConfirmSuccess) name:@"driveConfirmSuccess" object:nil];
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+}
+
+-(void)driveConfirmSuccess{
+    
+    self.pullPageIndex = 1;
+    [self loadWebDataSource];
+}
+
 
 
 -(void)initNavView{

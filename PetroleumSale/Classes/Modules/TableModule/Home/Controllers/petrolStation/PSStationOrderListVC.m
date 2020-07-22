@@ -28,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(driveConfirmSuccess) name:@"driveConfirmSuccess" object:nil];
 }
 
 -(void)initBaseViews{
@@ -40,6 +41,11 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
+    [self loadWebDataSource];
+}
+
+-(void)driveConfirmSuccess{
+    self.pullPageIndex = 1;
     [self loadWebDataSource];
 }
 

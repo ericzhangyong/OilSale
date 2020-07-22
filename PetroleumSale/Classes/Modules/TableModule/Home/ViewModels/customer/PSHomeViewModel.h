@@ -56,6 +56,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSString *)ps_getFarpStationSelectCar;
 -(NSArray *)ps_getFarpStationSelectCarArr;
 -(void)ps_setFarpStationWithFarp_id:(NSString *)farp_id;
+-(void)ps_cleanFarpStationSelect;
 
 
 

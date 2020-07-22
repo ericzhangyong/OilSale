@@ -73,7 +73,7 @@
     
     WEAK_SELF;
     self.view_header.restMoreClik = ^(BOOL isClick) {
-        PSAccountHisVC *his = [PSAccountHisVC new];
+        PSAccountHisVC *his = [[PSAccountHisVC alloc] initWithMoney:self.accountInfoModel.account_balance];
         [weakSelf.navigationController pushViewController:his animated:YES];
     };
 //    if (![BaseVerifyUtils isNullOrSpaceStr:fuel_card_balance]) {

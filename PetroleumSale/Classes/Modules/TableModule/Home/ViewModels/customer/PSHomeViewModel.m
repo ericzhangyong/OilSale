@@ -276,6 +276,17 @@
     }
     return arr;
 }
+-(void)ps_cleanFarpStationSelect{
+    for (int i = 0; i<self.homeModel.farp_product.farp_car_list.count; i++) {
+        PSStationCarModel *carModel = self.homeModel.farp_product.farp_car_list[i];
+        carModel.isSelected = NO;
+    }
+    
+    for (PSStationModel *model in self.homeModel.farp_product.farp_addr_list) {
+        model.isSelected = NO;
+    }
+}
+
 -(void)ps_setFarpStationWithFarp_id:(NSString *)farp_id{
     
     for (PSStationModel *model in self.homeModel.farp_product.farp_addr_list) {

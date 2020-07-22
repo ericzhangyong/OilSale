@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PSKeeperHomeViewModel : BaseViewModel
 
 /// 今日油价
-@property (nonatomic,copy) NSString *oil_price;
+@property (nonatomic,copy) NSString *stock_weight_total;
 /// 仓库油量
 @property (nonatomic,copy) NSString *oil_total;
 

@@ -57,7 +57,7 @@
     if ([BaseVerifyUtils isNullOrSpaceStr:pinx]) {
         pinx = @"未知";
     }
-    return [NSString stringWithFormat:@"品相：%@",pinx];
+    return @"";//[NSString stringWithFormat:@"品相：%@",pinx];
 }
 
 
@@ -78,7 +78,7 @@
     [listRequest postRequestCompleted:^(BaseResponse * _Nonnull response) {
         if (response.isFinished) {
             
-            self.oil_price = response.result[@"oil_price"];
+            self.stock_weight_total = response.result[@"stock_weight_total"];
             self.oil_total = response.result[@"stock_volume_total"];
             NSArray *data= [PSKeeperStockModel convertModelWithJsonArr:response.result[@"stock_info_list"]];
             if (page == 1) {

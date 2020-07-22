@@ -111,17 +111,17 @@
     
     WEAK_SELF;
     cell.confirmClick = ^{
-      
+        
         [weakSelf.senderViewModel reqeustSendOrderWithOrderIdAtIndex:index complete:^(BOOL isFinished) {
             
             if (isFinished) {
-                [MMAlertView showWithTitle:@"派单成功" detail:@"加油点收到此加油订单" sureBtn:@"知道了"];
+                [MMAlertView showWithTitle:@"派单成功" detail:@"加油点收到此加油订单" cancelBtn:nil sureBtn:@"知道了" sureOrCanceHandler:^(BOOL sureButton) {
+                    [weakSelf.senderViewModel ps_removeDataIndex:index];
+                    [weakSelf.tableView reloadData];
+                }];
             }
         }];
     };
-    
-    
-    
     
     return cell;
 }

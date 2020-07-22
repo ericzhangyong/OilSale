@@ -126,7 +126,7 @@
 
 - (void)updateBtnClick {
 
-    NSArray *titles = @[@"拍照", @"从手机相册中选择"];
+    NSArray *titles = @[@"拍照"];
 
     UIView *view = [UIApplication sharedApplication].keyWindow;
     BasePopSheetView *sheet = [BasePopSheetView showPopSheet:view buttonTitles:titles];
@@ -134,8 +134,6 @@
         
         if (idx == 0) {
             [self onCameraBtn];
-        }else if (idx == 1){
-            [self onPhotoLibraryBtn];
         }
     }];
 }
@@ -172,9 +170,6 @@
     }
 
     UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
-    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    }
     UIImagePickerController *picker = [[UIImagePickerController alloc]init];
     picker.delegate = self;
     picker.allowsEditing = YES;

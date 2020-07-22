@@ -39,6 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSString *)ps_getBossStatusAtIndex:(NSInteger)index;
 -(UIColor *)ps_getBossStatusColorAtIndex:(NSInteger)index;
 
+-(void)ps_removeDataIndex:(NSInteger)index;
 
 
 #pragma mark- 接口

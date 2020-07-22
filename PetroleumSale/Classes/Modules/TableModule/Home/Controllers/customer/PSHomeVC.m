@@ -31,7 +31,7 @@
     [super viewDidLoad];
     
     [self loadWebDataSource];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reserveSuccessed) name:@"reserveSuccessed" object:nil];
 }
 
 -(void)initBaseViews{
@@ -111,6 +111,13 @@
         self.tableView.tableFooterView = [UIView new];
     }
     
+}
+
+-(void)reserveSuccessed{
+    
+    [self.homeViewModel ps_cleanFarpStationSelect];
+    self.view_footer.tf_carNum.text = @"";
+    self.view_footer.label_perolStation.text = @"";
 }
 
 -(UITableViewStyle)re_tableViewStryle{

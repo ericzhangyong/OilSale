@@ -25,6 +25,7 @@
 		072BBD362436172000EBE005 /* PSKeeperHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072BBD352436172000EBE005 /* PSKeeperHomeVC.m */; };
 		072BBD3E2436183E00EBE005 /* PSWareHouseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072BBD3D2436183E00EBE005 /* PSWareHouseVC.m */; };
 		072BBD462436194B00EBE005 /* PSPropertyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072BBD452436194B00EBE005 /* PSPropertyVC.m */; };
+		0734F49A24BE09C800599E83 /* PSAccountHisModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0734F49924BE09C800599E83 /* PSAccountHisModel.m */; };
 		073A60642470172F0059E050 /* PSImageListVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 073A60632470172F0059E050 /* PSImageListVCViewController.m */; };
 		073A6068247018CC0059E050 /* PSImageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 073A6066247018CC0059E050 /* PSImageListCell.m */; };
 		073A6069247018CC0059E050 /* PSImageListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 073A6067247018CC0059E050 /* PSImageListCell.xib */; };
@@ -85,6 +86,7 @@
 		07BC312A248279910098763A /* 老板加油APP用户注册和服务协议0529.docx in Resources */ = {isa = PBXBuildFile; fileRef = 07BC3128248279900098763A /* 老板加油APP用户注册和服务协议0529.docx */; };
 		07BC312D24827DA70098763A /* 384.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BC312C24827DA70098763A /* 384.png */; };
 		07BC313124829E430098763A /* 上海升到石化隐私权政策.docx in Resources */ = {isa = PBXBuildFile; fileRef = 07BC313024829E430098763A /* 上海升到石化隐私权政策.docx */; };
+		07CE168324BC9E4C00044170 /* PSAccountHisRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07CE168224BC9E4C00044170 /* PSAccountHisRequest.m */; };
 		07D7E61A246D830900389AEE /* save.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D7E619246D830900389AEE /* save.xib */; };
 		07D98EF824BAFA6E00A162B3 /* PSAccountHisCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D98EF624BAFA6E00A162B3 /* PSAccountHisCell.m */; };
 		07D98EF924BAFA6E00A162B3 /* PSAccountHisCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D98EF724BAFA6E00A162B3 /* PSAccountHisCell.xib */; };
@@ -416,6 +418,8 @@
 		072BBD3D2436183E00EBE005 /* PSWareHouseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSWareHouseVC.m; sourceTree = "<group>"; };
 		072BBD442436194B00EBE005 /* PSPropertyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSPropertyVC.h; sourceTree = "<group>"; };
 		072BBD452436194B00EBE005 /* PSPropertyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSPropertyVC.m; sourceTree = "<group>"; };
+		0734F49824BE09C800599E83 /* PSAccountHisModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAccountHisModel.h; sourceTree = "<group>"; };
+		0734F49924BE09C800599E83 /* PSAccountHisModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAccountHisModel.m; sourceTree = "<group>"; };
 		073A60622470172F0059E050 /* PSImageListVCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSImageListVCViewController.h; sourceTree = "<group>"; };
 		073A60632470172F0059E050 /* PSImageListVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSImageListVCViewController.m; sourceTree = "<group>"; };
 		073A6065247018CC0059E050 /* PSImageListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSImageListCell.h; sourceTree = "<group>"; };
@@ -521,6 +525,8 @@
 		07BC3128248279900098763A /* 老板加油APP用户注册和服务协议0529.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "老板加油APP用户注册和服务协议0529.docx"; sourceTree = "<group>"; };
 		07BC312C24827DA70098763A /* 384.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 384.png; sourceTree = "<group>"; };
 		07BC313024829E430098763A /* 上海升到石化隐私权政策.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "上海升到石化隐私权政策.docx"; sourceTree = "<group>"; };
+		07CE168124BC9E4C00044170 /* PSAccountHisRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAccountHisRequest.h; sourceTree = "<group>"; };
+		07CE168224BC9E4C00044170 /* PSAccountHisRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAccountHisRequest.m; sourceTree = "<group>"; };
 		07D7E619246D830900389AEE /* save.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = save.xib; sourceTree = "<group>"; };
 		07D98EF524BAFA6E00A162B3 /* PSAccountHisCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAccountHisCell.h; sourceTree = "<group>"; };
 		07D98EF624BAFA6E00A162B3 /* PSAccountHisCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAccountHisCell.m; sourceTree = "<group>"; };
@@ -2104,6 +2110,8 @@
 				07ABDDC3245471A6002093A4 /* PSKeeperWareHourseAddModel.m */,
 				073A606A24701AE50059E050 /* PSImageModel.h */,
 				073A606B24701AE50059E050 /* PSImageModel.m */,
+				0734F49824BE09C800599E83 /* PSAccountHisModel.h */,
+				0734F49924BE09C800599E83 /* PSAccountHisModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2680,6 +2688,8 @@
 				07ABDDC024546CDE002093A4 /* PSWareHourseListRequest.m */,
 				07ABDDCA24547BFB002093A4 /* PSWareHourseEditReqeust.h */,
 				07ABDDCB24547BFB002093A4 /* PSWareHourseEditReqeust.m */,
+				07CE168124BC9E4C00044170 /* PSAccountHisRequest.h */,
+				07CE168224BC9E4C00044170 /* PSAccountHisRequest.m */,
 			);
 			path = request;
 			sourceTree = "<group>";
@@ -3127,6 +3137,7 @@
 				C2003B8823B1E5950010BDB9 /* PSDriverBottomView.m in Sources */,
 				C260CC53238660AC00D51CF4 /* main.m in Sources */,
 				C2F8775523EFCBFB00B8A65C /* PSStationPhoteRequest.m in Sources */,
+				07CE168324BC9E4C00044170 /* PSAccountHisRequest.m in Sources */,
 				077DF3402420BD6300DDD3A2 /* PSSalesmanOrderListVC.m in Sources */,
 				C2845D2124025FF600FAA2B7 /* PSReserveStationViewModel.m in Sources */,
 				C2C1AB67238A519C00693FFC /* PSMineTableCell.m in Sources */,
@@ -3179,6 +3190,7 @@
 				C20E97462387B54B005C07EF /* BaseWebViewController.m in Sources */,
 				0723E168243F42AD00B709AD /* PSDropBucketListVCViewController.m in Sources */,
 				C2692E3423895E26007123B0 /* REThirdAppleRegistRequest.m in Sources */,
+				0734F49A24BE09C800599E83 /* PSAccountHisModel.m in Sources */,
 				C24505E623EBFCB800EC389A /* PSPhotoStationCell.m in Sources */,
 				C229BC0D23974A0B00A3C223 /* PSWareHouseModel.m in Sources */,
 				C20E974D2387B54B005C07EF /* BaseRefreshFooter.m in Sources */,
@@ -3400,7 +3412,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CS7ZPKG5FL;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3415,7 +3427,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-isystem",
@@ -3446,7 +3458,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CS7ZPKG5FL;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3461,7 +3473,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-isystem",

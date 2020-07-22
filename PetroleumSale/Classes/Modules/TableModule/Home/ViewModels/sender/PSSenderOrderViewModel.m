@@ -104,8 +104,17 @@
 -(NSString *)ps_getPhoneAtIndex:(NSInteger)index{
     
     PSSenderOrderModel *senderOrderModel = [self ps_getSenderOrderModelAtIndex:index];
-    return [NSString stringWithFormat:@"电话：%@",senderOrderModel.order_info.farp_phone];
+    if (self.listType == SenderListTypeHome) {
+        return [NSString stringWithFormat:@"电话：%@",senderOrderModel.order_info.phone_num];
+    }else{
+        return [NSString stringWithFormat:@"电话：%@",senderOrderModel.order_info.farp_phone];
+    }
 }
+
+
+
+
+
 
 //-(NSString *)ps_getIsDebtAtIndex:(NSInteger)index{
 //
@@ -118,12 +127,16 @@
     PSSenderOrderModel *senderOrderModel = [self ps_getSenderOrderModelAtIndex:index];
 
     if (self.listType == SenderListTypeHome) {
-        return [NSString stringWithFormat:@"地址：%@%@",senderOrderModel.order_info.rec_region,senderOrderModel.order_info.rec_complete_address];
+        return [NSString stringWithFormat:@"%@%@",senderOrderModel.order_info.rec_region,senderOrderModel.order_info.farp_address];
     }else{
         return [NSString stringWithFormat:@"加油站地址：%@",senderOrderModel.order_info.farp_address];
-
     }
 }
+//
+
+
+
+
 -(NSString *)ps_getwarHouseStatusAtIndex:(NSInteger)index{
     
     PSSenderOrderModel *senderOrderModel = [self ps_getSenderOrderModelAtIndex:index];
@@ -157,6 +170,13 @@
     PSSenderOrderModel *senderOrderModel = [self ps_getSenderOrderModelAtIndex:index];
 
     return [self getStatusColorWithInteger:senderOrderModel.wh_verify_info.wh_verify_state];
+}
+
+-(void)ps_removeDataIndex:(NSInteger)index{
+    
+    if (index <self.dataSource.count) {
+        [self.dataSource removeObjectAtIndex:index];
+    }
 }
 
 -(NSString *)getStatusWithInteger:(NSInteger)integer{

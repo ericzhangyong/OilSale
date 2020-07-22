@@ -11,8 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 //测试环境
-#define RootUrl @"http://api.shengdaoshiyou.com:8080/api/v1"//@"http://106.14.63.137/api/v1"
-
+#define RootUrl @"http://api.shengdaoshiyou.com:8080/api/v1"
 //正式环境
 //#define RootUrl @"https://api.shengdaoshiyou.com:8443/api/v1"
 ////https://api.shengdaoshiyou.com:8443/
