@@ -127,12 +127,17 @@
     PSSenderOrderModel *senderOrderModel = [self ps_getSenderOrderModelAtIndex:index];
 
     if (self.listType == SenderListTypeHome) {
-        return [NSString stringWithFormat:@"%@%@",senderOrderModel.order_info.rec_region,senderOrderModel.order_info.farp_address];
+        if (![BaseVerifyUtils isNullOrSpaceStr:senderOrderModel.order_info.farp_address]) {
+            return [NSString stringWithFormat:@"%@",senderOrderModel.order_info.farp_address];
+        }else{
+            return [NSString stringWithFormat:@"%@",senderOrderModel.order_info.rec_complete_address];
+        }
     }else{
         return [NSString stringWithFormat:@"加油站地址：%@",senderOrderModel.order_info.farp_address];
     }
+    
 }
-//
+
 
 
 
